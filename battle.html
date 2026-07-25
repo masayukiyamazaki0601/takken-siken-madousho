@@ -282,7 +282,13 @@ function continueBattle(){
   state.timerId=null;
   if(state.floor>=state.totalFloors)return;
   state.currentQuestion=pickQuestion(FLOORS[state.floor].area);
-  if(!state.currentQuestion){state.floor=0;startBattle();return}
+  if(!state.currentQuestion){state.floor=0;// ハッシュから開始フロア指定
+const hash = window.location.hash;
+if (hash && /^#floord+$/.test(hash)) {
+  const f = parseInt(hash.replace("#floor", ""));
+  if (f >= 0 && f < state.totalFloors) state.floor = f;
+}
+startBattle();return}
   state.answered=false;
   showQuestion();
 }
