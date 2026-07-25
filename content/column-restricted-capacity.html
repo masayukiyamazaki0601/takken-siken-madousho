@@ -86,6 +86,13 @@ body{
 }
 .article .highlight-box b{color:#7f1d1d}
 
+/* ===== Diagram (SVG図解) ===== */
+.article .diagram{
+  margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;
+  border-radius:10px;padding:16px;overflow:hidden;
+}
+.article .diagram svg{width:100%;height:auto;display:block}
+
 @media(max-width:768px){
   .article{padding:16px}
   .article h1{font-size:20px}
@@ -118,6 +125,57 @@ body{
 
     <h2>4タイプの比較表</h2>
     <p>民法は、判断能力が不十分な人を保護するために4段階の制限行為能力者制度を設けています。</p>
+    <div class="diagram">
+      <svg viewBox="0 0 600 300" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+        <defs>
+          <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f59e0b" stop-opacity=".08"/>
+            <stop offset="100%" stop-color="#f59e0b" stop-opacity=".02"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4f46e5" stop-opacity=".08"/>
+            <stop offset="100%" stop-color="#4f46e5" stop-opacity=".02"/>
+          </linearGradient>
+          <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#a83030" stop-opacity=".08"/>
+            <stop offset="100%" stop-color="#a83030" stop-opacity=".02"/>
+          </linearGradient>
+          <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#7b5ea7" stop-opacity=".08"/>
+            <stop offset="100%" stop-color="#7b5ea7" stop-opacity=".02"/>
+          </linearGradient>
+        </defs>
+        <!-- 4象限 -->
+        <rect x="10" y="30" width="280" height="120" rx="8" fill="url(#g1)" stroke="#f59e0b" stroke-width="1.5"/>
+        <rect x="310" y="30" width="280" height="120" rx="8" fill="url(#g2)" stroke="#4f46e5" stroke-width="1.5"/>
+        <rect x="10" y="165" width="280" height="120" rx="8" fill="url(#g3)" stroke="#a83030" stroke-width="1.5"/>
+        <rect x="310" y="165" width="280" height="120" rx="8" fill="url(#g4)" stroke="#7b5ea7" stroke-width="1.5"/>
+        <!-- ラベル -->
+        <text x="150" y="55" text-anchor="middle" font-size="14" font-weight="900" fill="#d97706">未成年</text>
+        <text x="150" y="73" font-size="11" fill="#7c6853">18歳未満</text>
+        <text x="150" y="93" font-size="11" fill="#433422">取消し：原則すべて</text>
+        <text x="150" y="110" font-size="11" fill="#433422">例外：営業許可・婚姻</text>
+        <text x="150" y="127" font-size="11" fill="#7c6853">詐術→取消し不可</text>
+
+        <text x="450" y="55" text-anchor="middle" font-size="14" font-weight="900" fill="#3730a3">成年被後見人</text>
+        <text x="450" y="73" font-size="11" fill="#7c6853">判断能力を欠く（常時）</text>
+        <text x="450" y="93" font-size="11" fill="#433422">取消し：日用品除くすべて</text>
+        <text x="450" y="110" font-size="11" fill="#433422">詐術制限なし</text>
+        <text x="450" y="127" font-size="11" fill="#7c6853">最強の保護レベル</text>
+
+        <text x="150" y="190" text-anchor="middle" font-size="14" font-weight="900" fill="#b91c1c">被保佐人</text>
+        <text x="150" y="208" font-size="11" fill="#7c6853">判断能力が著しく不十分</text>
+        <text x="150" y="228" font-size="11" fill="#433422">取消し：重要な行為のみ</text>
+        <text x="150" y="245" font-size="11" fill="#433422">民法13条1項各号に限定</text>
+        <text x="150" y="262" font-size="11" fill="#7c6853">日常生活は自由</text>
+
+        <text x="450" y="190" text-anchor="middle" font-size="14" font-weight="900" fill="#6d28d9">被補助人</text>
+        <text x="450" y="208" font-size="11" fill="#7c6853">判断能力が不十分（軽度）</text>
+        <text x="450" y="228" font-size="11" fill="#433422">取消し：指定行為のみ</text>
+        <text x="450" y="245" font-size="11" fill="#433422">家庭裁判所が個別指定</text>
+        <text x="450" y="262" font-size="11" fill="#7c6853">最も軽い保護</text>
+      </svg>
+    </div>
     <table>
       <tr><th>タイプ</th><th>該当者</th><th>保護</th><th>取消しできる行為</th></tr>
       <tr><td><b>未成年</b></td><td>18歳未満</td><td>⭐⭐⭐</td><td><b>原則すべて</b>（法定代理人がやった分はOK）</td></tr>

@@ -75,6 +75,8 @@ body{
   color:#7f1d1d;font-size:14px;line-height:1.7;
 }
 .article .highlight-box b{color:#7f1d1d}
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}
 @media(max-width:768px){
   .article{padding:16px}
   .article h1{font-size:20px}
@@ -110,6 +112,51 @@ body{
   <hr>
 
   <h2>意思表示の5パターン（横断比較）</h2>
+  <div class="diagram">
+    <svg viewBox="0 0 600 260" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+      <defs>
+        <linearGradient id="b1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".10"/><stop offset="100%" stop-color="#f59e0b" stop-opacity=".03"/></linearGradient>
+        <linearGradient id="b2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5" stop-opacity=".10"/><stop offset="100%" stop-color="#4f46e5" stop-opacity=".03"/></linearGradient>
+        <linearGradient id="b3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#a83030" stop-opacity=".10"/><stop offset="100%" stop-color="#a83030" stop-opacity=".03"/></linearGradient>
+        <linearGradient id="b4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#059669" stop-opacity=".10"/><stop offset="100%" stop-color="#059669" stop-opacity=".03"/></linearGradient>
+        <linearGradient id="b5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#dc2626" stop-opacity=".10"/><stop offset="100%" stop-color="#dc2626" stop-opacity=".03"/></linearGradient>
+        <marker id="ar" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#e6dac6"/></marker>
+      </defs>
+      <!-- タイトル -->
+      <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">意思表示5パターン ── 効力と第三者保護の比較</text>
+      <line x1="30" y1="32" x2="570" y2="32" stroke="#e6dac6" stroke-width="1"/>
+      <!-- カード1: 心裡留保 -->
+      <rect x="10" y="42" width="175" height="95" rx="6" fill="url(#b1)" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="97" y="62" text-anchor="middle" font-size="12" font-weight="900" fill="#d97706">心裡留保（93条）</text>
+      <text x="97" y="80" text-anchor="middle" font-size="10" fill="#433422">当事者間：有効（原則）</text>
+      <text x="97" y="96" text-anchor="middle" font-size="10" fill="#433422">相手方悪意→無効</text>
+      <text x="97" y="114" text-anchor="middle" font-size="10" fill="#7c6853">善意の第三者→保護</text>
+      <!-- カード2: 虚偽表示 -->
+      <rect x="212" y="42" width="175" height="95" rx="6" fill="url(#b2)" stroke="#4f46e5" stroke-width="1.5"/>
+      <text x="299" y="62" text-anchor="middle" font-size="12" font-weight="900" fill="#3730a3">虚偽表示（94条）</text>
+      <text x="299" y="80" text-anchor="middle" font-size="10" fill="#433422">当事者間：無効</text>
+      <text x="299" y="96" text-anchor="middle" font-size="10" fill="#433422">94条2項が超頻出</text>
+      <text x="299" y="114" text-anchor="middle" font-size="10" fill="#7c6853">善意の第三者→保護</text>
+      <!-- カード3: 錯誤 -->
+      <rect x="414" y="42" width="175" height="95" rx="6" fill="url(#b3)" stroke="#a83030" stroke-width="1.5"/>
+      <text x="501" y="62" text-anchor="middle" font-size="12" font-weight="900" fill="#b91c1c">錯誤（95条）</text>
+      <text x="501" y="80" text-anchor="middle" font-size="10" fill="#433422">取消し可</text>
+      <text x="501" y="96" text-anchor="middle" font-size="10" fill="#433422">表意者に過失→不可</text>
+      <text x="501" y="114" text-anchor="middle" font-size="10" fill="#7c6853">第三者保護なし</text>
+      <!-- カード4: 詐欺 -->
+      <rect x="110" y="155" width="175" height="90" rx="6" fill="url(#b4)" stroke="#059669" stroke-width="1.5"/>
+      <text x="197" y="175" text-anchor="middle" font-size="12" font-weight="900" fill="#047857">詐欺（96条）</text>
+      <text x="197" y="193" text-anchor="middle" font-size="10" fill="#433422">取消し可</text>
+      <text x="197" y="209" text-anchor="middle" font-size="10" fill="#433422">善意の第三者→保護</text>
+      <text x="197" y="227" text-anchor="middle" font-size="10" fill="#7c6853">第三者に対抗できない</text>
+      <!-- カード5: 強迫 -->
+      <rect x="315" y="155" width="175" height="90" rx="6" fill="url(#b5)" stroke="#dc2626" stroke-width="1.5"/>
+      <text x="402" y="175" text-anchor="middle" font-size="12" font-weight="900" fill="#b91c1c">強迫（96条）</text>
+      <text x="402" y="193" text-anchor="middle" font-size="10" fill="#433422">取消し可</text>
+      <text x="402" y="209" text-anchor="middle" font-size="10" fill="#433422">善意の第三者→保護×</text>
+      <text x="402" y="227" text-anchor="middle" font-size="10" fill="#7c6853">悪意の第三者にも対抗可</text>
+    </svg>
+  </div>
   <table>
     <tr><th>パターン</th><th>条文</th><th>契約の効力</th><th>取消し</th><th>第三者の保護</th></tr>
     <tr><td><b>心裡留保</b></td><td>93条</td><td><b>有効</b>（原則）</td><td>✗</td><td>○（善意の第三者を保護）</td></tr>
