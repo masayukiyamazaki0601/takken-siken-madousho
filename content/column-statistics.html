@@ -32,7 +32,8 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 .article ul{list-style:none;padding-left:4px;margin:16px 0}
 .article ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15px;color:#433422}
 .article ul li::before{content:"✓";position:absolute;left:0;top:0;color:#4f46e5;font-weight:900}
-@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
 </style>
 </head>
 <body>
@@ -47,6 +48,42 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 <p class="desc">宅建 税・その他、統計・その他編。地価公示法、不動産流通統計、土地基本法、建物の区分所有等に関する法律を整理。</p>
 <hr>
 
+<div class="diagram">
+  <svg viewBox="0 0 600 210" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <defs>
+      <linearGradient id="d1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#eef2ff"/><stop offset="100%" stop-color="#c7d2fe"/></linearGradient>
+      <linearGradient id="d2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+      <linearGradient id="d3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+    </defs>
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">区分所有法 関係概念図</text>
+
+    <!-- 建物全体 -->
+    <rect x="60" y="35" width="480" height="160" rx="10" fill="none" stroke="#433422" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <text x="300" y="55" text-anchor="middle" font-size="10" font-weight="700" fill="#433422">建物全体（一棟の区分所有建物）</text>
+
+    <!-- 専有部分（個室） -->
+    <rect x="80" y="70" width="140" height="70" rx="6" fill="url(#d1)" stroke="#818cf8" stroke-width="1.5"/>
+    <text x="150" y="95" text-anchor="middle" font-size="10" font-weight="800" fill="#3730a3">🏠 専有部分</text>
+    <text x="150" y="112" text-anchor="middle" font-size="9" fill="#6b7280">各自の部屋</text>
+    <text x="150" y="128" text-anchor="middle" font-size="8" fill="#6b7280">独立した所有権</text>
+
+    <!-- 共用部分（共通） -->
+    <rect x="240" y="70" width="140" height="70" rx="6" fill="url(#d2)" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="310" y="95" text-anchor="middle" font-size="10" font-weight="800" fill="#b45309">🚪 共用部分</text>
+    <text x="310" y="112" text-anchor="middle" font-size="9" fill="#92400e">廊下・階段</text>
+    <text x="310" y="128" text-anchor="middle" font-size="8" fill="#92400e">エレベーター</text>
+
+    <!-- 管理組合 -->
+    <rect x="400" y="70" width="120" height="70" rx="6" fill="url(#d3)" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="460" y="95" text-anchor="middle" font-size="10" font-weight="800" fill="#047857">👥 管理組合</text>
+    <text x="460" y="112" text-anchor="middle" font-size="9" fill="#065f46">全員で構成</text>
+    <text x="460" y="128" text-anchor="middle" font-size="8" fill="#065f46">設置義務</text>
+
+    <!-- キーポイント下段 -->
+    <rect x="80" y="155" width="440" height="30" rx="6" fill="#f3ebd9" stroke="#e6dac6" stroke-width="1"/>
+    <text x="300" y="174" text-anchor="middle" font-size="9" fill="#7c6853">📌 建替え決議：区分所有者の4分の3以上の同意が必要</text>
+  </svg>
+</div>
 <h2>地価公示法</h2>
 <ul>
 <li><b>地価公示</b>：国土交通省が毎年1月1日時点の標準地の価格を公表</li>

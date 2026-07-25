@@ -39,7 +39,8 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 .article ol{padding-left:24px;margin:16px 0}
 .article ol li{font-size:15px;margin-bottom:10px;color:#433422;line-height:1.7}
 .article ol li::marker{color:#f59e0b;font-weight:900}
-@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
 </style>
 </head>
 <body>
@@ -54,6 +55,52 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 <p class="desc">宅建 権利関係の借地借家法。借地権の存続期間（30年）、借地契約の更新・正当事由、借家の契約更新と明渡し、定期借地権・定期借家権を条文ベースで整理。</p>
 <hr>
 
+<div class="diagram">
+  <svg viewBox="0 0 600 200" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <defs>
+      <linearGradient id="lb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#eef2ff"/><stop offset="100%" stop-color="#e0e7ff"/></linearGradient>
+      <linearGradient id="ly" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+      <marker id="la" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#4f46e5"/></marker>
+    </defs>
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">借地権 vs 借家権 比較タイムライン</text>
+
+    <!-- タイムライン軸 -->
+    <line x1="40" y1="60" x2="560" y2="60" stroke="#4f46e5" stroke-width="2" marker-end="url(#la)"/>
+
+    <!-- 借地権 -->
+    <rect x="40" y="70" width="120" height="40" rx="6" fill="url(#lb)" stroke="#a5b4fc" stroke-width="1.5"/>
+    <text x="100" y="93" text-anchor="middle" font-size="10" font-weight="800" fill="#3730a3">借地契約</text>
+    <text x="100" y="105" text-anchor="middle" font-size="8" fill="#6b7280">初回30年</text>
+
+    <line x1="160" y1="80" x2="280" y2="80" stroke="#a5b4fc" stroke-width="1.5"/>
+    <polygon points="275,76 285,80 275,84" fill="#a5b4fc"/>
+
+    <rect x="285" y="70" width="120" height="40" rx="6" fill="url(#lb)" stroke="#a5b4fc" stroke-width="1.5"/>
+    <text x="345" y="93" text-anchor="middle" font-size="10" font-weight="800" fill="#3730a3">更新1回目</text>
+    <text x="345" y="105" text-anchor="middle" font-size="8" fill="#6b7280">20年</text>
+
+    <line x1="405" y1="80" x2="500" y2="80" stroke="#a5b4fc" stroke-width="1.5"/>
+    <polygon points="495,76 505,80 495,84" fill="#a5b4fc"/>
+
+    <rect x="505" y="70" width="55" height="40" rx="6" fill="url(#lb)" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="532" y="93" text-anchor="middle" font-size="9" font-weight="700" fill="#d97706">以降</text>
+    <text x="532" y="105" text-anchor="middle" font-size="7" fill="#b45309">正当事由必要</text>
+
+    <!-- 借家権（下段） -->
+    <rect x="40" y="135" width="120" height="40" rx="6" fill="url(#ly)" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="100" y="158" text-anchor="middle" font-size="10" font-weight="800" fill="#b45309">借家契約</text>
+    <text x="100" y="170" text-anchor="middle" font-size="8" fill="#92400e">期間自由</text>
+
+    <line x1="160" y1="145" x2="280" y2="145" stroke="#fcd34d" stroke-width="1.5"/>
+    <polygon points="275,141 285,145 275,149" fill="#fcd34d"/>
+
+    <rect x="285" y="135" width="120" height="40" rx="6" fill="url(#ly)" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="345" y="158" text-anchor="middle" font-size="10" font-weight="800" fill="#b45309">更新</text>
+    <text x="345" y="170" text-anchor="middle" font-size="8" fill="#92400e">正当事由必要</text>
+
+    <text x="300" y="195" text-anchor="middle" font-size="8" fill="#7c6853">定期借地/借家は更新なし・書面必須</text>
+  </svg>
+</div>
 <h2>借地権（借地借家法2条〜30条）</h2>
 <p>建物の所有を目的とする地上権または土地の賃借権。<b>存続期間は30年</b>（3条）。第1回目の更新後は<b>20年</b>。第2回目以降の更新には<b>正当事由</b>が必要。</p>
 

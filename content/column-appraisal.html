@@ -32,7 +32,8 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 .article ul{list-style:none;padding-left:4px;margin:16px 0}
 .article ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15px;color:#433422}
 .article ul li::before{content:"✓";position:absolute;left:0;top:0;color:#4f46e5;font-weight:900}
-@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
 </style>
 </head>
 <body>
@@ -47,6 +48,31 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 <p class="desc">宅建 宅建業法、不動産鑑定評価編。不動産鑑定評価の3手法（原価法・取引事例比較法・収益還元法）、価格形成要因、不動産鑑定士制度を整理。</p>
 <hr>
 
+<div class="diagram">
+  <svg viewBox="0 0 600 220" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">不動産鑑定評価の3手法</text>
+
+    <!-- 原価法（左） -->
+    <circle cx="140" cy="115" r="70" fill="#eef2ff" opacity=".7" stroke="#818cf8" stroke-width="2"/>
+    <text x="140" y="105" text-anchor="middle" font-size="12" font-weight="800" fill="#3730a3">原価法</text>
+    <text x="140" y="125" text-anchor="middle" font-size="9" fill="#6b7280">再調達価格</text>
+    <text x="140" y="140" text-anchor="middle" font-size="8" fill="#6b7280">− 減価修正</text>
+
+    <!-- 取引事例比較法（右） -->
+    <circle cx="460" cy="115" r="70" fill="#fef3c7" opacity=".7" stroke="#fbbf24" stroke-width="2"/>
+    <text x="460" y="105" text-anchor="middle" font-size="12" font-weight="800" fill="#b45309">取引事例比較法</text>
+    <text x="460" y="125" text-anchor="middle" font-size="9" fill="#92400e">類似物件の</text>
+    <text x="460" y="140" text-anchor="middle" font-size="8" fill="#92400e">取引事例と比較</text>
+
+    <!-- 収益還元法（下中央） -->
+    <circle cx="300" cy="155" r="70" fill="#d1fae5" opacity=".7" stroke="#34d399" stroke-width="2"/>
+    <text x="300" y="150" text-anchor="middle" font-size="12" font-weight="800" fill="#047857">収益還元法</text>
+    <text x="300" y="168" text-anchor="middle" font-size="9" fill="#065f46">将来純収益</text>
+    <text x="300" y="183" text-anchor="middle" font-size="8" fill="#065f46">÷ 還元利回り</text>
+
+    <text x="300" y="210" text-anchor="middle" font-size="9" fill="#7c6853">3手法を併用し鑑定評価額を決定</text>
+  </svg>
+</div>
 <h2>不動産鑑定評価の3手法</h2>
 <table>
 <tr><th>手法</th><th>内容</th></tr>

@@ -32,7 +32,8 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 .article ul{list-style:none;padding-left:4px;margin:16px 0}
 .article ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15px;color:#433422}
 .article ul li::before{content:"✓";position:absolute;left:0;top:0;color:#4f46e5;font-weight:900}
-@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
 </style>
 </head>
 <body>
@@ -83,6 +84,29 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 
 <hr>
 
+<div class="diagram">
+  <svg viewBox="0 0 600 180" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">登記簿の3層構造</text>
+
+    <!-- 表題部 -->
+    <rect x="20" y="38" width="560" height="40" rx="6" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="1.5"/>
+    <rect x="20" y="38" width="100" height="40" rx="6" fill="#0ea5e9"/>
+    <text x="70" y="61" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">表題部</text>
+    <text x="300" y="61" text-anchor="middle" font-size="10" fill="#0e7490">土地・建物の物理的状況（所在地・地目・床面積）</text>
+
+    <!-- 甲区 -->
+    <rect x="20" y="86" width="560" height="40" rx="6" fill="#fef3c7" stroke="#fcd34d" stroke-width="1.5"/>
+    <rect x="20" y="86" width="100" height="40" rx="6" fill="#f59e0b"/>
+    <text x="70" y="109" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">甲区</text>
+    <text x="300" y="109" text-anchor="middle" font-size="10" fill="#92400e">所有権に関する事項（所有者・登記原因・日付）</text>
+
+    <!-- 乙区 -->
+    <rect x="20" y="134" width="560" height="40" rx="6" fill="#fce7f3" stroke="#f9a8d4" stroke-width="1.5"/>
+    <rect x="20" y="134" width="100" height="40" rx="6" fill="#ec4899"/>
+    <text x="70" y="157" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">乙区</text>
+    <text x="300" y="157" text-anchor="middle" font-size="10" fill="#9d174d">所有権以外の権利（抵当権・賃借権・地上権等）</text>
+  </svg>
+</div>
 <h2>登記簿の構成</h2>
 <table>
 <tr><th>区分</th><th>内容</th></tr>

@@ -32,7 +32,8 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 .article ul{list-style:none;padding-left:4px;margin:16px 0}
 .article ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15px;color:#433422}
 .article ul li::before{content:"✓";position:absolute;left:0;top:0;color:#4f46e5;font-weight:900}
-@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
 </style>
 </head>
 <body>
@@ -58,6 +59,52 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 
 <hr>
 
+<div class="diagram">
+  <svg viewBox="0 0 600 240" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <defs>
+      <marker id="af" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#059669"/></marker>
+      <linearGradient id="f1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+      <linearGradient id="f2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+      <linearGradient id="f3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+    </defs>
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">農地法 許可区分判定フロー</text>
+
+    <!-- スタート -->
+    <rect x="195" y="38" width="210" height="36" rx="18" fill="url(#f1)" stroke="#6ee7b7" stroke-width="2"/>
+    <text x="300" y="60" text-anchor="middle" font-size="11" font-weight="800" fill="#047857">農地に関する行為</text>
+
+    <!-- 下方向に3分岐 -->
+    <line x1="300" y1="74" x2="300" y2="94" stroke="#e6dac6" stroke-width="1.5"/>
+    <line x1="300" y1="94" x2="120" y2="94" stroke="#e6dac6" stroke-width="1.5"/>
+    <line x1="300" y1="94" x2="300" y2="94" stroke="#e6dac6" stroke-width="1.5"/>
+    <line x1="300" y1="94" x2="480" y2="94" stroke="#e6dac6" stroke-width="1.5"/>
+
+    <!-- 分岐矢印3本 -->
+    <line x1="120" y1="94" x2="120" y2="108" stroke="#059669" stroke-width="1.5" marker-end="url(#af)"/>
+    <line x1="300" y1="94" x2="300" y2="108" stroke="#d97706" stroke-width="1.5" marker-end="url(#af)"/>
+    <line x1="480" y1="94" x2="480" y2="108" stroke="#dc2626" stroke-width="1.5" marker-end="url(#af)"/>
+
+    <!-- 3条許可 -->
+    <rect x="30" y="112" width="180" height="50" rx="8" fill="url(#f1)" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="120" y="134" text-anchor="middle" font-size="11" font-weight="800" fill="#047857">3条許可</text>
+    <text x="120" y="150" text-anchor="middle" font-size="9" fill="#065f46">権利移動のみ</text>
+
+    <!-- 4条許可 -->
+    <rect x="210" y="112" width="180" height="50" rx="8" fill="url(#f2)" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="300" y="134" text-anchor="middle" font-size="11" font-weight="800" fill="#b45309">4条許可</text>
+    <text x="300" y="150" text-anchor="middle" font-size="9" fill="#92400e">転用のみ</text>
+
+    <!-- 5条許可 -->
+    <rect x="390" y="112" width="180" height="50" rx="8" fill="url(#f3)" stroke="#f9a8d4" stroke-width="1.5"/>
+    <text x="480" y="134" text-anchor="middle" font-size="11" font-weight="800" fill="#be185d">5条許可</text>
+    <text x="480" y="150" text-anchor="middle" font-size="9" fill="#9d174d">転用＋権利移動</text>
+
+    <!-- 下段：注釈 -->
+    <rect x="90" y="185" width="420" height="40" rx="6" fill="#f3ebd9" stroke="#e6dac6" stroke-width="1"/>
+    <text x="300" y="202" text-anchor="middle" font-size="10" fill="#7c6853">📝 市街化区域内の農地は届出制で許可不要</text>
+    <text x="300" y="216" text-anchor="middle" font-size="9" fill="#7c6853">市街化区域外はすべて許可制（原則不許可事由あり）</text>
+  </svg>
+</div>
 <h2>農地転用許可（4条・5条）</h2>
 <table>
 <tr><th>許可の種類</th><th>内容</th></tr>

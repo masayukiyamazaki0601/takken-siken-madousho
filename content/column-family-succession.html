@@ -39,7 +39,8 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 .article ol{padding-left:24px;margin:16px 0}
 .article ol li{font-size:15px;margin-bottom:10px;color:#433422}
 .article ol li::marker{color:#f59e0b;font-weight:900}
-@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
 </style>
 </head>
 <body>
@@ -59,6 +60,76 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 
 <hr>
 
+<div class="diagram">
+  <svg viewBox="0 0 600 300" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <defs>
+      <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#eef2ff"/><stop offset="100%" stop-color="#c7d2fe"/></linearGradient>
+      <linearGradient id="py" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+      <linearGradient id="pp" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+    </defs>
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">法定相続分の割合（配偶者＋相続人別）</text>
+
+    <!-- 配偶者＋子 -->
+    <rect x="20" y="35" width="175" height="135" rx="10" fill="url(#pg)" stroke="#a5b4fc" stroke-width="1.5"/>
+    <text x="107" y="55" text-anchor="middle" font-size="11" font-weight="800" fill="#3730a3">配偶者 ＋ 子</text>
+
+    <!-- 円グラフ（簡易表現） -->
+    <circle cx="107" cy="105" r="40" fill="none" stroke="#e6dac6" stroke-width="1"/>
+    <!-- 配偶者1/2 → 半円はパスで -->
+    <path d="M107,65 A40,40 0 0,1 107,145 A40,40 0 0,0 107,65" fill="#818cf8" opacity="0.5"/>
+    <circle cx="107" cy="105" r="40" fill="none" stroke="#a5b4fc" stroke-width="1.5"/>
+    <text x="107" y="100" text-anchor="middle" font-size="14" font-weight="900" fill="#3730a3">½</text>
+    <text x="107" y="116" text-anchor="middle" font-size="8" fill="#3730a3">配偶者</text>
+    <text x="107" y="128" text-anchor="middle" font-size="9" fill="#6b7280">子＝½</text>
+
+    <!-- 配偶者＋直系尊属 -->
+    <rect x="210" y="35" width="175" height="135" rx="10" fill="url(#py)" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="297" y="55" text-anchor="middle" font-size="11" font-weight="800" fill="#b45309">配偶者 ＋ 直系尊属</text>
+
+    <circle cx="297" cy="105" r="40" fill="none" stroke="#e6dac6" stroke-width="1"/>
+    <!-- 配偶者2/3 → 240度 -->
+    <path d="M297,65 A40,40 0 0,1 331.6,125 A40,40 0 0,0 297,65" fill="#fbbf24" opacity="0.5"/>
+    <circle cx="297" cy="105" r="40" fill="none" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="297" y="100" text-anchor="middle" font-size="14" font-weight="900" fill="#b45309">⅔</text>
+    <text x="297" y="116" text-anchor="middle" font-size="8" fill="#b45309">配偶者</text>
+    <text x="297" y="128" text-anchor="middle" font-size="9" fill="#92400e">尊属＝⅓</text>
+
+    <!-- 配偶者＋兄弟姉妹 -->
+    <rect x="400" y="35" width="180" height="135" rx="10" fill="url(#pp)" stroke="#f9a8d4" stroke-width="1.5"/>
+    <text x="490" y="55" text-anchor="middle" font-size="11" font-weight="800" fill="#be185d">配偶者 ＋ 兄弟姉妹</text>
+
+    <circle cx="490" cy="105" r="40" fill="none" stroke="#e6dac6" stroke-width="1"/>
+    <!-- 配偶者3/4 → 270度 -->
+    <path d="M490,65 A40,40 0 0,1 490,145 A40,40 0 0,0 490,65" fill="#f472b6" opacity="0.4"/>
+    <circle cx="490" cy="105" r="40" fill="none" stroke="#f9a8d4" stroke-width="1.5"/>
+    <text x="490" y="100" text-anchor="middle" font-size="14" font-weight="900" fill="#be185d">¾</text>
+    <text x="490" y="116" text-anchor="middle" font-size="8" fill="#be185d">配偶者</text>
+    <text x="490" y="128" text-anchor="middle" font-size="9" fill="#9d174d">兄弟姉妹＝¼</text>
+
+    <!-- 下段：相続順位図 -->
+    <rect x="20" y="185" width="560" height="100" rx="10" fill="#f3ebd9" stroke="#e6dac6" stroke-width="1"/>
+    <text x="300" y="205" text-anchor="middle" font-size="11" font-weight="800" fill="#2e1d0c">相続人の順位</text>
+
+    <!-- 第1順位 -->
+    <rect x="30" y="215" width="160" height="30" rx="6" fill="url(#pg)" stroke="#a5b4fc" stroke-width="1"/>
+    <text x="110" y="234" text-anchor="middle" font-size="11" font-weight="700" fill="#3730a3">第1順位：子</text>
+
+    <text x="200" y="234" text-anchor="middle" font-size="12" fill="#a1a1aa">→</text>
+
+    <!-- 第2順位 -->
+    <rect x="220" y="215" width="160" height="30" rx="6" fill="url(#py)" stroke="#fcd34d" stroke-width="1"/>
+    <text x="300" y="234" text-anchor="middle" font-size="11" font-weight="700" fill="#b45309">第2順位：直系尊属</text>
+
+    <text x="390" y="234" text-anchor="middle" font-size="12" fill="#a1a1aa">→</text>
+
+    <!-- 第3順位 -->
+    <rect x="410" y="215" width="160" height="30" rx="6" fill="url(#pp)" stroke="#f9a8d4" stroke-width="1"/>
+    <text x="490" y="234" text-anchor="middle" font-size="11" font-weight="700" fill="#be185d">第3順位：兄弟姉妹</text>
+
+    <!-- 注釈 -->
+    <text x="300" y="268" text-anchor="middle" font-size="9" fill="#7c6853">👫 配偶者は常に相続人。先順位がいれば後順位は相続不可</text>
+  </svg>
+</div>
 <h2>相続人の順位（887条〜890条）</h2>
 <p>第1順位：<b>子</b>（嫡出子・非嫡出子・養子）。第2順位：<b>直系尊属</b>。第3順位：<b>兄弟姉妹</b>。<b>配偶者は常に相続人</b>。</p>
 

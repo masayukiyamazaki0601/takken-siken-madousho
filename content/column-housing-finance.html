@@ -32,7 +32,8 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 .article ul{list-style:none;padding-left:4px;margin:16px 0}
 .article ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15px;color:#433422}
 .article ul li::before{content:"✓";position:absolute;left:0;top:0;color:#4f46e5;font-weight:900}
-@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
 </style>
 </head>
 <body>
@@ -47,6 +48,47 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 <p class="desc">宅建 宅建業法、住宅金融支援機構編。フラット35（買取型・保証型）、融資保険、証券化支援、機構の業務内容を整理。</p>
 <hr>
 
+<div class="diagram">
+  <svg viewBox="0 0 600 200" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <defs>
+      <marker id="ha" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#4f46e5"/></marker>
+      <marker id="hb" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#059669"/></marker>
+    </defs>
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">住宅金融支援機構 資金フロー</text>
+
+    <!-- 金融機関 -->
+    <rect x="20" y="45" width="170" height="60" rx="8" fill="#eef2ff" stroke="#a5b4fc" stroke-width="1.5"/>
+    <text x="105" y="67" text-anchor="middle" font-size="11" font-weight="800" fill="#3730a3">🏦 金融機関</text>
+    <text x="105" y="85" text-anchor="middle" font-size="9" fill="#6b7280">住宅ローン貸付</text>
+
+    <!-- 矢印：融資 -->
+    <line x1="190" y1="60" x2="260" y2="60" stroke="#4f46e5" stroke-width="1.5" marker-end="url(#ha)"/>
+    <text x="225" y="53" text-anchor="middle" font-size="8" fill="#4f46e5">借入</text>
+
+    <!-- 借入者 -->
+    <rect x="265" y="45" width="150" height="60" rx="8" fill="#fef3c7" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="340" y="67" text-anchor="middle" font-size="11" font-weight="800" fill="#b45309">👤 借入者</text>
+    <text x="340" y="85" text-anchor="middle" font-size="9" fill="#92400e">返済</text>
+
+    <!-- 機構へ -->
+    <line x1="415" y1="60" x2="480" y2="60" stroke="#059669" stroke-width="1.5" marker-end="url(#hb)"/>
+    <text x="448" y="53" text-anchor="middle" font-size="8" fill="#059669">買取</text>
+
+    <!-- 機構 -->
+    <rect x="485" y="45" width="100" height="60" rx="8" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="535" y="67" text-anchor="middle" font-size="10" font-weight="800" fill="#047857">🏢 機構</text>
+    <text x="535" y="85" text-anchor="middle" font-size="8" fill="#065f46">証券化</text>
+
+    <!-- 下段：証券市場 -->
+    <rect x="265" y="130" width="200" height="40" rx="8" fill="#f3ebd9" stroke="#e6dac6" stroke-width="1"/>
+    <text x="365" y="150" text-anchor="middle" font-size="10" font-weight="700" fill="#7c6853">📈 証券市場（投資家）</text>
+    <line x1="535" y1="105" x2="535" y2="128" stroke="#059669" stroke-width="1.5"/>
+    <polygon points="535,124 540,130 530,130" fill="#059669"/>
+
+    <text x="120" y="175" text-anchor="middle" font-size="8" fill="#6b7280">📝 フラット35（全期間固定金利）</text>
+    <text x="440" y="175" text-anchor="middle" font-size="8" fill="#6b7280">融資保険：機構→金融機関</text>
+  </svg>
+</div>
 <h2>住宅金融支援機構の業務</h2>
 <table>
 <tr><th>業務</th><th>内容</th></tr>

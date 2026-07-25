@@ -32,7 +32,8 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 .article ul{list-style:none;padding-left:4px;margin:16px 0}
 .article ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15px;color:#433422}
 .article ul li::before{content:"✓";position:absolute;left:0;top:0;color:#4f46e5;font-weight:900}
-@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
 </style>
 </head>
 <body>
@@ -47,6 +48,35 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 <p class="desc">宅建 法令上の制限、国土利用計画法。国土利用計画法の目的、監視区域・規制区域の区分、土地取引の届出義務・許可制を条文ベースで整理。</p>
 <hr>
 
+<div class="diagram">
+  <svg viewBox="0 0 600 180" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">国土利用計画法 規制強度比較</text>
+    <!-- 規制区域 -->
+    <rect x="20" y="40" width="175" height="120" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="107" y="62" text-anchor="middle" font-size="11" font-weight="800" fill="#dc2626">🔴 規制区域</text>
+    <text x="107" y="82" text-anchor="middle" font-size="10" fill="#991b1b">許可制（事前）</text>
+    <text x="107" y="100" text-anchor="middle" font-size="9" fill="#991b1b">許可なければ無効</text>
+    <text x="107" y="118" text-anchor="middle" font-size="9" fill="#991b1b">罰則あり</text>
+    <!-- 強度バー -->
+    <rect x="40" y="130" width="135" height="16" rx="4" fill="#fca5a5"/><text x="107" y="142" text-anchor="middle" font-size="9" font-weight="700" fill="#7f1d1d">強度 高</text>
+
+    <!-- 監視区域 -->
+    <rect x="210" y="40" width="175" height="120" rx="10" fill="#fef3c7" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="297" y="62" text-anchor="middle" font-size="11" font-weight="800" fill="#b45309">🟡 監視区域</text>
+    <text x="297" y="82" text-anchor="middle" font-size="10" fill="#92400e">事後届出制</text>
+    <text x="297" y="100" text-anchor="middle" font-size="9" fill="#92400e">取引後に届出</text>
+    <text x="297" y="118" text-anchor="middle" font-size="9" fill="#92400e">勧告・公表あり</text>
+    <rect x="230" y="130" width="135" height="16" rx="4" fill="#fde68a"/><text x="297" y="142" text-anchor="middle" font-size="9" font-weight="700" fill="#92400e">強度 中</text>
+
+    <!-- 注視区域 -->
+    <rect x="400" y="40" width="180" height="120" rx="10" fill="#e0f2fe" stroke="#7dd3fc" stroke-width="1.5"/>
+    <text x="490" y="62" text-anchor="middle" font-size="11" font-weight="800" fill="#0369a1">🔵 注視区域</text>
+    <text x="490" y="82" text-anchor="middle" font-size="10" fill="#0e7490">事後届出制</text>
+    <text x="490" y="100" text-anchor="middle" font-size="9" fill="#0e7490">取引後に届出</text>
+    <text x="490" y="118" text-anchor="middle" font-size="9" fill="#0e7490">制裁措置なし</text>
+    <rect x="420" y="130" width="140" height="16" rx="4" fill="#bae6fd"/><text x="490" y="142" text-anchor="middle" font-size="9" font-weight="700" fill="#0369a1">強度 低</text>
+  </svg>
+</div>
 <h2>規制区域（12条）</h2>
 <ul>
 <li>地価が急激に上昇している区域を<strong>都道府県知事</strong>が指定</li>

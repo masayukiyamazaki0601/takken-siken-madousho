@@ -39,7 +39,8 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 .article ol{padding-left:24px;margin:16px 0}
 .article ol li{font-size:15px;margin-bottom:10px;color:#433422}
 .article ol li::marker{color:#f59e0b;font-weight:900}
-@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
 </style>
 </head>
 <body>
@@ -64,6 +65,76 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 
 <hr>
 
+<div class="diagram">
+  <svg viewBox="0 0 600 300" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#d1fae5"/><stop offset="100%" stop-color="#a7f3d0"/></linearGradient>
+      <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+      <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e0e7ff"/><stop offset="100%" stop-color="#c7d2fe"/></linearGradient>
+      <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+      <linearGradient id="g5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ffe4e0"/><stop offset="100%" stop-color="#fecaca"/></linearGradient>
+    </defs>
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">13用途地域 ヒエラルキー（制限の強さ順）</text>
+
+    <!-- 住居系（緑） -->
+    <rect x="5" y="35" width="195" height="18" rx="4" fill="#059669" opacity=".15"/>
+    <text x="102" y="48" text-anchor="middle" font-size="10" font-weight="700" fill="#047857">🌿 住居系（7種）</text>
+
+    <rect x="5" y="58" width="195" height="20" rx="4" fill="url(#g1)" stroke="#6ee7b7" stroke-width="1"/>
+    <text x="102" y="72" text-anchor="middle" font-size="9" fill="#047857">第1種低層住居専用</text>
+
+    <rect x="5" y="82" width="195" height="20" rx="4" fill="url(#g1)" stroke="#6ee7b7" stroke-width="1"/>
+    <text x="102" y="96" text-anchor="middle" font-size="9" fill="#047857">田園住居</text>
+
+    <rect x="5" y="106" width="195" height="20" rx="4" fill="url(#g1)" stroke="#6ee7b7" stroke-width="1"/>
+    <text x="102" y="120" text-anchor="middle" font-size="9" fill="#047857">第2種低層住居専用</text>
+
+    <rect x="5" y="130" width="195" height="20" rx="4" fill="url(#g1)" stroke="#6ee7b7" stroke-width="1"/>
+    <text x="102" y="144" text-anchor="middle" font-size="9" fill="#047857">第1種中高層住居専用</text>
+
+    <rect x="5" y="154" width="195" height="20" rx="4" fill="url(#g1)" stroke="#6ee7b7" stroke-width="1"/>
+    <text x="102" y="168" text-anchor="middle" font-size="9" fill="#047857">第2種中高層住居専用</text>
+
+    <rect x="5" y="178" width="195" height="20" rx="4" fill="url(#g1)" stroke="#6ee7b7" stroke-width="1"/>
+    <text x="102" y="192" text-anchor="middle" font-size="9" fill="#047857">第1種住居</text>
+
+    <rect x="5" y="202" width="195" height="20" rx="4" fill="url(#g1)" stroke="#6ee7b7" stroke-width="1"/>
+    <text x="102" y="216" text-anchor="middle" font-size="9" fill="#047857">第2種住居</text>
+
+    <rect x="5" y="226" width="195" height="20" rx="4" fill="url(#g1)" stroke="#6ee7b7" stroke-width="1"/>
+    <text x="102" y="240" text-anchor="middle" font-size="9" fill="#047857">準住居</text>
+
+    <!-- 商業系（黄） -->
+    <rect x="210" y="35" width="185" height="18" rx="4" fill="#d97706" opacity=".15"/>
+    <text x="302" y="48" text-anchor="middle" font-size="10" font-weight="700" fill="#b45309">🏪 商業系（2種）</text>
+
+    <rect x="210" y="58" width="185" height="20" rx="4" fill="url(#g2)" stroke="#fcd34d" stroke-width="1"/>
+    <text x="302" y="72" text-anchor="middle" font-size="9" fill="#92400e">近隣商業</text>
+
+    <rect x="210" y="82" width="185" height="20" rx="4" fill="url(#g2)" stroke="#fcd34d" stroke-width="1"/>
+    <text x="302" y="96" text-anchor="middle" font-size="9" fill="#92400e">商業</text>
+
+    <!-- 工業系（青→赤） -->
+    <rect x="405" y="35" width="190" height="18" rx="4" fill="#dc2626" opacity=".15"/>
+    <text x="500" y="48" text-anchor="middle" font-size="10" font-weight="700" fill="#b91c1c">🏭 工業系（3種）</text>
+
+    <rect x="405" y="58" width="190" height="20" rx="4" fill="url(#g3)" stroke="#a5b4fc" stroke-width="1"/>
+    <text x="500" y="72" text-anchor="middle" font-size="9" fill="#3730a3">準工業</text>
+
+    <rect x="405" y="82" width="190" height="20" rx="4" fill="url(#g4)" stroke="#f9a8d4" stroke-width="1"/>
+    <text x="500" y="96" text-anchor="middle" font-size="9" fill="#be185d">工業</text>
+
+    <rect x="405" y="106" width="190" height="20" rx="4" fill="url(#g5)" stroke="#fca5a5" stroke-width="1"/>
+    <text x="500" y="120" text-anchor="middle" font-size="9" fill="#b91c1c">工業専用</text>
+    <text x="500" y="140" text-anchor="middle" font-size="8" fill="#991b1b">住宅・店舗🚫</text>
+
+    <!-- 凡例 -->
+    <rect x="60" y="265" width="12" height="12" rx="2" fill="url(#g1)" stroke="#6ee7b7" stroke-width="1"/>
+    <text x="78" y="275" font-size="9" fill="#7c6853">制限強い</text>
+    <text x="140" y="275" font-size="9" fill="#a1a1aa">→</text>
+    <text x="165" y="275" font-size="9" fill="#7c6853">制限ゆるい</text>
+  </svg>
+</div>
 <h2>13の用途地域</h2>
 <p>用途制限の強い順：<b>第1種低層住居専用＞田園住居＞第2種低層＞第1種中高層＞第2種中高層＞第1種住居＞第2種住居＞準住居＞近隣商業＞商業＞準工業＞工業＞工業専用</b></p>
 <p><b>工業専用地域</b>だけは住宅・店舗が一切建てられない。それ以外は段階的に制限が緩くなる。</p>

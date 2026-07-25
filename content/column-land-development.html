@@ -32,7 +32,8 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 .article ul{list-style:none;padding-left:4px;margin:16px 0}
 .article ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15px;color:#433422}
 .article ul li::before{content:"✓";position:absolute;left:0;top:0;color:#4f46e5;font-weight:900}
-@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
 </style>
 </head>
 <body>
@@ -47,6 +48,41 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 <p class="desc">宅建 法令上の制限、宅地造成等規制法。宅地造成の定義、許可基準、擁壁・排水施設の技術基準、完了検査、罰則を条文ベースで整理。</p>
 <hr>
 
+<div class="diagram">
+  <svg viewBox="0 0 600 190" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">盛土・切土の概念断面図</text>
+
+    <!-- 切土側（左） -->
+    <polygon points="80,140 80,60 160,140" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="100" y="80" text-anchor="middle" font-size="10" font-weight="700" fill="#b45309">切土</text>
+    <text x="100" y="95" text-anchor="middle" font-size="8" fill="#92400e">山を削る</text>
+
+    <!-- 盛土側（右） -->
+    <polygon points="340,140 280,100 400,100 480,140" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+    <text x="400" y="80" text-anchor="middle" font-size="10" font-weight="700" fill="#047857">盛土</text>
+    <text x="400" y="95" text-anchor="middle" font-size="8" fill="#065f46">土を盛る</text>
+
+    <!-- 地盤面 -->
+    <line x1="20" y1="140" x2="580" y2="140" stroke="#433422" stroke-width="2"/>
+
+    <!-- 擁壁（境界） -->
+    <rect x="230" y="80" width="30" height="60" rx="2" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+    <text x="245" y="118" text-anchor="middle" font-size="9" font-weight="700" fill="#3730a3">擁壁</text>
+
+    <!-- 排水孔 -->
+    <circle cx="238" cy="125" r="3" fill="#4338ca"/>
+    <circle cx="252" cy="125" r="3" fill="#4338ca"/>
+    <text x="245" y="138" text-anchor="middle" font-size="7" fill="#4338ca">排水孔</text>
+
+    <!-- 既存地盤 -->
+    <rect x="20" y="142" width="560" height="20" rx="2" fill="#e6dac6" opacity=".4"/>
+    <text x="110" y="155" text-anchor="middle" font-size="8" fill="#7c6853">既存地盤</text>
+    <text x="490" y="155" text-anchor="middle" font-size="8" fill="#7c6853">既存地盤</text>
+
+    <!-- 注釈 -->
+    <text x="300" y="180" text-anchor="middle" font-size="9" fill="#7c6853">許可基準：高さ制限・勾配制限・排水施設・災害防止</text>
+  </svg>
+</div>
 <h2>宅地造成の定義</h2>
 <ul>
 <li><b>宅地造成</b>：宅地以外の土地を宅地にするため、または宅地の形質を変更するため、盛土・切土等を行うこと</li>

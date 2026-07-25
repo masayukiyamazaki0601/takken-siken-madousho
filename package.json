@@ -1,0 +1,27 @@
+{
+  "name": "takken-siken-redesign",
+  "version": "1.0.0",
+  "description": "> 他のAIにそのまま貼り付けて相談できるように、この議論の全容を1ファイルにまとめました。",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masayukiyamazaki0601/takken-siken-madousho.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/masayukiyamazaki0601/takken-siken-madousho/issues"
+  },
+  "homepage": "https://github.com/masayukiyamazaki0601/takken-siken-madousho#readme",
+  "dependencies": {
+    "puppeteer": "^25.3.0"
+  }
+}

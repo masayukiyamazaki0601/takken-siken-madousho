@@ -62,7 +62,8 @@ body{
 .article ol{padding-left:24px;margin:16px 0}
 .article ol li{font-size:15px;line-height:1.7;margin-bottom:10px;color:#433422}
 .article ol li::marker{color:#f59e0b;font-weight:900}
-@media(max-width:768px){
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){
   .article{padding:16px}
   .article h1{font-size:20px}
   .article h2{font-size:18px}
@@ -84,17 +85,72 @@ body{
 <p class="desc">宅建 権利関係の契約各論。7つの典型契約について成立要件・当事者の権利義務を条文ベースで横断比較。</p>
 <hr>
 
-<h2>7つの典型契約</h2>
-<table>
-<tr><th>契約</th><th>目的</th><th>有償/無償</th><th>頻出度</th></tr>
-<tr><td><b>売買</b></td><td>財産権の有償移転</td><td>有償</td><td>⭐⭐⭐⭐⭐</td></tr>
-<tr><td><b>賃貸借</b></td><td>物の使用収益</td><td>有償</td><td>⭐⭐⭐⭐⭐</td></tr>
-<tr><td><b>請負</b></td><td>仕事の完成</td><td>有償</td><td>⭐⭐⭐</td></tr>
-<tr><td><b>委任</b></td><td>事務処理</td><td>無償（原則）</td><td>⭐⭐⭐</td></tr>
-<tr><td><b>寄託</b></td><td>物の保管</td><td>無償（原則）</td><td>⭐⭐</td></tr>
-<tr><td><b>贈与</b></td><td>無償の財産譲渡</td><td>無償</td><td>⭐⭐</td></tr>
-<tr><td><b>交換</b></td><td>相互の財産権移転</td><td>有償</td><td>⭐⭐</td></tr>
-</table>
+<div class="diagram">
+  <svg viewBox="0 0 600 340" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <defs>
+      <linearGradient id="c1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#eef2ff"/><stop offset="100%" stop-color="#e0e7ff"/></linearGradient>
+      <linearGradient id="c2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fef3c7"/><stop offset="100%" stop-color="#fde68a"/></linearGradient>
+      <linearGradient id="c3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fce7f3"/><stop offset="100%" stop-color="#fbcfe8"/></linearGradient>
+      <linearGradient id="c4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e0f2fe"/><stop offset="100%" stop-color="#bae6fd"/></linearGradient>
+    </defs>
+    <text x="300" y="22" text-anchor="middle" font-size="14" font-weight="900" fill="#2e1d0c">典型契約の分類（全13種）</text>
+
+    <!-- カテゴリ見出し -->
+    <rect x="10" y="35" width="580" height="28" rx="6" fill="#4f46e5" opacity=".12"/>
+    <rect x="10" y="125" width="580" height="28" rx="6" fill="#d97706" opacity=".12"/>
+    <rect x="10" y="215" width="580" height="28" rx="6" fill="#c2410c" opacity=".12"/>
+    <rect x="10" y="270" width="580" height="28" rx="6" fill="#0891b2" opacity=".12"/>
+
+    <text x="300" y="53" text-anchor="middle" font-size="11" font-weight="800" fill="#3730a3">📦 財産権移転（売買・贈与・交換）</text>
+    <text x="300" y="143" text-anchor="middle" font-size="11" font-weight="800" fill="#b45309">🏠 使用・収益（賃貸借・使用貸借）</text>
+    <text x="300" y="233" text-anchor="middle" font-size="11" font-weight="800" fill="#9a3412">🔧 劳务（請負・委任・寄託）</text>
+    <text x="300" y="288" text-anchor="middle" font-size="11" font-weight="800" fill="#0e7490">📄 その他（組合・終身定期金・和解）</text>
+
+    <!-- カード1: 売買 -->
+    <rect x="20" y="68" width="130" height="48" rx="6" fill="url(#c1)" stroke="#a5b4fc" stroke-width="1.5"/>
+    <text x="85" y="86" text-anchor="middle" font-size="12" font-weight="800" fill="#3730a3">売買</text>
+    <text x="85" y="102" text-anchor="middle" font-size="8" fill="#6b7280">有償・諸成契約</text>
+
+    <!-- 贈与 -->
+    <rect x="165" y="68" width="130" height="48" rx="6" fill="url(#c1)" stroke="#a5b4fc" stroke-width="1.5"/>
+    <text x="230" y="86" text-anchor="middle" font-size="12" font-weight="800" fill="#3730a3">贈与</text>
+    <text x="230" y="102" text-anchor="middle" font-size="8" fill="#6b7280">無償・書面or口頭</text>
+
+    <!-- 交換 -->
+    <rect x="310" y="68" width="130" height="48" rx="6" fill="url(#c1)" stroke="#a5b4fc" stroke-width="1.5"/>
+    <text x="375" y="86" text-anchor="middle" font-size="12" font-weight="800" fill="#3730a3">交換</text>
+    <text x="375" y="102" text-anchor="middle" font-size="8" fill="#6b7280">相互移転・有償</text>
+
+    <!-- カード2: 賃貸借 -->
+    <rect x="100" y="158" width="180" height="48" rx="6" fill="url(#c2)" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="190" y="176" text-anchor="middle" font-size="12" font-weight="800" fill="#b45309">賃貸借</text>
+    <text x="190" y="192" text-anchor="middle" font-size="8" fill="#92400e">有償・最長20年</text>
+
+    <!-- 使用貸借 -->
+    <rect x="310" y="158" width="180" height="48" rx="6" fill="url(#c2)" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="400" y="176" text-anchor="middle" font-size="12" font-weight="800" fill="#b45309">使用貸借</text>
+    <text x="400" y="192" text-anchor="middle" font-size="8" fill="#92400e">無償・期間自由</text>
+
+    <!-- カード3: 請負 -->
+    <rect x="20" y="248" width="130" height="40" rx="6" fill="url(#c3)" stroke="#f9a8d4" stroke-width="1.5"/>
+    <text x="85" y="266" text-anchor="middle" font-size="11" font-weight="800" fill="#be185d">請負</text>
+    <text x="85" y="280" text-anchor="middle" font-size="8" fill="#9d174d">仕事の完成</text>
+
+    <!-- 委任 -->
+    <rect x="165" y="248" width="130" height="40" rx="6" fill="url(#c3)" stroke="#f9a8d4" stroke-width="1.5"/>
+    <text x="230" y="266" text-anchor="middle" font-size="11" font-weight="800" fill="#be185d">委任</text>
+    <text x="230" y="280" text-anchor="middle" font-size="8" fill="#9d174d">事務処理</text>
+
+    <!-- 寄託 -->
+    <rect x="310" y="248" width="130" height="40" rx="6" fill="url(#c3)" stroke="#f9a8d4" stroke-width="1.5"/>
+    <text x="375" y="266" text-anchor="middle" font-size="11" font-weight="800" fill="#be185d">寄託</text>
+    <text x="375" y="280" text-anchor="middle" font-size="8" fill="#9d174d">物の保管</text>
+
+    <!-- カード4: その他 -->
+    <rect x="100" y="298" width="180" height="36" rx="6" fill="url(#c4)" stroke="#7dd3fc" stroke-width="1.5"/>
+    <text x="190" y="318" text-anchor="middle" font-size="10" font-weight="600" fill="#0369a1">組合・終身定期金・和解</text>
+  </svg>
+</div>
 
 <hr>
 

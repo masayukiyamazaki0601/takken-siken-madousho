@@ -32,7 +32,8 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 .article ul{list-style:none;padding-left:4px;margin:16px 0}
 .article ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15px;color:#433422}
 .article ul li::before{content:"✓";position:absolute;left:0;top:0;color:#4f46e5;font-weight:900}
-@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
 </style>
 </head>
 <body>
@@ -47,6 +48,34 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 <p class="desc">宅建 法令上の制限、その他法令。土地区画整理事業、景観法の届出制、駐車場法の附置義務、盛土規制法（令和5年施行）を整理。</p>
 <hr>
 
+<div class="diagram">
+  <svg viewBox="0 0 600 200" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">その他4法令 比較カード</text>
+    <!-- 土地区画整理法 -->
+    <rect x="10" y="35" width="280" height="70" rx="8" fill="#eef2ff" stroke="#a5b4fc" stroke-width="1.5"/>
+    <text x="150" y="55" text-anchor="middle" font-size="11" font-weight="800" fill="#3730a3">📐 土地区画整理法</text>
+    <text x="150" y="73" text-anchor="middle" font-size="9" fill="#6b7280">換地・減歩・保留地・仮換地</text>
+    <text x="150" y="88" text-anchor="middle" font-size="8" fill="#6b7280">事業のための強制力あり</text>
+
+    <!-- 景観法 -->
+    <rect x="310" y="35" width="280" height="70" rx="8" fill="#fef3c7" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="450" y="55" text-anchor="middle" font-size="11" font-weight="800" fill="#b45309">🏛️ 景観法</text>
+    <text x="450" y="73" text-anchor="middle" font-size="9" fill="#92400e">景観計画区域内は届出制</text>
+    <text x="450" y="88" text-anchor="middle" font-size="8" fill="#92400e">勧告・変更命令</text>
+
+    <!-- 駐車場法 -->
+    <rect x="10" y="115" width="280" height="70" rx="8" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1.5"/>
+    <text x="150" y="135" text-anchor="middle" font-size="11" font-weight="800" fill="#047857">🚗 駐車場法</text>
+    <text x="150" y="153" text-anchor="middle" font-size="9" fill="#065f46">附置義務駐車場</text>
+    <text x="150" y="168" text-anchor="middle" font-size="8" fill="#065f46">大規模店舗に設置義務</text>
+
+    <!-- 盛土規制法 -->
+    <rect x="310" y="115" width="280" height="70" rx="8" fill="#fce7f3" stroke="#f9a8d4" stroke-width="1.5"/>
+    <text x="450" y="135" text-anchor="middle" font-size="11" font-weight="800" fill="#be185d">⛰️ 盛土規制法</text>
+    <text x="450" y="153" text-anchor="middle" font-size="9" fill="#9d174d">令和5年5月施行</text>
+    <text x="450" y="168" text-anchor="middle" font-size="8" fill="#9d174d">許可制・全国一律基準</text>
+  </svg>
+</div>
 <h2>土地区画整理法</h2>
 <table>
 <tr><th>項目</th><th>内容</th></tr>

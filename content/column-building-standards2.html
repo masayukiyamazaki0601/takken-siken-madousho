@@ -32,7 +32,8 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 .article ul{list-style:none;padding-left:4px;margin:16px 0}
 .article ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15px;color:#433422}
 .article ul li::before{content:"✓";position:absolute;left:0;top:0;color:#4f46e5;font-weight:900}
-@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
 </style>
 </head>
 <body>
@@ -47,6 +48,47 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 <p class="desc">宅建 法令上の制限、建築基準法後編。高さ制限（絶対高さ・道路斜線・北側斜線）、防火地域、構造耐力のポイントを整理。</p>
 <hr>
 
+<div class="diagram">
+  <svg viewBox="0 0 600 200" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">高さ制限4種 概念断面図</text>
+
+    <!-- 地面 -->
+    <line x1="20" y1="140" x2="580" y2="140" stroke="#433422" stroke-width="2"/>
+
+    <!-- 建物 -->
+    <rect x="100" y="50" width="80" height="90" rx="2" fill="#e0e7ff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="140" y="110" text-anchor="middle" font-size="9" font-weight="700" fill="#3730a3">建物</text>
+
+    <!-- 絶対高さ制限 -->
+    <line x1="100" y1="50" x2="30" y2="50" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,3"/>
+    <text x="30" y="45" font-size="9" font-weight="700" fill="#dc2626">絶対高さ</text>
+    <text x="30" y="62" font-size="8" fill="#dc2626">10m/12m</text>
+
+    <!-- 道路斜線（右側道路） -->
+    <line x1="400" y1="140" x2="220" y2="30" stroke="#059669" stroke-width="2" stroke-dasharray="4,3"/>
+    <text x="420" y="138" font-size="9" fill="#059669">道路</text>
+    <text x="230" y="25" font-size="9" font-weight="700" fill="#059669">道路斜線</text>
+
+    <!-- 北側斜線（左側） -->
+    <line x1="20" y1="30" x2="180" y2="60" stroke="#d97706" stroke-width="2" stroke-dasharray="4,3"/>
+    <text x="20" y="25" font-size="9" font-weight="700" fill="#d97706">北側斜線</text>
+
+    <!-- 隣地斜線 -->
+    <line x1="280" y1="140" x2="280" y2="20" stroke="#7c3aed" stroke-width="2" stroke-dasharray="4,3"/>
+    <text x="285" y="18" font-size="9" font-weight="700" fill="#7c3aed">隣地斜線</text>
+
+    <!-- 凡例 -->
+    <rect x="20" y="165" width="560" height="28" rx="4" fill="#f3ebd9" stroke="#e6dac6" stroke-width="1"/>
+    <rect x="30" y="170" width="10" height="10" rx="2" fill="#dc2626"/>
+    <text x="45" y="179" font-size="8" fill="#7c6853">絶対高さ</text>
+    <rect x="120" y="170" width="10" height="10" rx="2" fill="#059669"/>
+    <text x="135" y="179" font-size="8" fill="#7c6853">道路斜線</text>
+    <rect x="230" y="170" width="10" height="10" rx="2" fill="#d97706"/>
+    <text x="245" y="179" font-size="8" fill="#7c6853">北側斜線</text>
+    <rect x="340" y="170" width="10" height="10" rx="2" fill="#7c3aed"/>
+    <text x="355" y="179" font-size="8" fill="#7c6853">隣地斜線</text>
+  </svg>
+</div>
 <h2>高さ制限（55条〜58条）</h2>
 <table>
 <tr><th>制限</th><th>内容</th></tr>

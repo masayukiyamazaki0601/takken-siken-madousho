@@ -32,7 +32,8 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 .article ul{list-style:none;padding-left:4px;margin:16px 0}
 .article ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15px;color:#433422}
 .article ul li::before{content:"✓";position:absolute;left:0;top:0;color:#4f46e5;font-weight:900}
-@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){.article h1{font-size:20px}.article h2{font-size:18px}}
 </style>
 </head>
 <body>
@@ -47,6 +48,29 @@ body{font-family:var(--font-sans);background:#faf6eb;color:#433422;line-height:1
 <p class="desc">宅建 税・その他、不動産取得税・登録免許税編。不動産取得税の課税標準・税率・軽減措置、登録免許税の税率・計算方法を整理。</p>
 <hr>
 
+<div class="diagram">
+  <svg viewBox="0 0 600 180" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">不動産取得税 vs 登録免許税 税率比較</text>
+
+    <!-- 不動産取得税 -->
+    <rect x="20" y="38" width="270" height="130" rx="10" fill="#eef2ff" stroke="#a5b4fc" stroke-width="1.5"/>
+    <text x="155" y="60" text-anchor="middle" font-size="12" font-weight="800" fill="#3730a3">💰 不動産取得税</text>
+    <text x="155" y="82" text-anchor="middle" font-size="10" fill="#6b7280">課税標準：固定資産税評価額</text>
+    <text x="155" y="102" text-anchor="middle" font-size="10" font-weight="700" fill="#6366f1">標準税率：<tspan fill="#dc2626">4%</tspan></text>
+    <text x="155" y="120" text-anchor="middle" font-size="9" fill="#6b7280">宅地・住宅：<tspan fill="#059669">3%</tspan></text>
+    <text x="155" y="140" text-anchor="middle" font-size="9" fill="#6b7280">軽減措置：1200万円控除等</text>
+    <text x="155" y="158" text-anchor="middle" font-size="8" fill="#6b7280">対象：土地・建物の取得時</text>
+
+    <!-- 登録免許税 -->
+    <rect x="310" y="38" width="270" height="130" rx="10" fill="#fef3c7" stroke="#fcd34d" stroke-width="1.5"/>
+    <text x="445" y="60" text-anchor="middle" font-size="12" font-weight="800" fill="#b45309">📝 登録免許税</text>
+    <text x="445" y="82" text-anchor="middle" font-size="10" fill="#92400e">課税標準：固定資産税評価額</text>
+    <text x="445" y="102" text-anchor="middle" font-size="10" font-weight="700" fill="#d97706">所有権移転：<tspan fill="#dc2626">2%</tspan></text>
+    <text x="445" y="120" text-anchor="middle" font-size="9" fill="#92400e">抵当権設定：<tspan fill="#059669">0.4%</tspan></text>
+    <text x="445" y="140" text-anchor="middle" font-size="9" fill="#92400e">軽減税率：0.3%（H28〜）</text>
+    <text x="445" y="158" text-anchor="middle" font-size="8" fill="#92400e">対象：登記申請時</text>
+  </svg>
+</div>
 <h2>不動産取得税</h2>
 <table>
 <tr><th>項目</th><th>内容</th></tr>

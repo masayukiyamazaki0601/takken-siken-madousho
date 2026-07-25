@@ -1,0 +1,5 @@
+node_modules/
+*.pdf
+*.txt
+test_response.html
+questions_from_pdf.json
