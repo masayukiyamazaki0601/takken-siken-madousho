@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>制限行為能力者｜宅建試験ドットコム 解説魔導書</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --font-sans:'Outfit','Noto Sans JP',system-ui,-apple-system,sans-serif;
+}
+body{
+  font-family:var(--font-sans);background:#faf6eb;color:#433422;
+  line-height:1.85;min-height:100vh;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px}
+
+/* ===== Navigation Bar (boki-3準拠: ダーク) ===== */
+.nav-bar{
+  background:rgba(11,16,28,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(245,158,11,.15);
+  padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:50;margin-bottom:32px;
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#f8fafc}
+.nav-logo-icon{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,#6366f1,#818cf8);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;color:#fff;font-weight:900;box-shadow:0 0 12px rgba(99,102,241,.3);
+}
+.nav-logo-text{font-size:15px;font-weight:800;letter-spacing:.3px;color:#f8fafc}
+.nav-logo-text span{color:#6366f1}
+.nav-back{font-size:12px;font-weight:700;color:#94a3b8;text-decoration:none;padding:6px 14px;border-radius:8px;background:rgba(255,255,255,.04);transition:200ms}
+.nav-back:hover{color:#f8fafc}
+
+/* ===== Article Content (羊皮紙スタイル) ===== */
+.article{padding:24px}
+.article h1{font-size:26px;font-weight:900;color:#2e1d0c;line-height:1.3;margin-bottom:6px;letter-spacing:-.3px}
+.article .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.article .tags span{
+  font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;
+  background:#f3ebd9;color:#7c6853;
+}
+.article .desc{font-size:14px;color:#7c6853;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid #e6dac6;line-height:1.7}
+
+.article h2{
+  position:relative;padding:4px 0 4px 14px;
+  border-left:5px solid #f59e0b;font-size:22px;font-weight:900;
+  color:#2e1d0c;margin-top:44px;margin-bottom:20px;
+  letter-spacing:.02em;border-bottom:1px solid #e6dac6;padding-bottom:8px;
+}
+.article h3{font-size:18px;font-weight:850;color:#3b2314;border-bottom:2px dashed #dcd0bd;padding-bottom:5px;margin-top:36px;margin-bottom:16px}
+.article p{font-size:15px;margin-bottom:14px;line-height:1.85;color:#433422}
+.article p b{font-weight:900;color:#1e0f02;background:linear-gradient(transparent 55%,rgba(245,158,11,.25) 55%);padding:0 2px}
+
+.article table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border-radius:10px;overflow:hidden}
+.article th,.article td{border:1px solid #e6dac6;padding:12px 14px;text-align:left}
+.article th{background:#f3ebd9;color:#2e1d0c;font-weight:900;font-size:13px}
+.article td{background:#faf6eb;line-height:1.65;color:#433422}
+
+.article blockquote{
+  background:#f3ebd9;border-left:4px solid #c9b9a1;
+  border-radius:16px;padding:18px 22px;margin:20px 0;
+  color:#5c4b37;box-shadow:inset 0 1px 3px rgba(0,0,0,.01);
+  font-size:14px;line-height:1.7;
+}
+.article blockquote b{color:#2e1d0c}
+
+.article hr{margin:28px 0;border:none;border-top:1px solid #e6dac6}
+
+.article ul{list-style:none;padding-left:4px;margin:16px 0}
+.article ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15px;line-height:1.7;color:#433422}
+.article ul li::before{content:"✓";position:absolute;left:0;top:0;color:#4f46e5;font-weight:900;font-size:16px}
+
+.article ol{padding-left:24px;margin:16px 0}
+.article ol li{font-size:15px;line-height:1.7;margin-bottom:10px;color:#433422}
+.article ol li::marker{color:#f59e0b;font-weight:900}
+
+.article .highlight-box{
+  background:#fdf2f2;border-left:4px solid #f87171;
+  border-radius:16px;padding:16px 20px;margin:16px 0;
+  color:#7f1d1d;font-size:14px;line-height:1.7;
+}
+.article .highlight-box b{color:#7f1d1d}
+
+@media(max-width:768px){
+  .article{padding:16px}
+  .article h1{font-size:20px}
+  .article h2{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- Nav bar (ダーク/glass準拠) -->
+<div class="nav-bar">
+  <a href="../index.html" class="nav-logo">
+    <div class="nav-logo-icon">宅</div>
+    <div class="nav-logo-text">宅建試験<span>ドットコム</span></div>
+  </a>
+  <a href="../index.html" class="nav-back">← 一覧に戻る</a>
+</div>
+
+<div class="wrap">
+
+  <div class="article">
+    <div class="tags">
+      <span>権利関係</span><span>民法総則</span><span>制限行為能力者</span>
+    </div>
+
+    <h1>制限行為能力者 ── 未成年・成年被後見人・被保佐人・被補助人の取消しルールを完全整理</h1>
+    <p class="desc">宅建 権利関係の序盤で登場する「制限行為能力者」。4つのタイプの違いと取消しの範囲を条文ベースで整理します。</p>
+
+    <hr>
+
+    <h2>4タイプの比較表</h2>
+    <p>民法は、判断能力が不十分な人を保護するために4段階の制限行為能力者制度を設けています。</p>
+    <table>
+      <tr><th>タイプ</th><th>該当者</th><th>保護</th><th>取消しできる行為</th></tr>
+      <tr><td><b>未成年</b></td><td>18歳未満</td><td>⭐⭐⭐</td><td><b>原則すべて</b>（法定代理人がやった分はOK）</td></tr>
+      <tr><td><b>成年被後見人</b></td><td>判断能力を欠く（常時）</td><td>⭐⭐⭐⭐⭐</td><td><b>すべて</b>（日用品の購入を除く）</td></tr>
+      <tr><td><b>被保佐人</b></td><td>判断能力が著しく不十分</td><td>⭐⭐⭐</td><td><b>重要な行為のみ</b>（民法13条1項各号）</td></tr>
+      <tr><td><b>被補助人</b></td><td>判断能力が不十分（軽度）</td><td>⭐</td><td><b>裁判所が指定した行為のみ</b></td></tr>
+    </table>
+    <p>成年被後見人（最強） > 未成年（強い） > 被保佐人（中程度） > 被補助人（弱い）</p>
+
+    <hr>
+
+    <h2>未成年（民法第5条・第21条）</h2>
+    <p>未成年者が法定代理人の同意なしに行った法律行為は、<b>取り消すことができる</b>（民法第5条）。例えば16歳の高校生が保護者に無断で100万円のゲーム課金をした場合、この契約は取消し可能です。</p>
+    <blockquote>
+      <b>未成年者のルール</b><br>
+      - 未成年者の法律行為は法定代理人の同意が必要<br>
+      - 同意なしに行った行為は取り消すことができる<br>
+      - ただし単に権利を得るだけの行為（無償プレゼント等）や、法定代理人が目的を定めて処分させた金銭（お小遣い）での取引は取消し不可
+    </blockquote>
+    <p><b>例外（成年擬制）：</b></p>
+    <ul>
+      <li><b>営業許可</b>（民法第6条）：許可を得た未成年は、その営業に関する行為に限り成年者とみなされる</li>
+      <li><b>婚姻</b>（民法第753条）：婚姻届を出した未成年は成年者とみなされる。離婚しても成年擬制は消えない</li>
+      <li><b>詐術</b>（民法第21条）：未成年が「もう大人です」と嘘をついて契約した場合、取消し不可</li>
+    </ul>
+
+    <hr>
+
+    <h2>成年被後見人（民法第9条・第120条）</h2>
+    <p>成年被後見人の法律行為は、<b>日用品の購入など日常生活に関する行為を除き、取り消すことができる</b>。例えば認知症が進行した85歳の高齢者が訪問販売で土地の売却契約を結んだ場合、この契約は取消し可能です。</p>
+    <blockquote>
+      <b>成年被後見人のルール</b><br>
+      - 成年被後見人の法律行為は取り消すことができる<br>
+      - 日用品の購入など日常生活に関する行為は取消し不可<br>
+      - 取消しは本人・後見人・その承継人ができる
+    </blockquote>
+    <div class="highlight-box">
+      <b>未成年との違い：</b>未成年には「詐術を使ったら取消し不可」の制限（民法第21条）があるが、成年被後見人にはこの制限がない。判断能力がない状態での発言はそもそも有効な意思表示とはみなされないため。
+    </div>
+
+    <hr>
+
+    <h2>被保佐人（民法第13条）</h2>
+    <p>被保佐人が<b>重要な行為</b>をするには保佐人の同意が必要。同意なしに行った場合は取り消すことができる。</p>
+    <blockquote>
+      <b>同意が必要な行為（民法第13条1項各号）→ 試験で超頻出！</b><br>
+      1. 元本を取る行為（借金・保証・贈与・不動産売却など）<br>
+      2. 訴訟行為 3. 相続の承認・放棄 4. 新築・改築・増築<br>
+      5. 贈与・和解・仲裁合意 6. 保証人になること<br>
+      7. 不動産に関する権利の得喪 8. 50万円以上の金銭の借入れ・消費<br>
+      9. その他、家庭裁判所が指定した行為
+    </blockquote>
+    <p>日常生活（100円の鉛筆を買うなど）は自由にできる。「日常生活は自由だが、人生を大きく変える決断には保佐人の同意が必要」というバランス設計。</p>
+
+    <hr>
+
+    <h2>被補助人（民法第17条）</h2>
+    <p>被補助人は、<b>家庭裁判所が同意を得なければならないと定めた行為</b>についてのみ、補助人の同意が必要。同意なしに行った場合は取り消すことができる。</p>
+    <p>被保佐人と異なり、<b>法定の一覧はなく</b>、本人の申立てに基づいて家庭裁判所が個別に指定する。</p>
+    <p>例：裁判所が「不動産の売却」と「50万円以上の借入れ」のみ同意必須と指定した場合、80万円の中古車を現金一括購入するのは同意不要。ただしローンを組んだ場合は「50万円以上の借入れ」に該当する可能性がある。</p>
+
+    <hr>
+
+    <h2>共通ルール：催告権・取消しの効果・時効</h2>
+    <p><b>催告権（民法第19条・第20条）：</b>相手方は本人や法定代理人に対し「この契約を有効にするか1ヶ月以内に返事ください」と通知できる。1ヶ月以内に返事がない場合、契約は有効に確定（みなし追認）。</p>
+    <p><b>取消しの効果：</b>契約は最初からなかったことに。善意の相手は現存利益の範囲内で返還すればよい。悪意の場合は全額返還義務。</p>
+    <p><b>時効：</b>取消し権は、追認できるようになってから<b>5年</b>、または行為の時から<b>20年</b>で時効により消滅（民法第126条）。</p>
+
+    <hr>
+
+    <h2>試験対策まとめ</h2>
+    <p>宅建試験では以下の3点だけ押さえればOK：</p>
+    <ol>
+      <li><b>4タイプの区別</b>（誰が・どの範囲で取消しできるか）</li>
+      <li><b>取消しの効果</b>（最初からなかったことに。善意の相手は現存利益だけ返せばOK）</li>
+      <li><b>催告権と時効</b>（相手方にも保護がある。永久に取消せるわけじゃない）</li>
+    </ol>
+
+  </div>
+</div>
+</body>
+</html>

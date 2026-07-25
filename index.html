@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宅建試験ドットコム｜解説魔導書</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --font-sans:'Outfit','Noto Sans JP',system-ui,-apple-system,sans-serif;
+  --bg:#090d16;
+  --card:rgba(11,16,28,.55);
+  --border:rgba(255,255,255,.08);
+  --text:#f8fafc;
+  --text-sec:#94a3b8;
+  --text-muted:#64748b;
+  --primary:#6366f1;
+  --primary-light:rgba(99,102,241,.15);
+  --amber:#f59e0b;
+  --amber-light:rgba(245,158,11,.1);
+  --radius-sm:8px;
+  --radius-md:12px;
+  --radius-lg:16px;
+  --radius-xl:20px;
+  --radius-2xl:24px;
+  --transition:200ms cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-sans);background:var(--bg);color:var(--text);
+  line-height:1.7;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+.magic-bg{
+  position:fixed;inset:0;z-index:-1;
+  background:linear-gradient(-45deg,#090d16,#111827,#1e1b4b,#0f172a);
+  background-size:400% 400%;animation:magic 20s ease infinite;
+}
+@keyframes magic{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px 80px;position:relative;z-index:1}
+.glass{background:var(--card);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);box-shadow:0 10px 40px -10px rgba(0,0,0,.5)}
+
+/* Header (boki-3完全準拠) */
+.header{position:sticky;top:0;z-index:50;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(245,158,11,.15);border-radius:0 0 var(--radius-lg) var(--radius-lg);margin-bottom:32px}
+.header-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.header-logo-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),#818cf8);display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;font-weight:900;box-shadow:0 0 12px rgba(99,102,241,.3)}
+.header-logo-text{font-size:15px;font-weight:800;letter-spacing:.3px}
+.header-logo-text span{color:var(--primary)}
+.header-logo-sub{font-size:9px;color:var(--text-muted);letter-spacing:2px;font-weight:700;display:block;margin-top:-2px}
+.header-nav{display:flex;gap:4px}
+.header-nav a{padding:7px 14px;border-radius:var(--radius-sm);text-decoration:none;font-size:13px;font-weight:600;color:var(--text-sec);transition:var(--transition)}
+.header-nav a:hover,.header-nav a.active{background:var(--primary-light);color:var(--primary)}
+
+/* 2カラム */
+.layout{display:flex;gap:32px}
+.main{flex:1;min-width:0}
+.sidebar{width:320px;flex-shrink:0;display:none}
+@media(min-width:768px){.sidebar{display:block}}
+
+/* Welcome */
+.welcome{background:rgba(11,16,28,.8);border:1px solid var(--border);border-radius:var(--radius-2xl);padding:24px;margin-bottom:40px}
+.welcome h2{font-size:17px;font-weight:900;color:var(--amber);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.welcome p{font-size:13px;color:#cbd5e1;line-height:1.7;margin-bottom:12px}
+.welcome .tip{font-size:12px;color:var(--text-sec);line-height:1.6;border-top:1px solid rgba(255,255,255,.05);padding-top:10px}
+.welcome .tip a{color:var(--primary);text-decoration:underline}
+
+/* Section title */
+.sec-title{font-size:13px;font-weight:900;color:var(--primary);letter-spacing:2px;margin-bottom:16px;padding-left:4px;display:flex;align-items:center;gap:8px}
+.sec-title.col{color:var(--amber)}
+
+/* Grid */
+.article-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:40px}
+@media(min-width:640px){.article-grid{grid-template-columns:1fr 1fr}}
+
+.article-card{display:flex;align-items:flex-start;gap:16px;padding:20px;background:rgba(11,16,28,.8);border:1px solid var(--border);border-radius:var(--radius-2xl);text-decoration:none;color:inherit;transition:var(--transition)}
+.article-card:hover{border-color:rgba(99,102,241,.4);transform:scale(1.01)}
+.article-card .badge{width:48px;height:40px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;font-weight:900;letter-spacing:1px;background:var(--primary-light);border:1px solid rgba(99,102,241,.2);color:var(--primary)}
+.article-card .body{flex:1;min-width:0}
+.article-card .body h3{font-size:15px;font-weight:900;color:#e2e8f0;margin-bottom:4px;transition:var(--transition)}
+.article-card:hover .body h3{color:var(--amber)}
+.article-card .body p{font-size:13px;color:var(--text-sec);line-height:1.5}
+.article-card .tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:10px}
+.article-card .tags span{font-size:11px;font-weight:800;color:var(--text-muted);background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,.06);padding:2px 8px;border-radius:4px}
+.article-card .arrow{color:var(--text-muted);flex-shrink:0;align-self:center;margin-left:8px;transition:var(--transition)}
+.article-card:hover .arrow{color:var(--primary)}
+
+.article-card.column{border-color:rgba(245,158,11,.15)}
+.article-card.column:hover{border-color:rgba(245,158,11,.4)}
+.article-card.column .badge{background:var(--amber-light);border-color:rgba(245,158,11,.2);color:var(--amber)}
+
+/* Sidebar */
+.side-panel{background:rgba(11,16,28,.8);border:1px solid var(--border);border-radius:var(--radius-2xl);padding:20px;margin-bottom:20px}
+.side-panel h4{font-size:13px;font-weight:900;color:var(--text-muted);margin-bottom:12px;letter-spacing:1px}
+.profile{display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,.05);padding-bottom:12px;margin-bottom:12px}
+.profile-avatar{width:40px;height:40px;border-radius:50%;background:rgba(30,41,59,1);border:1px solid rgba(99,102,241,.3);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:18px}
+.profile .label{font-size:12px;font-weight:700;color:var(--text-muted)}
+.profile .name{font-size:14px;font-weight:900;color:var(--text)}
+.profile-bio{font-size:12px;color:#cbd5e1;line-height:1.6}
+.category-list{display:flex;flex-direction:column;gap:8px}
+.category-item{font-size:13px;font-weight:800;padding:10px 14px;border-radius:var(--radius-md);border:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center}
+.category-item:nth-child(1){background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.2);color:#34d399}
+.category-item:nth-child(2){background:rgba(244,63,94,.1);border-color:rgba(244,63,94,.2);color:#fb7185}
+.category-item:nth-child(3){background:rgba(234,179,8,.1);border-color:rgba(234,179,8,.2);color:#fbbf24}
+.category-item:nth-child(4){background:rgba(6,182,212,.1);border-color:rgba(6,182,212,.2);color:#22d3ee}
+.category-item:nth-child(5){background:rgba(249,115,22,.1);border-color:rgba(249,115,22,.2);color:#fb923c}
+
+/* Footer */
+.footer{margin-top:48px;padding:24px 0;text-align:center;border-top:1px solid rgba(255,255,255,.05);font-size:12px;color:var(--text-muted)}
+</style>
+</head>
+<body>
+<div class="magic-bg"></div>
+<div class="wrap">
+
+  <!-- Header -->
+  <div class="header glass">
+    <a href="#" class="header-logo">
+      <div class="header-logo-icon">宅</div>
+      <div>
+        <span class="header-logo-text">宅建試験<span>ドットコム</span></span>
+        <span class="header-logo-sub">解説魔導書ライブラリ</span>
+      </div>
+    </a>
+    <nav class="header-nav">
+      <a href="#" class="active">魔導書一覧</a>
+      <a href="https://takken-siken.com/kakomon.php">過去問道場</a>
+    </nav>
+  </div>
+
+  <!-- 2カラム -->
+  <div class="layout">
+    <div class="main">
+
+      <!-- Welcome -->
+      <div class="welcome">
+        <h2>📖 宅建魔導書ライブラリへようこそ</h2>
+        <p>この書庫では、宅建試験「権利関係」の民法を、お堅い講義形式ではなく「指が覚えるまで解きまくる → 解説で理解が化ける」スタイルで挫折せずに理解できるように噛み砕いています。</p>
+        <div class="tip">💡 <strong>まずは<a href="https://takken-siken.com/kakomon.php">過去問道場</a>で問題を解きまくれ</strong>。解説はその後で読め──認知科学が証明した最強の学習法。</div>
+      </div>
+
+      <!-- 本編 -->
+      <div class="sec-title">📖 魔導ロードマップ（権利関係）</div>
+      <div class="article-grid">
+        <a href="content/column-restricted-capacity.html" class="article-card">
+          <div class="badge">Lv1</div>
+          <div class="body">
+            <h3>制限行為能力者</h3>
+            <p>未成年・成年被後見人・被保佐人・被補助人──4タイプの取消しルールを条文ベースで完全整理。</p>
+            <div class="tags"><span>#権利関係</span><span>#民法総則</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="#" class="article-card" style="opacity:.4;pointer-events:none">
+          <div class="badge">Lv2</div>
+          <div class="body">
+            <h3>意思表示</h3>
+            <p>準備中</p>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="#" class="article-card" style="opacity:.4;pointer-events:none">
+          <div class="badge">Lv3</div>
+          <div class="body">
+            <h3>代理</h3>
+            <p>準備中</p>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+      </div>
+
+      <!-- 番外コラム -->
+      <div class="sec-title col">✨ 特別番外コラム</div>
+      <div class="article-grid">
+        <a href="content/column-restricted-capacity.html" class="article-card column">
+          <div class="badge">コラム</div>
+          <div class="body">
+            <h3>制限行為能力者</h3>
+            <p>未成年・成年被後見人・被保佐人・被補助人の取消しルール。</p>
+            <div class="tags"><span>#権利関係</span><span>#民法総則</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="side-panel">
+        <div class="profile">
+          <div class="profile-avatar">👤</div>
+          <div>
+            <div class="label">管理人</div>
+            <div class="name">宅建エンジニア</div>
+          </div>
+        </div>
+        <div class="profile-bio">宅建試験に合格するため、自分が本当に理解できるまで噛み砕いた知識を「魔導書」として記録。指が覚えるまで解きまくれ。</div>
+      </div>
+      <div class="side-panel">
+        <h4>📱 スマホアプリ</h4>
+        <div style="background:rgba(30,41,59,.5);border-radius:var(--radius-md);padding:12px;text-align:center;font-size:11px;font-weight:700;color:rgba(99,102,241,.5)">🚧 準備中</div>
+      </div>
+      <div class="side-panel">
+        <h4>📂 カテゴリー</h4>
+        <div class="category-list">
+          <div class="category-item"><span>権利関係</span><span>405問</span></div>
+          <div class="category-item"><span>法令上の制限</span><span>238問</span></div>
+          <div class="category-item"><span>宅建業法等</span><span>524問</span></div>
+          <div class="category-item"><span>税・その他</span><span>233問</span></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="footer">© 宅建試験ドットコム 解説魔導書 DEMO</div>
+</div>
+</body>
+</html>
