@@ -62,7 +62,8 @@ body{
 .article ol{padding-left:24px;margin:16px 0}
 .article ol li{font-size:15px;line-height:1.7;margin-bottom:10px;color:#433422}
 .article ol li::marker{color:#f59e0b;font-weight:900}
-@media(max-width:768px){
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){
   .article{padding:16px}
   .article h1{font-size:20px}
   .article h2{font-size:18px}
@@ -85,6 +86,29 @@ body{
 <hr>
 
 <h2>占有権と所有権の違い</h2>
+<div class="diagram">
+  <svg viewBox="0 0 600 180" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <defs>
+      <linearGradient id="venn1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5" stop-opacity=".06"/><stop offset="100%" stop-color="#4f46e5" stop-opacity=".02"/></linearGradient>
+      <linearGradient id="venn2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".06"/><stop offset="100%" stop-color="#f59e0b" stop-opacity=".02"/></linearGradient>
+    </defs>
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">占有権と所有権の違い ── 「持ってる」vs「持つ権利がある」</text>
+    <!-- ベン図（左円：占有権、右円：所有権） -->
+    <circle cx="230" cy="95" r="65" fill="url(#venn1)" stroke="#4f46e5" stroke-width="2" opacity="0.6"/>
+    <circle cx="370" cy="95" r="65" fill="url(#venn2)" stroke="#f59e0b" stroke-width="2" opacity="0.6"/>
+    <!-- ラベル -->
+    <text x="230" y="50" text-anchor="middle" font-size="13" font-weight="900" fill="#3730a3">占有権</text>
+    <text x="230" y="70" text-anchor="middle" font-size="10" fill="#433422">事実上の支配を保護</text>
+    <text x="230" y="88" text-anchor="middle" font-size="10" fill="#433422">盗人でも占有権あり</text>
+    <text x="230" y="106" text-anchor="middle" font-size="10" fill="#433422">占有訴権を行使可</text>
+    <text x="300" y="135" text-anchor="middle" font-size="10" fill="#7c6853">賃借人は占有権のみ</text>
+    <!-- 所有権 -->
+    <text x="370" y="50" text-anchor="middle" font-size="13" font-weight="900" fill="#d97706">所有権</text>
+    <text x="370" y="70" text-anchor="middle" font-size="10" fill="#433422">法律上の全面的支配権</text>
+    <text x="370" y="88" text-anchor="middle" font-size="10" fill="#433422">使用・収益・処分</text>
+    <text x="370" y="106" text-anchor="middle" font-size="10" fill="#433422">登記で対抗可能</text>
+  </svg>
+</div>
 <table>
 <tr><th></th><th>占有権</th><th>所有権</th></tr>
 <tr><td>意味</td><td>物を事実上支配している状態に対する権利</td><td>物を全面的に支配する権利（使用・収益・処分）</td></tr>
