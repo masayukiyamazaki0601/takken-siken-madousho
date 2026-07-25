@@ -67,6 +67,8 @@ body{
 .article ol{padding-left:24px;margin:16px 0}
 .article ol li{font-size:15px;line-height:1.7;margin-bottom:10px;color:#433422}
 .article ol li::marker{color:#f59e0b;font-weight:900}
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}
 @media(max-width:768px){
   .article{padding:16px}
   .article h1{font-size:20px}
@@ -95,6 +97,45 @@ body{
 <hr>
 
 <h2>不動産物権変動の対抗要件（民法第177条）</h2>
+<div class="diagram">
+  <svg viewBox="0 0 600 200" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <defs>
+      <marker id="ar" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#e6dac6"/></marker>
+      <marker id="ar2" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#a83030"/></marker>
+    </defs>
+    <!-- タイトル -->
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">二重譲渡の構図 ── 登記の早い者勝ち（177条）</text>
+    <line x1="30" y1="32" x2="570" y2="32" stroke="#e6dac6" stroke-width="1"/>
+    <!-- A（売主） -->
+    <rect x="30" y="50" width="160" height="65" rx="8" fill="url(#ab)" stroke="#4f46e5" stroke-width="2"/>
+    <text x="110" y="73" text-anchor="middle" font-size="14" font-weight="900" fill="#3730a3">A（売主）</text>
+    <text x="110" y="93" text-anchor="middle" font-size="10" fill="#7c6853">土地を2人に売却</text>
+    <text x="110" y="108" text-anchor="middle" font-size="9" fill="#a83030">背信的悪意者→除外</text>
+    <!-- 線：A→B -->
+    <line x1="190" y1="60" x2="240" y2="60" stroke="#f59e0b" stroke-width="2" marker-end="url(#ar)"/>
+    <text x="215" y="50" text-anchor="middle" font-size="9" fill="#f59e0b">①売買契約</text>
+    <!-- 線：A→C -->
+    <line x1="190" y1="95" x2="240" y2="95" stroke="#a83030" stroke-width="2" marker-end="url(#ar2)"/>
+    <text x="215" y="120" text-anchor="middle" font-size="9" fill="#a83030">②売買契約</text>
+    <!-- B -->
+    <rect x="250" y="45" width="150" height="55" rx="8" fill="url(#ac)" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="325" y="65" text-anchor="middle" font-size="13" font-weight="900" fill="#d97706">B（先買主）</text>
+    <text x="325" y="83" text-anchor="middle" font-size="10" fill="#433422">代金支払済</text>
+    <text x="325" y="96" text-anchor="middle" font-size="9" fill="#a83030">未登記 → ❌負け</text>
+    <!-- C -->
+    <rect x="250" y="115" width="150" height="55" rx="8" fill="url(#b2)" stroke="#059669" stroke-width="1.5"/>
+    <text x="325" y="135" text-anchor="middle" font-size="13" font-weight="900" fill="#047857">C（後買主）</text>
+    <text x="325" y="153" text-anchor="middle" font-size="10" fill="#433422">代金支払＋登記</text>
+    <text x="325" y="166" text-anchor="middle" font-size="9" fill="#059669">登記済 → ✅勝ち</text>
+    <!-- 勝敗表示 -->
+    <rect x="430" y="50" width="150" height="120" rx="8" fill="#f3ebd9" stroke="#e6dac6" stroke-width="1"/>
+    <text x="505" y="73" text-anchor="middle" font-size="12" font-weight="900" fill="#2e1d0c">結論</text>
+    <text x="505" y="95" text-anchor="middle" font-size="10" fill="#433422">登記したCが</text>
+    <text x="505" y="112" text-anchor="middle" font-size="10" fill="#433422">所有権を取得</text>
+    <text x="505" y="132" text-anchor="middle" font-size="10" fill="#7c6853">BはCに対抗</text>
+    <text x="505" y="149" text-anchor="middle" font-size="10" fill="#7c6853">できない（177条）</text>
+  </svg>
+</div>
 <blockquote><b>民法第177条：</b>不動産に関する物権の得喪及び変更は、<b>登記しなければ、第三者に対抗することができない</b>。</blockquote>
 <p>不動産の所有権を取得しても、<b>登記をしなければ第三者に「自分のものです」と主張できない</b>。</p>
 
