@@ -95,6 +95,37 @@ body{
 <hr>
 
 <h2>取得時効（民法第162条〜第163条）</h2>
+<div class="diagram">
+  <svg viewBox="0 0 600 200" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <defs>
+      <marker id="ar" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#e6dac6"/></marker>
+    </defs>
+    <!-- メインタイムライン -->
+    <line x1="40" y1="80" x2="560" y2="80" stroke="#e6dac6" stroke-width="2" marker-end="url(#ar)"/>
+    <!-- ラベル -->
+    <text x="300" y="20" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">取得時効 ── 占有開始から権利取得までの流れ</text>
+    <!-- 起算点 -->
+    <circle cx="80" cy="80" r="7" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+    <text x="80" y="55" text-anchor="middle" font-size="11" font-weight="900" fill="#d97706">占有開始</text>
+    <text x="80" y="70" text-anchor="middle" font-size="10" fill="#7c6853">平穏・公然</text>
+    <!-- 10年線 -->
+    <line x1="80" y1="90" x2="280" y2="90" stroke="#4f46e5" stroke-width="3" stroke-dasharray="6,3"/>
+    <text x="180" y="110" text-anchor="middle" font-size="10" fill="#4f46e5">10年（善意・無過失）</text>
+    <!-- 20年線 -->
+    <line x1="80" y1="120" x2="480" y2="120" stroke="#a83030" stroke-width="3" stroke-dasharray="6,3" opacity="0.7"/>
+    <text x="280" y="140" text-anchor="middle" font-size="10" fill="#a83030">20年（善意・無過失不要）</text>
+    <!-- 10年完了点 -->
+    <circle cx="280" cy="80" r="7" fill="#4f46e5" stroke="#3730a3" stroke-width="2"/>
+    <text x="280" y="55" text-anchor="middle" font-size="11" font-weight="900" fill="#3730a3">10年完了</text>
+    <!-- 20年完了点 -->
+    <circle cx="480" cy="80" r="7" fill="#a83030" stroke="#b91c1c" stroke-width="2"/>
+    <text x="480" y="55" text-anchor="middle" font-size="11" font-weight="900" fill="#b91c1c">20年完了</text>
+    <!-- 完成猶予（更新）の説明 -->
+    <rect x="40" y="155" width="520" height="35" rx="6" fill="#f3ebd9" stroke="#e6dac6" stroke-width="1"/>
+    <text x="300" y="168" text-anchor="middle" font-size="10" fill="#433422">完成猶予（中断）：権利者が承認・裁判上の請求等で時効がリセット</text>
+    <text x="300" y="182" text-anchor="middle" font-size="10" fill="#433422">更新：新しい時効期間がゼロからスタート</text>
+  </svg>
+</div>
 <p>一定期間、他人の物を占有し続けた者が所有権を取得する制度。</p>
 <table>
 <tr><th>要件</th><th>内容</th><th>10年取得時効</th><th>20年取得時効</th></tr>
