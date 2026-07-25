@@ -62,7 +62,8 @@ body{
 .article ol{padding-left:24px;margin:16px 0}
 .article ol li{font-size:15px;line-height:1.7;margin-bottom:10px;color:#433422}
 .article ol li::marker{color:#f59e0b;font-weight:900}
-@media(max-width:768px){
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){
   .article{padding:16px}
   .article h1{font-size:20px}
   .article h2{font-size:18px}
@@ -85,6 +86,37 @@ body{
 <hr>
 
 <h2>債権の目的</h2>
+<div class="diagram">
+  <svg viewBox="0 0 600 180" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <defs>
+      <linearGradient id="o1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5" stop-opacity=".10"/><stop offset="100%" stop-color="#4f46e5" stop-opacity=".03"/></linearGradient>
+    </defs>
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">債権の種類 ── 目的物による分類</text>
+    <!-- ツリー構造 -->
+    <rect x="220" y="40" width="160" height="35" rx="6" fill="url(#o1)" stroke="#4f46e5" stroke-width="1.5"/>
+    <text x="300" y="63" text-anchor="middle" font-size="13" font-weight="900" fill="#3730a3">債権</text>
+    <!-- 枝 -->
+    <line x1="260" y1="75" x2="110" y2="105" stroke="#e6dac6" stroke-width="1.5"/>
+    <line x1="310" y1="75" x2="310" y2="105" stroke="#e6dac6" stroke-width="1.5"/>
+    <line x1="340" y1="75" x2="500" y2="105" stroke="#e6dac6" stroke-width="1.5"/>
+    <!-- 特定物債権 -->
+    <rect x="20" y="110" width="140" height="55" rx="6" fill="url(#o1)" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="90" y="133" text-anchor="middle" font-size="11" font-weight="900" fill="#d97706">特定物債権</text>
+    <text x="90" y="152" text-anchor="middle" font-size="9" fill="#7c6853">この土地を引き渡せ</text>
+    <!-- 種類債権 -->
+    <rect x="180" y="110" width="115" height="55" rx="6" fill="url(#o1)" stroke="#059669" stroke-width="1.5"/>
+    <text x="237" y="133" text-anchor="middle" font-size="11" font-weight="900" fill="#047857">種類債権</text>
+    <text x="237" y="152" text-anchor="middle" font-size="9" fill="#7c6853">米10kg</text>
+    <!-- 金銭債権 -->
+    <rect x="315" y="110" width="115" height="55" rx="6" fill="url(#o1)" stroke="#a83030" stroke-width="1.5"/>
+    <text x="372" y="133" text-anchor="middle" font-size="11" font-weight="900" fill="#b91c1c">金銭債権</text>
+    <text x="372" y="152" text-anchor="middle" font-size="9" fill="#7c6853">100万円</text>
+    <!-- 選択債権 -->
+    <rect x="450" y="110" width="140" height="55" rx="6" fill="url(#o1)" stroke="#7b5ea7" stroke-width="1.5"/>
+    <text x="520" y="133" text-anchor="middle" font-size="11" font-weight="900" fill="#6d28d9">選択債権</text>
+    <text x="520" y="152" text-anchor="middle" font-size="9" fill="#7c6853">土地か建物か</text>
+  </svg>
+</div>
 <table>
 <tr><th>種類</th><th>内容</th><th>例</th></tr>
 <tr><td><b>特定物債権</b></td><td>特定の物を引き渡す債務</td><td>この土地を引き渡せ</td></tr>

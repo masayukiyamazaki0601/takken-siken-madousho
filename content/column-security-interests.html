@@ -62,7 +62,8 @@ body{
 .article ol{padding-left:24px;margin:16px 0}
 .article ol li{font-size:15px;line-height:1.7;margin-bottom:10px;color:#433422}
 .article ol li::marker{color:#f59e0b;font-weight:900}
-@media(max-width:768px){
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){
   .article{padding:16px}
   .article h1{font-size:20px}
   .article h2{font-size:18px}
@@ -85,6 +86,49 @@ body{
 <hr>
 
 <h2>根抵当権（398条の2〜398条の22）</h2>
+<div class="diagram">
+  <svg viewBox="0 0 600 200" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <defs>
+      <linearGradient id="s1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4f46e5" stop-opacity=".10"/><stop offset="100%" stop-color="#4f46e5" stop-opacity=".03"/></linearGradient>
+      <linearGradient id="s2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#059669" stop-opacity=".10"/><stop offset="100%" stop-color="#059669" stop-opacity=".03"/></linearGradient>
+      <linearGradient id="s3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b" stop-opacity=".10"/><stop offset="100%" stop-color="#f59e0b" stop-opacity=".03"/></linearGradient>
+      <linearGradient id="s4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#a83030" stop-opacity=".10"/><stop offset="100%" stop-color="#a83030" stop-opacity=".03"/></linearGradient>
+    </defs>
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">担保物権4種 ── 占有の要否と優先弁済権の有無</text>
+    <!-- 根抵当 -->
+    <rect x="10" y="35" width="135" height="150" rx="8" fill="url(#s1)" stroke="#4f46e5" stroke-width="1.5"/>
+    <text x="77" y="58" text-anchor="middle" font-size="12" font-weight="900" fill="#3730a3">根抵当権</text>
+    <text x="77" y="78" text-anchor="middle" font-size="9" fill="#433422">不特定債権を担保</text>
+    <text x="77" y="98" text-anchor="middle" font-size="9" fill="#7c6853">極度額あり</text>
+    <text x="77" y="113" text-anchor="middle" font-size="9" fill="#7c6853">元本確定必要</text>
+    <text x="77" y="133" text-anchor="middle" font-size="9" fill="#7c6853">非占有</text>
+    <text x="77" y="148" text-anchor="middle" font-size="9" fill="#7c6853">優先弁済権あり</text>
+    <!-- 質権 -->
+    <rect x="160" y="35" width="135" height="150" rx="8" fill="url(#s2)" stroke="#059669" stroke-width="1.5"/>
+    <text x="227" y="58" text-anchor="middle" font-size="12" font-weight="900" fill="#047857">質権</text>
+    <text x="227" y="78" text-anchor="middle" font-size="9" fill="#433422">占有を移す</text>
+    <text x="227" y="98" text-anchor="middle" font-size="9" fill="#7c6853">不動産・動産・権利</text>
+    <text x="227" y="113" text-anchor="middle" font-size="9" fill="#7c6853">不動産質は用途権あり</text>
+    <text x="227" y="133" text-anchor="middle" font-size="9" fill="#7c6853">占有担保</text>
+    <text x="227" y="148" text-anchor="middle" font-size="9" fill="#7c6853">優先弁済権あり</text>
+    <!-- 留置権 -->
+    <rect x="310" y="35" width="135" height="150" rx="8" fill="url(#s3)" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="377" y="58" text-anchor="middle" font-size="12" font-weight="900" fill="#d97706">留置権</text>
+    <text x="377" y="78" text-anchor="middle" font-size="9" fill="#433422">引渡し拒否のみ</text>
+    <text x="377" y="98" text-anchor="middle" font-size="9" fill="#7c6853">牽連関係必要</text>
+    <text x="377" y="113" text-anchor="middle" font-size="9" fill="#7c6853">弁済期にあること</text>
+    <text x="377" y="133" text-anchor="middle" font-size="9" fill="#7c6853">占有担保</text>
+    <text x="377" y="148" text-anchor="middle" font-size="9" fill="#a83030">優先弁済権なし</text>
+    <!-- 先取特権 -->
+    <rect x="460" y="35" width="130" height="150" rx="8" fill="url(#s4)" stroke="#a83030" stroke-width="1.5"/>
+    <text x="525" y="58" text-anchor="middle" font-size="12" font-weight="900" fill="#b91c1c">先取特権</text>
+    <text x="525" y="78" text-anchor="middle" font-size="9" fill="#433422">法定担保</text>
+    <text x="525" y="98" text-anchor="middle" font-size="9" fill="#7c6853">登記不要</text>
+    <text x="525" y="113" text-anchor="middle" font-size="9" fill="#7c6853">優先順位あり</text>
+    <text x="525" y="133" text-anchor="middle" font-size="9" fill="#7c6853">非占有</text>
+    <text x="525" y="148" text-anchor="middle" font-size="9" fill="#7c6853">優先弁済権あり</text>
+  </svg>
+</div>
 <p>極度額の範囲内で一定範囲の不特定債権を担保する抵当権。<b>普通抵当権と違い、債権が変動しても極度額まで担保される</b>。</p>
 <table>
 <tr><th></th><th>普通抵当権</th><th>根抵当権</th></tr>

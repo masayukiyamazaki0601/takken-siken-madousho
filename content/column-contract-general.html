@@ -62,7 +62,8 @@ body{
 .article ol{padding-left:24px;margin:16px 0}
 .article ol li{font-size:15px;line-height:1.7;margin-bottom:10px;color:#433422}
 .article ol li::marker{color:#f59e0b;font-weight:900}
-@media(max-width:768px){
+.article .diagram{margin:24px 0;background:#faf6eb;border:1px solid #e6dac6;border-radius:10px;padding:16px;overflow:hidden}
+.article .diagram svg{width:100%;height:auto;display:block}@media(max-width:768px){
   .article{padding:16px}
   .article h1{font-size:20px}
   .article h2{font-size:18px}
@@ -85,6 +86,37 @@ body{
 <hr>
 
 <h2>契約の成立（521条〜528条）</h2>
+<div class="diagram">
+  <svg viewBox="0 0 600 200" style="font-family:'Outfit','Noto Sans JP',sans-serif">
+    <defs>
+      <marker id="ar" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#4f46e5"/></marker>
+      <marker id="ar2" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#059669"/></marker>
+    </defs>
+    <text x="300" y="22" text-anchor="middle" font-size="13" font-weight="900" fill="#2e1d0c">契約の流れ ── 成立から履行・解除まで</text>
+    <!-- フローチャート -->
+    <rect x="20" y="40" width="160" height="50" rx="8" fill="url(#ab)" stroke="#4f46e5" stroke-width="2"/>
+    <text x="100" y="62" text-anchor="middle" font-size="12" font-weight="900" fill="#3730a3">①申込</text>
+    <text x="100" y="78" text-anchor="middle" font-size="9" fill="#7c6853">撤回可能（期間定め除く）</text>
+    <!-- 矢印 -->
+    <line x1="180" y1="55" x2="218" y2="55" stroke="#4f46e5" stroke-width="2" marker-end="url(#ar)"/>
+    <!-- 承諾 -->
+    <rect x="220" y="40" width="160" height="50" rx="8" fill="url(#ac)" stroke="#f59e0b" stroke-width="2"/>
+    <text x="300" y="62" text-anchor="middle" font-size="12" font-weight="900" fill="#d97706">②承諾</text>
+    <text x="300" y="78" text-anchor="middle" font-size="9" fill="#7c6853">到達時に契約成立</text>
+    <!-- 矢印 -->
+    <line x1="380" y1="55" x2="418" y2="55" stroke="#f59e0b" stroke-width="2" marker-end="url(#ar)"/>
+    <!-- 契約成立 -->
+    <rect x="420" y="40" width="160" height="50" rx="8" fill="url(#b2)" stroke="#059669" stroke-width="2"/>
+    <text x="500" y="62" text-anchor="middle" font-size="12" font-weight="900" fill="#047857">契約成立</text>
+    <text x="500" y="78" text-anchor="middle" font-size="9" fill="#7c6853">同時履行・危険負担</text>
+    <!-- 下段 -->
+    <line x1="300" y1="95" x2="300" y2="115" stroke="#e6dac6" stroke-width="1.5"/>
+    <rect x="150" y="120" width="300" height="65" rx="8" fill="#f3ebd9" stroke="#e6dac6" stroke-width="1"/>
+    <text x="300" y="142" text-anchor="middle" font-size="11" font-weight="900" fill="#2e1d0c">解除</text>
+    <text x="300" y="160" text-anchor="middle" font-size="10" fill="#433422">催告解除（541条）：催告→相当期間経過で解除可</text>
+    <text x="300" y="175" text-anchor="middle" font-size="10" fill="#433422">無催告解除（542条）：履行不能など即時解除可</text>
+  </svg>
+</div>
 <p>契約は<b>申込（オッファー）と承諾（アクセプタンス）の合致</b>で成立。隔地者間の契約は承諾の通知が申込者に到達した時点で成立。</p>
 
 <h3>申込の効力</h3>
