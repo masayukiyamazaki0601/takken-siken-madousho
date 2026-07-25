@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>制限行為能力者4兄弟｜宅建メモリー コラム</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --font-sans:'Inter','Noto Sans JP',system-ui,-apple-system,sans-serif;
+  --c-bg:#0b0d17;
+  --c-surface:#131626;
+  --c-surface-2:#1a1d35;
+  --c-border:#2a2d4a;
+  --c-border-light:#3d4060;
+  --c-text:#e8eaf0;
+  --c-text-secondary:#9498b8;
+  --c-text-muted:#6b6f8a;
+  --c-primary:#7c5cfc;
+  --c-primary-glow:rgba(124,92,252,.25);
+  --c-primary-light:rgba(124,92,252,.12);
+  --c-accent:#ff6b6b;
+  --c-accent-green:#2ed573;
+  --c-accent-cyan:#4fc3f7;
+  --c-accent-orange:#ff9f43;
+  --c-accent-yellow:#ffd93d;
+  --gradient-1:linear-gradient(135deg,#7c5cfc,#a78bfa);
+  --radius-sm:8px;
+  --radius-md:12px;
+  --radius-lg:16px;
+  --radius-xl:24px;
+  --shadow-lg:0 12px 48px rgba(0,0,0,.5);
+  --transition:250ms cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);
+  line-height:1.9;min-height:100vh;-webkit-font-smoothing:antialiased;
+}
+.bg-grid{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(124,92,252,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(124,92,252,.04) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.app-wrapper{position:relative;z-index:1;max-width:800px;margin:0 auto;padding:0 20px}
+.topbar{
+  display:flex;align-items:center;gap:12px;padding:16px 0;
+  border-bottom:1px solid var(--c-border);margin-bottom:32px;
+}
+.topbar-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.topbar-logo-icon{
+  width:36px;height:36px;border-radius:var(--radius-sm);
+  background:var(--gradient-1);display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:900;color:#fff;
+}
+.topbar-logo-text{font-size:16px;font-weight:700;color:var(--c-text)}
+.topbar-logo-text span{background:var(--gradient-1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.topbar-back{
+  margin-left:auto;padding:6px 14px;border-radius:var(--radius-sm);
+  border:1px solid var(--c-border);background:transparent;color:var(--c-text-secondary);
+  font-size:13px;cursor:pointer;text-decoration:none;font-family:var(--font-sans);
+  transition:var(--transition);
+}
+.topbar-back:hover{border-color:var(--c-primary);color:var(--c-primary)}
+
+.article-header{margin-bottom:32px}
+.article-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:4px 12px;border-radius:4px;font-size:11px;font-weight:700;
+  margin-bottom:12px;
+}
+.article-badge.column{background:rgba(124,92,252,.15);color:var(--c-primary)}
+.article-badge.column::before{content:"📝"}
+.article-title{font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1.3;margin-bottom:8px}
+.article-desc{font-size:14px;color:var(--c-text-secondary);line-height:1.7}
+.article-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.article-tags span{
+  padding:2px 10px;border-radius:4px;font-size:11px;font-weight:500;
+  background:var(--c-surface-2);color:var(--c-text-muted);
+}
+
+.article-body h3{
+  font-size:20px;font-weight:700;margin:40px 0 16px;
+  padding-bottom:8px;border-bottom:1px solid var(--c-border);
+}
+.article-body h4{font-size:16px;font-weight:700;margin:28px 0 12px}
+.article-body p{font-size:15px;color:var(--c-text-secondary);margin-bottom:16px;line-height:1.9}
+.article-body p strong{color:var(--c-text);font-weight:600}
+.article-body hr{
+  border:none;border-top:1px solid var(--c-border);margin:32px 0;
+}
+.article-body table{
+  width:100%;border-collapse:collapse;margin:16px 0 24px;
+  font-size:14px;border-radius:var(--radius-md);overflow:hidden;
+}
+.article-body th,.article-body td{
+  padding:10px 14px;border:1px solid var(--c-border);text-align:left;
+}
+.article-body th{
+  background:var(--c-surface-2);font-weight:600;color:var(--c-text);font-size:13px;
+}
+.article-body td{color:var(--c-text-secondary)}
+.article-body blockquote{
+  margin:16px 0 20px;padding:16px 20px;border-radius:var(--radius-md);
+  background:var(--c-surface-2);border-left:3px solid var(--c-primary);
+  font-size:14px;color:var(--c-text-secondary);line-height:1.7;
+}
+.article-body blockquote strong{color:var(--c-text)}
+.article-body pre{
+  margin:16px 0 20px;padding:16px 20px;border-radius:var(--radius-md);
+  background:var(--c-surface-2);border:1px solid var(--c-border);
+  font-size:13px;line-height:1.7;color:var(--c-text-secondary);overflow-x:auto;
+  font-family:'SF Mono','Fira Code',monospace;
+}
+.article-body ul,.article-body ol{margin:12px 0 16px;padding-left:24px}
+.article-body li{font-size:15px;color:var(--c-text-secondary);margin-bottom:6px;line-height:1.7}
+.article-body li strong{color:var(--c-text)}
+
+.highlight-box{
+  margin:20px 0;padding:16px 20px;border-radius:var(--radius-md);
+  background:var(--c-primary-light);border:1px solid rgba(124,92,252,.2);
+  font-size:14px;color:var(--c-text-secondary);line-height:1.7;
+}
+.highlight-box strong{color:var(--c-text)}
+.highlight-box.orange{background:rgba(255,159,67,.1);border-color:rgba(255,159,67,.2)}
+.highlight-box.green{background:rgba(46,213,115,.1);border-color:rgba(46,213,115,.2)}
+.highlight-box.red{background:rgba(255,107,107,.1);border-color:rgba(255,107,107,.2)}
+
+.summary-table{
+  margin:24px 0;border-radius:var(--radius-lg);overflow:hidden;
+  border:1px solid var(--c-border);
+}
+.summary-table-header{
+  padding:12px 16px;background:var(--c-surface-2);
+  font-size:13px;font-weight:600;color:var(--c-text-muted);text-transform:uppercase;letter-spacing:.5px;
+}
+
+.footer-note{
+  margin-top:48px;padding:24px;border-radius:var(--radius-lg);
+  background:var(--c-surface);border:1px solid var(--c-border);
+  text-align:center;font-size:14px;color:var(--c-text-muted);
+  line-height:1.7;
+}
+.footer-note strong{color:var(--c-primary)}
+
+@media(max-width:768px){
+  .article-title{font-size:22px}
+  .article-body table{font-size:12px}
+  .article-body th,.article-body td{padding:6px 8px}
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="app-wrapper">
+
+  <div class="topbar">
+    <a href="index.html" class="topbar-logo">
+      <div class="topbar-logo-icon">宅</div>
+      <div class="topbar-logo-text">宅建<span>メモリー</span></div>
+    </a>
+    <a href="index.html" class="topbar-back">← トップに戻る</a>
+  </div>
+
+  <article class="article-body">
+    <div class="article-header">
+      <div class="article-badge column">番外コラム</div>
+      <h1 class="article-title">『制限行為能力者4兄弟』<br>──未成年、成年被後見人、被保佐人、被補助人の「契約をなかったことにするチート能力」を完全攻略</h1>
+      <p class="article-desc">宅建 権利関係の序盤で登場し、受験生を混乱させる「制限行為能力者」の4タイプ。未成年のゲーム課金、成年被後見人の訪問販売、被保佐人の土地売却……日常の具体例で完全整理します。</p>
+      <div class="article-tags">
+        <span>コラム</span>
+        <span>権利関係</span>
+        <span>民法総則</span>
+        <span>制限行為能力者</span>
+        <span>未成年</span>
+        <span>成年後見</span>
+        <span>保佐</span>
+        <span>取消し</span>
+      </div>
+    </div>
+
+    <p>宅建試験「権利関係」の序盤で登場し、多くの受験生を混乱させるラスボス、それが<strong>制限行為能力者（せいげんこういのうりょくしゃ）</strong>です。</p>
+    <p>「未成年」「成年被後見人」「被保佐人」「被補助人」という4つのタイプが登場し、<strong>「契約を結んだけど、後から『なかったこと』にできるチート能力</strong>を持っています。</p>
+    <p>「え、成年なのに『後見人』がついてる人は契約が無効にできるの？」<br>「保佐と補助って何が違うの？どっちが重いの？」</p>
+    <p>そんな疑問を、<strong>「4兄弟のバトルロワイヤル」</strong>形式で一気に解決しましょう。</p>
+
+    <hr>
+
+    <h3>登場人物（4兄弟）のバトルステータス</h3>
+    <p>民法は、<strong>「判断能力が不十分な人」</strong>を保護するために、4段階の制限行為能力者制度を設けています。</p>
+
+    <table>
+      <thead>
+        <tr><th>タイプ</th><th>該当者</th><th>保護の強さ</th><th>原則の取引</th><th>取消しOKな行為</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>未成年</strong></td><td>18歳未満</td><td>⭐⭐⭐</td><td>✗ 原則できない</td><td><strong>原則すべて</strong>（法定代理人がやった分はOK）</td></tr>
+        <tr><td><strong>成年被後見人</strong></td><td>判断能力が欠けている（日常的）</td><td>⭐⭐⭐⭐⭐</td><td>✗ 全部できない</td><td><strong>すべての行為</strong>（日用品の購入も原則✗）</td></tr>
+        <tr><td><strong>被保佐人</strong></td><td>判断能力が著しく不十分</td><td>⭐⭐⭐</td><td>○ 自分でできる</td><td><strong>重要な行為のみ</strong>（借金・不動産売却・訴訟など）</td></tr>
+        <tr><td><strong>被補助人</strong></td><td>判断能力が不十分（軽度）</td><td>⭐</td><td>○ 自分でできる</td><td><strong>本人申立てで指定された行為のみ</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box">
+      保護の強さ順：<strong>成年被後見人（最強）＞未成年（強い）＞被保佐人（まあまあ）＞被補助人（ちょっとだけ）</strong>
+    </div>
+
+    <hr>
+
+    <h3>エピソード①：未成年の逆襲 ── ドラマ「16歳がやった100万円のゲーム課金、返金できるの？」</h3>
+
+    <p><strong>事実関係：</strong><br>高校2年生のAくん（16歳）は、スマホゲームに夢中になり、保護者に無断でクレジットカードを使い、<strong>合計100万円分の課金</strong>をしてしまいました。お母さんが請求書を見て発狂。</p>
+
+    <p><strong>質問：</strong><br>この100万円の課金契約は、Aくん（または親）が「やっぱり無効にしてくれ」と言えますか？</p>
+
+    <div class="highlight-box green">
+      <strong>答え：はい。完全に取消し可能です。</strong><br>
+      なぜなら、未成年者が<strong>法定代理人（親権者）の同意なし</strong>にした契約は、<strong>後日取り消すことができる</strong>からです（民法第5条）。
+    </div>
+
+    <p>宅建試験で絶対に押さえるポイントはこちら：</p>
+
+    <blockquote>
+      <strong>未成年者のルール（民法第5条・第21条）</strong><br>
+      - 未成年者の法律行為は、<strong>法定代理人の同意が必要</strong><br>
+      - 同意なしに行った行為は <strong>取り消すことができる</strong><br>
+      - ただし、<strong>単に権利を得るだけの行為</strong>（無償でプレゼントをもらう等）や、<strong>法定代理人が目的を定めて処分させた金銭</strong>（お小遣い）での取引は取消し不可
+    </blockquote>
+
+    <div class="highlight-box orange">
+      <strong>【間違いやすいポイント】</strong><br>
+      - 「未成年者でも自分で働いて稼いでいる（営業許可を得ている）場合は？」→ その営業に関する行為に限り、成年者とみなされる（民法第6条）<br>
+      - 「結婚した未成年者は？」→ 婚姻届を出した未成年は<strong>成年者とみなされる</strong>（民法第753条）。ただし離婚しても成年擬制は消えない<br>
+      - 「取消しできるのは本人だけ？」→ <strong>本人だけでなく、法定代理人も取消しできる</strong>
+    </div>
+
+    <p><strong>バトルで言うと：</strong>未成年は「親の許可なしに戦場に出ると、後から『やっぱりやめる』と言って引き返せるチート能力」を持っているのです。</p>
+
+    <hr>
+
+    <h3>エピソード②：成年被後見人の悲劇 ── ドラマ「父さんの判断能力がなくなった。もう契約は全部うちが管理する」</h3>
+
+    <p><strong>事実関係：</strong><br>85歳のBさんは、認知症が進行し、日常の簡単な判断も難しくなりました。家族が家庭裁判所に申し立て、<strong>成年後見人</strong>が選任されました。その後、セールスに来たC社がBさんに<strong>「この土地、3,000万円で買い取りませんか？」</strong>と持ちかけ、Bさんは契約書にサインしてしまいました。</p>
+
+    <p><strong>質問：</strong><br>この土地売却契約は有効ですか？</p>
+
+    <div class="highlight-box green">
+      <strong>答え：完全に無効にできます。</strong><br>
+      成年被後見人の法律行為は、<strong>「取り消すことができる」</strong>どころか、<strong>日用品の購入以外は原則としてすべて取消し可能</strong>です。
+    </div>
+
+    <blockquote>
+      <strong>成年被後見人のルール（民法第9条・第120条）</strong><br>
+      - 成年被後見人の法律行為は <strong>取り消すことができる</strong><br>
+      - ただし、<strong>日用品の購入など日常生活に関する行為</strong>は取消し不可<br>
+      - 取消しは <strong>本人・後見人・その承継人ができる</strong>
+    </blockquote>
+
+    <div class="highlight-box red">
+      <strong>【バトル解体新書】成年被後見人の保護レベルが最強な理由</strong><br>
+      「未成年」は「原則すべて取消しOK」とはいえ、<strong>「詐術を使ったら取消し不可」</strong>というペナルティがあります（民法第21条）。未成年が「もう大人です」と嘘をついて契約した場合、取消しはできません。<br><br>
+      一方、<strong>成年被後見人にはこの制限がありません</strong>。重度の認知症の人が「私は大丈夫です」と言って契約しても、それはそもそも判断能力がない状態での発言なので、取消しから守られます。
+    </div>
+
+    <hr>
+
+    <h3>エピソード③：被保佐人のジレンマ ── ドラマ「借金1,000万円の保証人になっちゃった。でも俺、保佐人ついてるんだぜ？」</h3>
+
+    <p><strong>事実関係：</strong><br>32歳のDさんは、軽度の精神障がいがあり、家庭裁判所で<strong>保佐人</strong>がついています。Dさんは友人から「借金の保証人になってくれ」と頼まれ、なんと<strong>1,000万円の債務の保証人</strong>になってしまいました。保佐人には何も相談していません。</p>
+
+    <p><strong>質問：</strong><br>この保証契約は取消しできますか？</p>
+
+    <div class="highlight-box green">
+      <strong>答え：はい。重要なお金に関する行為は取消し可能です。</strong><br>
+      ここが<strong>受験生が最も間違えるポイント</strong>です。
+    </div>
+
+    <blockquote>
+      <strong>被保佐人のルール（民法第13条）</strong><br>
+      被保佐人が以下の「重要な行為」をするには、<strong>保佐人の同意が必要</strong>。同意なしに行った場合は <strong>取り消すことができる</strong><br><br>
+      <strong>同意が必要な行為の一覧（第13条1項各号）→ 試験で超頻出！</strong><br>
+      1. <strong>元本を取る行為</strong>（借金・保証・贈与・不動産売却など）<br>
+      2. <strong>訴訟行為</strong>（他人を訴える・訴えられる）<br>
+      3. <strong>相続の承認・放棄</strong><br>
+      4. <strong>新築・改築・増築</strong><br>
+      5. <strong>贈与・和解・仲裁合意</strong><br>
+      6. <strong>保証人になること</strong><br>
+      7. <strong>不動産に関する権利の得喪</strong><br>
+      8. <strong>50万円以上の金銭の借入れ・消費</strong><br>
+      9. <strong>その他、家庭裁判所が指定した行為</strong>
+    </blockquote>
+
+    <h4>【最重要ポイント】被保佐人と成年被後見人の決定的な違い</h4>
+
+    <table>
+      <thead>
+        <tr><th></th><th>成年被後見人</th><th>被保佐人</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>日常的な買い物</strong></td><td>原則OK（日用品）</td><td><strong>OK</strong></td></tr>

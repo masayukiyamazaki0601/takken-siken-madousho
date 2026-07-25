@@ -3,123 +3,313 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>宅建試験ドットコム｜解説魔導書</title>
+<title>宅建魔導書｜権利関係グリモア</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --font-sans:'Outfit','Noto Sans JP',system-ui,-apple-system,sans-serif;
-  --bg:#090d16;
-  --card:rgba(11,16,28,.55);
-  --border:rgba(255,255,255,.08);
-  --text:#f8fafc;
-  --text-sec:#94a3b8;
-  --text-muted:#64748b;
-  --primary:#6366f1;
-  --primary-light:rgba(99,102,241,.15);
-  --amber:#f59e0b;
-  --amber-light:rgba(245,158,11,.1);
-  --radius-sm:8px;
-  --radius-md:12px;
-  --radius-lg:16px;
-  --radius-xl:20px;
-  --radius-2xl:24px;
-  --transition:200ms cubic-bezier(.4,0,.2,1);
+  --font-en:'Cinzel','MedievalSharp',serif;
+  --font-ja:'Noto Sans JP',sans-serif;
+  --parchment:#1a1220;
+  --parchment-dark:#110c18;
+  --gold:#d4a853;
+  --gold-light:#f0d68a;
+  --gold-dim:#8a6e3a;
+  --ink:#e8dcc8;
+  --ink-dim:#988c78;
+  --ink-pale:#5a4e3a;
+  --rune:#7b5ea7;
+  --rune-glow:rgba(123,94,167,.4);
+  --blood:#a83030;
+  --radius:12px;
+  --border-rune:1px solid rgba(123,94,167,.25);
 }
 html{scroll-behavior:smooth}
+
+/* ===== Parchment Background ===== */
 body{
-  font-family:var(--font-sans);background:var(--bg);color:var(--text);
-  line-height:1.7;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  font-family:var(--font-ja);
+  background:var(--parchment-dark);
+  color:var(--ink);
+  line-height:1.8;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
 }
 .magic-bg{
-  position:fixed;inset:0;z-index:-1;
-  background:linear-gradient(-45deg,#090d16,#111827,#1e1b4b,#0f172a);
-  background-size:400% 400%;animation:magic 20s ease infinite;
+  position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(123,94,167,.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(168,48,48,.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 0%, rgba(212,168,83,.04) 0%, transparent 40%),
+    linear-gradient(180deg, #110c18 0%, #1a1220 40%, #150e1a 100%);
 }
-@keyframes magic{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.magic-overlay{
+  position:fixed;inset:0;z-index:-1;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,.008) 2px, rgba(255,255,255,.008) 3px),
+    radial-gradient(circle at 30% 40%, rgba(212,168,83,.03) 0%, transparent 30%),
+    radial-gradient(circle at 70% 60%, rgba(123,94,167,.03) 0%, transparent 30%);
+  pointer-events:none;
+}
 .wrap{max-width:1200px;margin:0 auto;padding:0 20px 80px;position:relative;z-index:1}
-.glass{background:var(--card);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);box-shadow:0 10px 40px -10px rgba(0,0,0,.5)}
 
-/* Header (boki-3完全準拠) */
-.header{position:sticky;top:0;z-index:50;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(245,158,11,.15);border-radius:0 0 var(--radius-lg) var(--radius-lg);margin-bottom:32px}
+/* ===== Floating Runes (CSS only) ===== */
+.rune-decoration{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.rune-decoration span{
+  position:absolute;font-family:var(--font-en);font-size:14px;color:rgba(123,94,167,.06);
+  animation:floatRune 20s infinite linear;
+}
+.rune-decoration span:nth-child(1){top:10%;left:5%;font-size:20px;animation-duration:25s}
+.rune-decoration span:nth-child(2){top:30%;right:8%;font-size:16px;animation-duration:30s;animation-delay:-5s}
+.rune-decoration span:nth-child(3){bottom:20%;left:10%;font-size:18px;animation-duration:22s;animation-delay:-10s}
+.rune-decoration span:nth-child(4){top:60%;right:4%;font-size:12px;animation-duration:28s;animation-delay:-15s}
+.rune-decoration span:nth-child(5){bottom:40%;left:3%;font-size:15px;animation-duration:35s;animation-delay:-7s}
+@keyframes floatRune{
+  0%{transform:translateY(0) rotate(0deg);opacity:.06}
+  50%{transform:translateY(-120px) rotate(180deg);opacity:.02}
+  100%{transform:translateY(0) rotate(360deg);opacity:.06}
+}
+
+/* ===== Header ===== */
+.header{
+  position:sticky;top:12px;z-index:50;
+  padding:0 20px;height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(17,12,24,.85);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(212,168,83,.15);
+  border-radius:var(--radius);
+  box-shadow:0 0 30px rgba(0,0,0,.4),inset 0 1px 0 rgba(212,168,83,.05);
+  margin-bottom:32px;
+}
+.header::after{
+  content:"";position:absolute;bottom:-1px;left:10%;right:10%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(212,168,83,.2),transparent);
+}
 .header-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.header-logo-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),#818cf8);display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;font-weight:900;box-shadow:0 0 12px rgba(99,102,241,.3)}
-.header-logo-text{font-size:15px;font-weight:800;letter-spacing:.3px}
-.header-logo-text span{color:var(--primary)}
-.header-logo-sub{font-size:9px;color:var(--text-muted);letter-spacing:2px;font-weight:700;display:block;margin-top:-2px}
-.header-nav{display:flex;gap:4px}
-.header-nav a{padding:7px 14px;border-radius:var(--radius-sm);text-decoration:none;font-size:13px;font-weight:600;color:var(--text-sec);transition:var(--transition)}
-.header-nav a:hover,.header-nav a.active{background:var(--primary-light);color:var(--primary)}
+.header-logo-icon{
+  width:38px;height:38px;border-radius:8px;
+  background:linear-gradient(135deg,#2a1a3a,#3a2a4a);
+  border:1px solid rgba(212,168,83,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-en);font-size:18px;color:var(--gold);
+  box-shadow:0 0 12px rgba(212,168,83,.1);
+}
+.header-logo-text{
+  font-family:var(--font-en);font-size:14px;font-weight:700;
+  letter-spacing:2px;color:var(--gold-light);
+}
+.header-logo-text span{color:#8a6e3a}
+.header-logo-sub{
+  font-size:9px;color:var(--ink-pale);letter-spacing:3px;
+  font-weight:600;display:block;margin-top:-1px;
+  font-family:var(--font-en);
+}
+.header-nav{display:flex;gap:6px}
+.header-nav a{
+  padding:6px 14px;border-radius:6px;text-decoration:none;
+  font-size:12px;font-weight:600;color:var(--ink-dim);
+  border:1px solid transparent;
+  transition:200ms;letter-spacing:1px;
+}
+.header-nav a:hover,.header-nav a.active{
+  color:var(--gold);border-color:rgba(212,168,83,.2);
+  background:rgba(212,168,83,.06);
+}
 
-/* 2カラム */
-.layout{display:flex;gap:32px}
-.main{flex:1;min-width:0}
-.sidebar{width:320px;flex-shrink:0;display:none}
-@media(min-width:768px){.sidebar{display:block}}
+/* ===== Welcome Grimoire ===== */
+.welcome{
+  background:linear-gradient(135deg,rgba(26,18,32,.9),rgba(17,12,24,.9));
+  border:1px solid rgba(212,168,83,.12);
+  border-radius:16px;padding:28px;margin-bottom:44px;
+  position:relative;overflow:hidden;
+}
+.welcome::before{
+  content:"⚜";position:absolute;top:-10px;right:20px;
+  font-size:60px;color:rgba(212,168,83,.04);font-family:var(--font-en);
+}
+.welcome h2{
+  font-family:var(--font-en);
+  font-size:18px;font-weight:700;color:var(--gold);
+  margin-bottom:10px;letter-spacing:2px;
+}
+.welcome p{font-size:13px;color:var(--ink-dim);line-height:1.8;margin-bottom:12px}
+.welcome .tip{
+  font-size:12px;color:var(--ink-pale);line-height:1.7;
+  border-top:1px solid rgba(212,168,83,.08);padding-top:12px;
+}
+.welcome .tip a{color:var(--gold);text-decoration:underline;text-underline-offset:2px}
 
-/* Welcome */
-.welcome{background:rgba(11,16,28,.8);border:1px solid var(--border);border-radius:var(--radius-2xl);padding:24px;margin-bottom:40px}
-.welcome h2{font-size:17px;font-weight:900;color:var(--amber);margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.welcome p{font-size:13px;color:#cbd5e1;line-height:1.7;margin-bottom:12px}
-.welcome .tip{font-size:12px;color:var(--text-sec);line-height:1.6;border-top:1px solid rgba(255,255,255,.05);padding-top:10px}
-.welcome .tip a{color:var(--primary);text-decoration:underline}
+/* ===== Section Title ===== */
+.sec-title{
+  font-family:var(--font-en);
+  font-size:13px;font-weight:700;color:var(--gold-dim);
+  letter-spacing:4px;margin-bottom:16px;padding-left:4px;
+  display:flex;align-items:center;gap:10px;
+  text-transform:uppercase;
+}
+.sec-title::before{content:"◇";font-size:10px;color:var(--gold-dim)}
+.sec-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(212,168,83,.15),transparent)}
 
-/* Section title */
-.sec-title{font-size:13px;font-weight:900;color:var(--primary);letter-spacing:2px;margin-bottom:16px;padding-left:4px;display:flex;align-items:center;gap:8px}
-.sec-title.col{color:var(--amber)}
+/* ===== Section Color Variants ===== */
+.sec-title.fire{color:#fca5a5}
+.sec-title.fire::before{content:"◇";color:#f87171;font-size:10px}
+.sec-title.gold{color:var(--gold-light)}
+.sec-title.gold::before{content:"◇";color:var(--gold);font-size:10px}
+.sec-title.ice{color:#67e8f9}
+.sec-title.ice::before{content:"◇";color:#67e8f9;font-size:10px}
 
-/* Grid */
-.article-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:40px}
+/* ===== Grimoire Grid ===== */
+.article-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:48px}
 @media(min-width:640px){.article-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.article-grid{grid-template-columns:1fr 1fr 1fr}}
 
-.article-card{display:flex;align-items:flex-start;gap:16px;padding:20px;background:rgba(11,16,28,.8);border:1px solid var(--border);border-radius:var(--radius-2xl);text-decoration:none;color:inherit;transition:var(--transition)}
-.article-card:hover{border-color:rgba(99,102,241,.4);transform:scale(1.01)}
-.article-card .badge{width:48px;height:40px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;font-weight:900;letter-spacing:1px;background:var(--primary-light);border:1px solid rgba(99,102,241,.2);color:var(--primary)}
+.article-card{
+  display:flex;align-items:flex-start;gap:14px;padding:18px;
+  background:linear-gradient(135deg,rgba(26,18,32,.7),rgba(17,12,24,.7));
+  border:1px solid rgba(123,94,167,.12);
+  border-radius:14px;text-decoration:none;color:inherit;
+  transition:300ms cubic-bezier(.4,0,.2,1);
+  position:relative;overflow:hidden;
+}
+.article-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(212,168,83,.1),transparent);
+  opacity:0;transition:300ms;
+}
+.article-card:hover{
+  border-color:rgba(212,168,83,.2);
+  transform:translateY(-2px);
+  box-shadow:0 8px 30px rgba(0,0,0,.3),0 0 20px rgba(123,94,167,.05);
+}
+.article-card:hover::before{opacity:1}
+
+/* Level Badge (Rune-style) */
+.article-card .badge{
+  width:44px;height:38px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-family:var(--font-en);font-size:11px;font-weight:700;letter-spacing:1px;
+  background:rgba(123,94,167,.1);border:1px solid rgba(123,94,167,.2);
+  color:var(--rune);transition:300ms;
+}
+.article-card:hover .badge{
+  background:rgba(212,168,83,.1);border-color:rgba(212,168,83,.25);color:var(--gold);
+}
+
+/* Completed card style */
+.article-card.completed{border-color:rgba(212,168,83,.2)}
+.article-card.completed .badge{background:rgba(212,168,83,.1);border-color:rgba(212,168,83,.2);color:var(--gold)}
+.article-card.completed .body h3{color:var(--gold-light)}
+.article-card.completed::after{
+  content:"✦";position:absolute;top:8px;right:12px;
+  font-size:12px;color:rgba(212,168,83,.3);
+}
+
 .article-card .body{flex:1;min-width:0}
-.article-card .body h3{font-size:15px;font-weight:900;color:#e2e8f0;margin-bottom:4px;transition:var(--transition)}
-.article-card:hover .body h3{color:var(--amber)}
-.article-card .body p{font-size:13px;color:var(--text-sec);line-height:1.5}
-.article-card .tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:10px}
-.article-card .tags span{font-size:11px;font-weight:800;color:var(--text-muted);background:rgba(30,41,59,1);border:1px solid rgba(255,255,255,.06);padding:2px 8px;border-radius:4px}
-.article-card .arrow{color:var(--text-muted);flex-shrink:0;align-self:center;margin-left:8px;transition:var(--transition)}
-.article-card:hover .arrow{color:var(--primary)}
+.article-card .body h3{
+  font-size:14px;font-weight:700;color:var(--ink);
+  margin-bottom:5px;transition:300ms;
+  font-family:var(--font-ja);
+}
+.article-card:hover .body h3{color:var(--gold-light)}
+.article-card .body p{
+  font-size:12px;color:var(--ink-dim);line-height:1.6;
+}
+.article-card .tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:8px}
+.article-card .tags span{
+  font-size:10px;font-weight:600;color:var(--ink-pale);
+  background:rgba(123,94,167,.06);
+  border:1px solid rgba(123,94,167,.1);
+  padding:2px 7px;border-radius:3px;
+  font-family:var(--font-ja);
+}
+.article-card .arrow{
+  color:var(--ink-pale);flex-shrink:0;align-self:center;
+  margin-left:6px;font-size:16px;transition:300ms;
+  font-family:var(--font-en);
+}
+.article-card:hover .arrow{color:var(--gold);transform:translateX(3px)}
 
-.article-card.column{border-color:rgba(245,158,11,.15)}
-.article-card.column:hover{border-color:rgba(245,158,11,.4)}
-.article-card.column .badge{background:var(--amber-light);border-color:rgba(245,158,11,.2);color:var(--amber)}
+/* ===== Sidebar ===== */
+.sidebar{width:300px;flex-shrink:0;display:none}
+@media(min-width:768px){.sidebar{display:block}}
+.side-panel{
+  background:linear-gradient(135deg,rgba(26,18,32,.8),rgba(17,12,24,.8));
+  border:1px solid rgba(123,94,167,.1);
+  border-radius:14px;padding:20px;margin-bottom:18px;
+}
+.side-panel h4{
+  font-family:var(--font-en);
+  font-size:11px;font-weight:700;color:var(--gold-dim);
+  margin-bottom:12px;letter-spacing:2px;
+  text-transform:uppercase;
+}
+.profile{display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(123,94,167,.08);padding-bottom:14px;margin-bottom:14px}
+.profile-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:linear-gradient(135deg,#2a1a3a,#3a2a4a);
+  border:1px solid rgba(212,168,83,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;color:var(--gold);
+}
+.profile .label{font-size:10px;font-weight:600;color:var(--ink-pale);letter-spacing:1px}
+.profile .name{font-size:13px;font-weight:700;color:var(--ink);font-family:var(--font-en);letter-spacing:1px}
+.profile-bio{font-size:11px;color:var(--ink-dim);line-height:1.7}
 
-/* Sidebar */
-.side-panel{background:rgba(11,16,28,.8);border:1px solid var(--border);border-radius:var(--radius-2xl);padding:20px;margin-bottom:20px}
-.side-panel h4{font-size:13px;font-weight:900;color:var(--text-muted);margin-bottom:12px;letter-spacing:1px}
-.profile{display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,.05);padding-bottom:12px;margin-bottom:12px}
-.profile-avatar{width:40px;height:40px;border-radius:50%;background:rgba(30,41,59,1);border:1px solid rgba(99,102,241,.3);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:18px}
-.profile .label{font-size:12px;font-weight:700;color:var(--text-muted)}
-.profile .name{font-size:14px;font-weight:900;color:var(--text)}
-.profile-bio{font-size:12px;color:#cbd5e1;line-height:1.6}
+/* Category Tags (Crystal style) */
 .category-list{display:flex;flex-direction:column;gap:8px}
-.category-item{font-size:13px;font-weight:800;padding:10px 14px;border-radius:var(--radius-md);border:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center}
-.category-item:nth-child(1){background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.2);color:#34d399}
-.category-item:nth-child(2){background:rgba(244,63,94,.1);border-color:rgba(244,63,94,.2);color:#fb7185}
-.category-item:nth-child(3){background:rgba(234,179,8,.1);border-color:rgba(234,179,8,.2);color:#fbbf24}
-.category-item:nth-child(4){background:rgba(6,182,212,.1);border-color:rgba(6,182,212,.2);color:#22d3ee}
-.category-item:nth-child(5){background:rgba(249,115,22,.1);border-color:rgba(249,115,22,.2);color:#fb923c}
+.category-item{
+  font-size:12px;font-weight:700;padding:10px 14px;
+  border-radius:8px;display:flex;justify-content:space-between;align-items:center;
+  border:1px solid rgba(123,94,167,.1);
+  background:rgba(123,94,167,.04);
+  color:var(--ink-dim);
+}
+.category-item:nth-child(1){border-color:rgba(16,185,129,.15);color:#6ee7b7;background:rgba(16,185,129,.04)}
+.category-item:nth-child(2){border-color:rgba(244,63,94,.15);color:#fda4af;background:rgba(244,63,94,.04)}
+.category-item:nth-child(3){border-color:rgba(212,168,83,.15);color:var(--gold-light);background:rgba(212,168,83,.04)}
+.category-item:nth-child(4){border-color:rgba(6,182,212,.15);color:#67e8f9;background:rgba(6,182,212,.04)}
 
-/* Footer */
-.footer{margin-top:48px;padding:24px 0;text-align:center;border-top:1px solid rgba(255,255,255,.05);font-size:12px;color:var(--text-muted)}
+/* ===== Footer ===== */
+.footer{margin-top:48px;padding:24px 0;text-align:center;font-size:11px;color:var(--ink-pale);border-top:1px solid rgba(123,94,167,.08);letter-spacing:1px}
+.footer span{color:var(--gold-dim)}
+
+/* ===== Magic Circle Decoration (bottom) ===== */
+.magic-circle{
+  position:fixed;bottom:-100px;left:50%;transform:translateX(-50%);
+  width:400px;height:400px;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle,rgba(123,94,167,.04) 0%,transparent 70%);
+  border-radius:50%;
+  animation:pulseGlow 8s ease-in-out infinite;
+}
+@keyframes pulseGlow{
+  0%,100%{opacity:.3}
+  50%{opacity:.6}
+}
 </style>
 </head>
 <body>
 <div class="magic-bg"></div>
+<div class="magic-overlay"></div>
+<div class="rune-decoration">
+  <span>ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ ᚺ ᚾ ᛁ ᛃ</span>
+  <span>ᛇ ᛈ ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ ᛚ ᛝ ᛟ ᛞ</span>
+  <span>ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ</span>
+  <span>ᛁ ᛃ ᛇ ᛈ ᛉ ᛊ</span>
+  <span>ᚠ ᚢ ᚦ ᚨ ᚱ</span>
+</div>
+<div class="magic-circle"></div>
 <div class="wrap">
 
   <!-- Header -->
-  <div class="header glass">
+  <div class="header">
     <a href="#" class="header-logo">
-      <div class="header-logo-icon">宅</div>
+      <div class="header-logo-icon">⚜</div>
       <div>
-        <span class="header-logo-text">宅建試験<span>ドットコム</span></span>
-        <span class="header-logo-sub">解説魔導書ライブラリ</span>
+        <span class="header-logo-text">宅建<span>魔導書</span></span>
+        <span class="header-logo-sub">GRIMOIRE OF REAL ESTATE</span>
       </div>
     </a>
     <nav class="header-nav">
@@ -129,55 +319,329 @@ body{
   </div>
 
   <!-- 2カラム -->
-  <div class="layout">
-    <div class="main">
+  <div class="layout" style="display:flex;gap:32px">
+    <div class="main" style="flex:1;min-width:0">
 
       <!-- Welcome -->
       <div class="welcome">
-        <h2>📖 宅建魔導書ライブラリへようこそ</h2>
-        <p>この書庫では、宅建試験「権利関係」の民法を、お堅い講義形式ではなく「指が覚えるまで解きまくる → 解説で理解が化ける」スタイルで挫折せずに理解できるように噛み砕いています。</p>
-        <div class="tip">💡 <strong>まずは<a href="https://takken-siken.com/kakomon.php">過去問道場</a>で問題を解きまくれ</strong>。解説はその後で読め──認知科学が証明した最強の学習法。</div>
+        <h2>📖 宅建魔導書ライブラリ</h2>
+        <p>宅建試験4分野を<strong style="color:var(--gold-light)">「指が覚えるまで解きまくる → 解説で理解が化ける」</strong>スタイルで<br>
+        挫折せずに攻略するための魔導書を<strong style="color:var(--gold-light)">4属性・全33冊</strong>収録。</p>
+        <div class="tip">⚜ <strong>まずは<a href="https://takken-siken.com/kakomon.php">過去問道場</a>で問題を解きまくれ</strong>。解説はその後で読め。</div>
       </div>
 
-      <!-- 本編 -->
-      <div class="sec-title">📖 魔導ロードマップ（権利関係）</div>
+      <!-- Section 1: 権利関係・民法 -->
+      <div class="sec-title">Ⅰ 権利関係【民法】</div>
       <div class="article-grid">
-        <a href="content/column-restricted-capacity.html" class="article-card">
+        <a href="content/column-restricted-capacity.html" class="article-card completed">
           <div class="badge">Lv1</div>
           <div class="body">
             <h3>制限行為能力者</h3>
             <p>未成年・成年被後見人・被保佐人・被補助人──4タイプの取消しルールを条文ベースで完全整理。</p>
-            <div class="tags"><span>#権利関係</span><span>#民法総則</span></div>
+            <div class="tags"><span>民法総則</span><span>権利関係</span></div>
           </div>
           <div class="arrow">›</div>
         </a>
-        <a href="#" class="article-card" style="opacity:.4;pointer-events:none">
+        <a href="content/column-intention.html" class="article-card completed">
           <div class="badge">Lv2</div>
           <div class="body">
             <h3>意思表示</h3>
-            <p>準備中</p>
+            <p>錯誤・詐欺・強迫・虚偽表示──「心の中」と「外に出た言動」がズレたとき、契約はどうなるのか。</p>
+            <div class="tags"><span>民法総則</span><span>権利関係</span></div>
           </div>
           <div class="arrow">›</div>
         </a>
-        <a href="#" class="article-card" style="opacity:.4;pointer-events:none">
+        <a href="content/column-agency.html" class="article-card completed">
           <div class="badge">Lv3</div>
           <div class="body">
             <h3>代理</h3>
-            <p>準備中</p>
+            <p>代理権・顕名・無権代理・表見代理──「本人に代わって契約する」仕組みと表見代理3パターン。</p>
+            <div class="tags"><span>民法総則</span><span>権利関係</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="content/column-prescription.html" class="article-card completed">
+          <div class="badge">Lv4</div>
+          <div class="body">
+            <h3>時効</h3>
+            <p>取得時効・消滅時効・完成猶予・更新──「年月が権利を変える」仕組みを起算点・中断事由とともに。</p>
+            <div class="tags"><span>民法総則</span><span>権利関係</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="content/column-real-rights.html" class="article-card completed">
+          <div class="badge">Lv5</div>
+          <div class="body">
+            <h3>物権変動</h3>
+            <p>不動産物権変動・登記・対抗要件・177条・178条──「登記がなければ第三者に対抗できない」の真実。</p>
+            <div class="tags"><span>物権</span><span>権利関係</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="content/column-possession.html" class="article-card completed">
+          <div class="badge">Lv6</div>
+          <div class="body">
+            <h3>占有権・所有権</h3>
+            <p>占有権の種類・所有権の取得・共有・境界確定──「持ってる」と「持ってる権利がある」の違い。</p>
+            <div class="tags"><span>物権</span><span>権利関係</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="content/column-servitudes.html" class="article-card completed">
+          <div class="badge">Lv7</div>
+          <div class="body">
+            <h3>用益物権</h3>
+            <p>地上権・永小作権・地役権・入会権──「他人の土地を使う権利」4種の効力と存続期間。</p>
+            <div class="tags"><span>物権</span><span>権利関係</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="content/column-mortgage.html" class="article-card completed">
+          <div class="badge">Lv8</div>
+          <div class="body">
+            <h3>担保物権① 抵当権</h3>
+            <p>抵当権の設定・効力・物上代位・競売・法定地上権・一括競売・389条──実務で最も重要な担保。</p>
+            <div class="tags"><span>担保物権</span><span>権利関係</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="content/column-security-interests.html" class="article-card completed">
+          <div class="badge">Lv9</div>
+          <div class="body">
+            <h3>担保物権② 根抵当・質・留置・先取特権</h3>
+            <p>根抵当権の極度額・元本確定、質権・留置権・先取特権を抵当権と比較しながら網羅。</p>
+            <div class="tags"><span>担保物権</span><span>権利関係</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="content/column-obligations.html" class="article-card completed">
+          <div class="badge">Lv10</div>
+          <div class="body">
+            <h3>債権総論</h3>
+            <p>債権の目的・種類債権・連帯債務・保証・債権譲渡・弁済・相殺・更改・免除・混同。</p>
+            <div class="tags"><span>債権</span><span>権利関係</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="content/column-contract-general.html" class="article-card completed">
+          <div class="badge">Lv11</div>
+          <div class="body">
+            <h3>契約総論</h3>
+            <p>契約の成立（申込・承諾）・同時履行の抗弁権・危険負担・解除（催告解除・無催告解除）。</p>
+            <div class="tags"><span>債権</span><span>権利関係</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="content/column-contract-specifics.html" class="article-card completed">
+          <div class="badge">Lv12</div>
+          <div class="body">
+            <h3>契約各論</h3>
+            <p>売買・賃貸借・請負・委任・寄託・贈与・交換──典型契約ごとの成立要件と当事者の権利義務。</p>
+            <div class="tags"><span>債権</span><span>権利関係</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="content/column-torts.html" class="article-card completed">
+          <div class="badge">Lv13</div>
+          <div class="body">
+            <h3>不法行為</h3>
+            <p>不法行為の成立要件・損害賠償・過失相殺・使用者責任・工作物責任・共同不法行為・消滅時効。</p>
+            <div class="tags"><span>債権</span><span>権利関係</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="content/column-family-succession.html" class="article-card completed">
+          <div class="badge">Lv14</div>
+          <div class="body">
+            <h3>親族・相続</h3>
+            <p>婚姻・離婚・親権・相続分・遺言・遺留分──宅建で出る家族法エッセンスだけ凝縮。</p>
+            <div class="tags"><span>親族相続</span><span>権利関係</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="content/column-lease-act.html" class="article-card completed">
+          <div class="badge">Lv15</div>
+          <div class="body">
+            <h3>借地借家法</h3>
+            <p>借地権の存続期間・更新・正当事由・借家の契約更新・明渡し──宅建業法とのクロスで頻出。</p>
+            <div class="tags"><span>借地借家</span><span>権利関係</span></div>
           </div>
           <div class="arrow">›</div>
         </a>
       </div>
 
-      <!-- 番外コラム -->
-      <div class="sec-title col">✨ 特別番外コラム</div>
+      <!-- ===== Ⅱ 法令上の制限 ===== -->
+      <div class="sec-title fire">Ⅱ 法令上の制限</div>
       <div class="article-grid">
-        <a href="content/column-restricted-capacity.html" class="article-card column">
-          <div class="badge">コラム</div>
+        <a href="content/column-urban-planning.html" class="article-card completed">
+          <div class="badge">16</div>
           <div class="body">
-            <h3>制限行為能力者</h3>
-            <p>未成年・成年被後見人・被保佐人・被補助人の取消しルール。</p>
-            <div class="tags"><span>#権利関係</span><span>#民法総則</span></div>
+            <h3>都市計画法</h3>
+            <p>用途地域・開発許可・都市計画施設・地区計画。</p>
+            <div class="tags"><span>都市計画</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="content/column-building-standards1.html" class="article-card completed">
+          <div class="badge">17</div>
+          <div class="body">
+            <h3>建築基準法①</h3>
+            <p>建築確認・道路制限・用途制限・容積率・建蔽率。</p>
+            <div class="tags"><span>建築基準</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="content/column-building-standards2.html" class="article-card completed">
+          <div class="badge">18</div>
+          <div class="body">
+            <h3>建築基準法②</h3>
+            <p>高さ制限・日影規制・防火地域・構造耐力。</p>
+            <div class="tags"><span>建築基準</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="#" class="article-card" style="opacity:.5">
+          <div class="badge">19</div>
+          <div class="body">
+            <h3>国土利用計画法</h3>
+            <p>監視区域・規制区域・事後届出・土地取引規制。</p>
+            <div class="tags"><span>国土利用</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="#" class="article-card" style="opacity:.5">
+          <div class="badge">20</div>
+          <div class="body">
+            <h3>農地法</h3>
+            <p>農地転用許可・権利移動・農地の分類。</p>
+            <div class="tags"><span>農地法</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="#" class="article-card" style="opacity:.5">
+          <div class="badge">21</div>
+          <div class="body">
+            <h3>宅地造成等規制法</h3>
+            <p>造成規制・擁壁・排水・許可基準。</p>
+            <div class="tags"><span>宅地造成</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="#" class="article-card" style="opacity:.5">
+          <div class="badge">22</div>
+          <div class="body">
+            <h3>その他法令</h3>
+            <p>土地区画整理・景観法・駐車場法・盛土規制法。</p>
+            <div class="tags"><span>その他</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+      </div>
+
+      <!-- ===== Ⅲ 宅建業法等 ===== -->
+      <div class="sec-title gold">Ⅲ 宅建業法等</div>
+      <div class="article-grid">
+        <a href="#" class="article-card" style="opacity:.5">
+          <div class="badge">23</div>
+          <div class="body">
+            <h3>宅建業法① 免許・業務</h3>
+            <p>免許の種類・更新・業務範囲・名義貸し禁止。</p>
+            <div class="tags"><span>宅建業法</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="#" class="article-card" style="opacity:.5">
+          <div class="badge">24</div>
+          <div class="body">
+            <h3>宅建業法② 重要事項説明</h3>
+            <p>35条書面・説明義務・担保責任・クーリングオフ。</p>
+            <div class="tags"><span>宅建業法</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="#" class="article-card" style="opacity:.5">
+          <div class="badge">25</div>
+          <div class="body">
+            <h3>宅建業法③ 37条書面・広告</h3>
+            <p>37条書面の記載事項・誇大広告禁止・手付金保全。</p>
+            <div class="tags"><span>宅建業法</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="#" class="article-card" style="opacity:.5">
+          <div class="badge">26</div>
+          <div class="body">
+            <h3>宅建業法④ 保証協会・営業保証金</h3>
+            <p>保証協会・営業保証金・弁済業務。</p>
+            <div class="tags"><span>宅建業法</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="#" class="article-card" style="opacity:.5">
+          <div class="badge">27</div>
+          <div class="body">
+            <h3>宅建業法⑤ 監督・罰則</h3>
+            <p>業務停止・取消処分・罰金・宅建士の信用失墜行為。</p>
+            <div class="tags"><span>宅建業法</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="#" class="article-card" style="opacity:.5">
+          <div class="badge">28</div>
+          <div class="body">
+            <h3>不動産鑑定評価</h3>
+            <p>鑑定評価の手法・価格形成要因・鑑定士。</p>
+            <div class="tags"><span>鑑定評価</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="#" class="article-card" style="opacity:.5">
+          <div class="badge">29</div>
+          <div class="body">
+            <h3>不動産登記法</h3>
+            <p>登記の種類・共同申請・登記識別情報・登記簿。</p>
+            <div class="tags"><span>登記法</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="#" class="article-card" style="opacity:.5">
+          <div class="badge">30</div>
+          <div class="body">
+            <h3>住宅金融支援機構</h3>
+            <p>フラット35・融資保険・証券化支援。</p>
+            <div class="tags"><span>住宅金融</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+      </div>
+
+      <!-- ===== Ⅳ 税・その他 ===== -->
+      <div class="sec-title ice">Ⅳ 税・その他</div>
+      <div class="article-grid">
+        <a href="#" class="article-card" style="opacity:.5">
+          <div class="badge">31</div>
+          <div class="body">
+            <h3>不動産取得税・登録免許税</h3>
+            <p>取得税の課税標準・軽減措置・登録免許税の税率。</p>
+            <div class="tags"><span>不動産税</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="#" class="article-card" style="opacity:.5">
+          <div class="badge">32</div>
+          <div class="body">
+            <h3>印紙税・所得税・住民税</h3>
+            <p>印紙税額・譲渡所得・居住用財産の特別控除。</p>
+            <div class="tags"><span>税</span></div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+        <a href="#" class="article-card" style="opacity:.5">
+          <div class="badge">33</div>
+          <div class="body">
+            <h3>不動産に関する統計・その他</h3>
+            <p>地価公示・不動産流通・土地基本法・建物区分所有。</p>
+            <div class="tags"><span>統計・その他</span></div>
           </div>
           <div class="arrow">›</div>
         </a>
@@ -189,31 +653,40 @@ body{
     <aside class="sidebar">
       <div class="side-panel">
         <div class="profile">
-          <div class="profile-avatar">👤</div>
+          <div class="profile-avatar">⚜</div>
           <div>
-            <div class="label">管理人</div>
+            <div class="label">GRIMOIRE KEEPER</div>
             <div class="name">宅建エンジニア</div>
           </div>
         </div>
         <div class="profile-bio">宅建試験に合格するため、自分が本当に理解できるまで噛み砕いた知識を「魔導書」として記録。指が覚えるまで解きまくれ。</div>
       </div>
       <div class="side-panel">
-        <h4>📱 スマホアプリ</h4>
-        <div style="background:rgba(30,41,59,.5);border-radius:var(--radius-md);padding:12px;text-align:center;font-size:11px;font-weight:700;color:rgba(99,102,241,.5)">🚧 準備中</div>
+        <h4>📱 魔導端末アプリ</h4>
+        <div style="background:rgba(123,94,167,.06);border-radius:8px;padding:12px;text-align:center;font-size:11px;font-weight:600;color:var(--ink-pale);border:1px solid rgba(123,94,167,.08)">🚧 召喚準備中</div>
       </div>
       <div class="side-panel">
-        <h4>📂 カテゴリー</h4>
+        <h4>📂 属性</h4>
         <div class="category-list">
-          <div class="category-item"><span>権利関係</span><span>405問</span></div>
-          <div class="category-item"><span>法令上の制限</span><span>238問</span></div>
-          <div class="category-item"><span>宅建業法等</span><span>524問</span></div>
-          <div class="category-item"><span>税・その他</span><span>233問</span></div>
+          <div class="category-item"><span>🌿 権利関係</span><span>405問</span></div>
+          <div class="category-item"><span>🔥 法令上の制限</span><span>238問</span></div>
+          <div class="category-item"><span>⚜ 宅建業法等</span><span>524問</span></div>
+          <div class="category-item"><span>💎 税・その他</span><span>233問</span></div>
+        </div>
+      </div>
+      <div class="side-panel">
+        <h4>📊 進捗</h4>
+        <div style="font-size:11px;color:var(--ink-dim);line-height:1.7">
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span>全33冊</span><span style="color:var(--gold)">18/33 完了</span></div>
+          <div style="height:6px;background:rgba(123,94,167,.1);border-radius:3px;overflow:hidden">
+            <div style="width:55%;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:3px"></div>
+          </div>
         </div>
       </div>
     </aside>
   </div>
 
-  <div class="footer">© 宅建試験ドットコム 解説魔導書 DEMO</div>
+  <div class="footer"><span>⚜</span> 宅建魔導書 GRIMOIRE OF REAL ESTATE <span>⚜</span></div>
 </div>
 </body>
 </html>

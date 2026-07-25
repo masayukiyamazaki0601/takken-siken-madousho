@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>代理｜宅建試験ドットコム 解説魔導書</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --font-sans:'Outfit','Noto Sans JP',system-ui,-apple-system,sans-serif;
+}
+body{
+  font-family:var(--font-sans);background:#faf6eb;color:#433422;
+  line-height:1.85;min-height:100vh;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px}
+
+/* Nav */
+.nav-bar{
+  background:rgba(11,16,28,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(245,158,11,.15);
+  padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:50;margin-bottom:32px;
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#f8fafc}
+.nav-logo-icon{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,#6366f1,#818cf8);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;color:#fff;font-weight:900;box-shadow:0 0 12px rgba(99,102,241,.3);
+}
+.nav-logo-text{font-size:15px;font-weight:800;letter-spacing:.3px;color:#f8fafc}
+.nav-logo-text span{color:#6366f1}
+.nav-back{font-size:12px;font-weight:700;color:#94a3b8;text-decoration:none;padding:6px 14px;border-radius:8px;background:rgba(255,255,255,.04);transition:200ms}
+.nav-back:hover{color:#f8fafc}
+
+/* Article (羊皮紙スタイル) */
+.article{padding:24px}
+.article h1{font-size:26px;font-weight:900;color:#2e1d0c;line-height:1.3;margin-bottom:6px;letter-spacing:-.3px}
+.article .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.article .tags span{font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;background:#f3ebd9;color:#7c6853}
+.article .desc{font-size:14px;color:#7c6853;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid #e6dac6;line-height:1.7}
+.article h2{
+  position:relative;padding:4px 0 4px 14px;
+  border-left:5px solid #f59e0b;font-size:22px;font-weight:900;
+  color:#2e1d0c;margin-top:44px;margin-bottom:20px;
+  letter-spacing:.02em;border-bottom:1px solid #e6dac6;padding-bottom:8px;
+}
+.article h3{font-size:18px;font-weight:850;color:#3b2314;border-bottom:2px dashed #dcd0bd;padding-bottom:5px;margin-top:36px;margin-bottom:16px}
+.article p{font-size:15px;margin-bottom:14px;line-height:1.85;color:#433422}
+.article p b,.article strong{font-weight:900;color:#1e0f02;background:linear-gradient(transparent 55%,rgba(245,158,11,.25) 55%);padding:0 2px}
+.article pre{
+  background:#f3ebd9;padding:16px 20px;border-radius:12px;
+  font-size:13px;line-height:1.7;color:#5c4b37;margin:16px 0;
+  white-space:pre-wrap;font-family:var(--font-sans);
+  border:1px solid #e6dac6;
+}
+.article table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border-radius:10px;overflow:hidden}
+.article th,.article td{border:1px solid #e6dac6;padding:12px 14px;text-align:left}
+.article th{background:#f3ebd9;color:#2e1d0c;font-weight:900;font-size:13px}
+.article td{background:#faf6eb;line-height:1.65;color:#433422}
+.article blockquote{
+  background:#f3ebd9;border-left:4px solid #c9b9a1;
+  border-radius:16px;padding:18px 22px;margin:20px 0;
+  color:#5c4b37;box-shadow:inset 0 1px 3px rgba(0,0,0,.01);
+  font-size:14px;line-height:1.7;
+}
+.article blockquote b{color:#2e1d0c}
+.article hr{margin:28px 0;border:none;border-top:1px solid #e6dac6}
+.article ul{list-style:none;padding-left:4px;margin:16px 0}
+.article ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15px;line-height:1.7;color:#433422}
+.article ul li::before{content:"✓";position:absolute;left:0;top:0;color:#4f46e5;font-weight:900;font-size:16px}
+.article ol{padding-left:24px;margin:16px 0}
+.article ol li{font-size:15px;line-height:1.7;margin-bottom:10px;color:#433422}
+.article ol li::marker{color:#f59e0b;font-weight:900}
+@media(max-width:768px){
+  .article{padding:16px}
+  .article h1{font-size:20px}
+  .article h2{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a href="../index.html" class="nav-logo">
+    <div class="nav-logo-icon">宅</div>
+    <div class="nav-logo-text">宅建試験<span>ドットコム</span></div>
+  </a>
+  <a href="../index.html" class="nav-back">← 一覧に戻る</a>
+</div>
+
+<div class="wrap">
+  <div class="article">
+    <div class="tags">
+      <span>権利関係</span><span>民法総則</span><span>代理</span>
+    </div>
+
+    <h1>代理 ── 代理権・顕名・無権代理・表見代理、本人に代わって契約する仕組みを完全攻略</h1>
+    <p class="desc">宅建 権利関係の民法総則、意思表示と並んで最も出題頻度が高い「代理」。代理権の範囲・顕名の要否・無権代理と表見代理3パターンを条文と具体例で完全整理。</p>
+
+    <hr>
+
+    <h2>そもそも「代理」とは何か</h2>
+    <p><b>代理</b>とは、<b>代理人が本人のために法律行為を行い、その効果が直接本人に帰属する</b>制度（民法第99条）。代理が有効に成立するには3つの要件が必要：</p>
+    <ol>
+      <li><b>代理権</b>があること（本人から授与されている）</li>
+      <li><b>顕名（けんめい）</b>をすること（「本人のために契約します」と明示する）</li>
+      <li><b>代理人が本人のためにする意思</b>を持っていること</li>
+    </ol>
+
+    <hr>
+
+    <h2>代理権の種類</h2>
+    <table>
+      <tr><th>種類</th><th>根拠</th><th>内容</th><th>頻出度</th></tr>
+      <tr><td><b>法定代理</b></td><td>法律の規定</td><td>親権者・成年後見人など法律で自動的に与えられる</td><td>⭐⭐⭐</td></tr>
+      <tr><td><b>任意代理</b></td><td>本人の意思（委任契約）</td><td>不動産会社に売却を依頼するなど本人が代理人を選ぶ</td><td>⭐⭐⭐⭐⭐</td></tr>
+      <tr><td><b>表見代理</b></td><td>民法109条〜112条</td><td>代理権がないのに「ありそうに見える」場合に本人が責任を負う</td><td>⭐⭐⭐⭐⭐</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>顕名（けんめい）の要否</h2>
+    <p><b>顕名</b>とは、相手方に対して「本人のために契約する」ことを示すこと。代理行為には原則として顕名が必要。顕名がない場合、代理人が自分のために契約したものとみなされる。</p>
+    <blockquote><b>例外（民法第100条）：</b>相手方が代理人の真意を知っていた（悪意）または知ることができた（有過失）場合は本人に効果が帰属する。</blockquote>
+
+    <hr>
+
+    <h2>代理権の範囲</h2>
+    <p>任意代理の場合、代理権の範囲は本人が代理人に与えた委任契約の内容で決まる（民法第103条）。</p>
+    <ul>
+      <li><b>保存行為</b>（修繕・固定資産税納付）→ <b>範囲内</b></li>
+      <li><b>利用行為</b>（賃貸・家賃受取り）→ <b>範囲内</b></li>
+      <li><b>改良行為</b>（リフォーム・価値向上）→ <b>範囲内</b></li>
+      <li><b>処分行為</b>（売却）→ <b>明示の代理権が必要</b></li>
+    </ul>
+
+    <hr>
+
+    <h2>無権代理（民法第113条〜第117条）</h2>
+    <p>無権代理とは<b>代理権がないのに代理人を名乗って契約すること</b>。本人が追認しない限り本人には効果が帰属せず、<b>無権代理人が相手方に対して履行または損害賠償の責任</b>を負う（民法第117条）。</p>
+
+    <hr>
+
+    <h2>表見代理（民法109条〜112条）── 宅建試験最頻出！</h2>
+    <p>表見代理とは<b>代理権がないのに周りから見ると「ありそうに見える」場合に本人が責任を負う</b>制度。3パターンを完全暗記。</p>
+
+    <h3>パターン①：代理権授与の表示（民法第109条）</h3>
+    <p>本人が第三者に対して代理人に代理権を与えた旨を表示した場合。相手方が善意・無過失なら、本人は表示した範囲内で責任を負う。</p>
+
+    <h3>パターン②：代理権消滅後（民法第112条）</h3>
+    <p>代理権が消滅（撤回・死亡・破産）した後に代理人が契約。相手方が善意・無過失なら、本人は消滅前の代理権の範囲内で責任を負う。</p>
+
+    <h3>パターン③：権限外の行為（民法第110条）</h3>
+    <p>基本代理権はあるが範囲を超えた行為。相手方が善意＋正当な理由（110条だけ要件がやや緩い）なら、本人は基本代理権の範囲内で責任を負う。</p>
+
+    <hr>
+
+    <h2>3つの表見代理の比較（超頻出）</h2>
+    <table>
+      <tr><th>パターン</th><th>条文</th><th>代理権の有無</th><th>相手方の要件</th></tr>
+      <tr><td><b>代理権授与の表示</b></td><td>109条</td><td>なし（最初から）</td><td>善意・無過失</td></tr>
+      <tr><td><b>権限外の行為</b></td><td>110条</td><td>あり（基本代理権あり）</td><td>善意＋正当な理由</td></tr>
+      <tr><td><b>代理権消滅後</b></td><td>112条</td><td>消滅（あったが消えた）</td><td>善意・無過失</td></tr>
+    </table>
+
+    <pre>
+【最強の暗記チャート】
+Q. 代理権はある？
+├─ 最初から一度もない → 109条（代理権授与の表示）
+├─ 基本代理権はあるが範囲外 → 110条（権限外の行為）
+└─ あったが消えた → 112条（代理権消滅後）
+
+Q. 相手方の要件は？
+├─ 善意・無過失 → 109条・112条
+└─ 善意＋正当な理由 → 110条（これだけ要件が緩い！）
+    </pre>
+
+    <hr>
+
+    <h2>代理の本質</h2>
+    <p><b>「代理権があるかないか。ないなら本人は責任を負わない。でも『ありそうに見える』場合は例外。」</b></p>
+    <ul>
+      <li><b>代理権あり</b> → 有権代理。契約の効果は本人に帰属</li>
+      <li><b>代理権なし</b> → 無権代理。本人は責任を負わない（追認すれば別）</li>
+      <li><b>代理権なし＋ありそうに見える</b> → 表見代理。本人が責任を負う</li>
+    </ul>
+
+    <p style="margin-top:28px;text-align:center;color:#7c6853;font-size:13px">次の魔導書は <b>「時効」</b>──取得時効・消滅時効・完成猶予・更新に挑みます。</p>
+  </div>
+</div>
+</body>
+</html>

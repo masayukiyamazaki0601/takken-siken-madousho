@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>担保物権② 根抵当・質・留置・先取特権｜宅建試験ドットコム 解説魔導書</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--font-sans:'Outfit','Noto Sans JP',system-ui,-apple-system,sans-serif}
+body{
+  font-family:var(--font-sans);background:#faf6eb;color:#433422;
+  line-height:1.85;min-height:100vh;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.nav-bar{
+  background:rgba(11,16,28,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(245,158,11,.15);
+  padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:50;margin-bottom:32px;
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#f8fafc}
+.nav-logo-icon{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,#6366f1,#818cf8);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;color:#fff;font-weight:900;box-shadow:0 0 12px rgba(99,102,241,.3);
+}
+.nav-logo-text{font-size:15px;font-weight:800;letter-spacing:.3px;color:#f8fafc}
+.nav-logo-text span{color:#6366f1}
+.nav-back{font-size:12px;font-weight:700;color:#94a3b8;padding:6px 14px;border-radius:8px;background:rgba(255,255,255,.04);transition:200ms;text-decoration:none}
+.nav-back:hover{color:#f8fafc}
+.article{padding:24px}
+.article h1{font-size:26px;font-weight:900;color:#2e1d0c;line-height:1.3;margin-bottom:6px;letter-spacing:-.3px}
+.article .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.article .tags span{font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;background:#f3ebd9;color:#7c6853}
+.article .desc{font-size:14px;color:#7c6853;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid #e6dac6;line-height:1.7}
+.article h2{
+  position:relative;padding:4px 0 4px 14px;
+  border-left:5px solid #f59e0b;font-size:22px;font-weight:900;
+  color:#2e1d0c;margin-top:44px;margin-bottom:20px;
+  letter-spacing:.02em;border-bottom:1px solid #e6dac6;padding-bottom:8px;
+}
+.article h3{font-size:18px;font-weight:850;color:#3b2314;border-bottom:2px dashed #dcd0bd;padding-bottom:5px;margin-top:36px;margin-bottom:16px}
+.article p{font-size:15px;margin-bottom:14px;line-height:1.85;color:#433422}
+.article p b,.article strong{font-weight:900;color:#1e0f02;background:linear-gradient(transparent 55%,rgba(245,158,11,.25) 55%);padding:0 2px}
+.article table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border-radius:10px;overflow:hidden}
+.article th,.article td{border:1px solid #e6dac6;padding:12px 14px;text-align:left}
+.article th{background:#f3ebd9;color:#2e1d0c;font-weight:900;font-size:13px}
+.article td{background:#faf6eb;line-height:1.65;color:#433422}
+.article blockquote{
+  background:#f3ebd9;border-left:4px solid #c9b9a1;
+  border-radius:16px;padding:18px 22px;margin:20px 0;
+  color:#5c4b37;box-shadow:inset 0 1px 3px rgba(0,0,0,.01);font-size:14px;line-height:1.7;
+}
+.article blockquote b{color:#2e1d0c}
+.article hr{margin:28px 0;border:none;border-top:1px solid #e6dac6}
+.article ul{list-style:none;padding-left:4px;margin:16px 0}
+.article ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15px;line-height:1.7;color:#433422}
+.article ul li::before{content:"✓";position:absolute;left:0;top:0;color:#4f46e5;font-weight:900;font-size:16px}
+.article ol{padding-left:24px;margin:16px 0}
+.article ol li{font-size:15px;line-height:1.7;margin-bottom:10px;color:#433422}
+.article ol li::marker{color:#f59e0b;font-weight:900}
+@media(max-width:768px){
+  .article{padding:16px}
+  .article h1{font-size:20px}
+  .article h2{font-size:18px}
+}
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html" class="nav-logo">
+    <div class="nav-logo-icon">宅</div>
+    <div class="nav-logo-text">宅建試験<span>ドットコム</span></div>
+  </a>
+  <a href="../index.html" class="nav-back">← 一覧に戻る</a>
+</div>
+<div class="wrap">
+<div class="article">
+<div class="tags"><span>権利関係</span><span>担保物権</span><span>根抵当</span></div>
+<h1>担保物権② 根抵当・質・留置・先取特権</h1>
+<p class="desc">根抵当権の極度額・元本確定、質権の種類、留置権の成立要件、先取特権の種類と優先順位を条文ベースで整理。抵当権との違いも横断比較。</p>
+<hr>
+
+<h2>根抵当権（398条の2〜398条の22）</h2>
+<p>極度額の範囲内で一定範囲の不特定債権を担保する抵当権。<b>普通抵当権と違い、債権が変動しても極度額まで担保される</b>。</p>
+<table>
+<tr><th></th><th>普通抵当権</th><th>根抵当権</th></tr>
+<tr><td>担保する債権</td><td>特定の債権</td><td>不特定の債権</td></tr>
+<tr><td>極度額</td><td>なし</td><td>あり（上限額）</td></tr>
+<tr><td>元本確定</td><td>不要</td><td>必要</td></tr>
+</table>
+<p><b>元本確定事由：</b>極度額減額請求・破産・死亡・合併・解散・競売開始・確定請求。</p>
+
+<hr>
+
+<h2>質権（342条〜368条）</h2>
+<p><b>占有担保</b>（目的物を引き渡す）。不動産質・動産質・権利質・営業質の4種類。</p>
+<table>
+<tr><th></th><th>質権</th><th>抵当権</th></tr>
+<tr><td>占有</td><td>移す</td><td>移さない</td></tr>
+<tr><td>目的物</td><td>不動産・動産・権利</td><td>不動産・地上権</td></tr>
+<tr><td>用途権</td><td>あり（不動産質）</td><td>なし</td></tr>
+</table>
+
+<hr>
+
+<h2>留置権（295条〜302条）</h2>
+<p>他人の物を占有している者が、その物に関して生じた債権の弁済を受けるまで物を留置できる権利。<b>優先弁済権はない</b>（引渡し拒否のみ）。</p>
+<blockquote><b>成立要件：</b>①他人の物を占有 ②物と債権の牽連関係 ③弁済期にある ④占有が不法行為でない</blockquote>
+
+<hr>
+
+<h2>先取特権（303条〜341条）</h2>
+<p>法律の規定で当然に発生する優先弁済権。一般・動産・不動産の3種類。</p>
+<p><b>一般：</b>共益費用＞雇用＞葬式＞生活保持<br>
+<b>動産：</b>不動産賃貸＞運送＞旅館＞動産保存＞動産売買<br>
+<b>不動産：</b>不動産保存＞不動産工事＞不動産売買</p>
+
+<hr>
+
+<h2>4つの担保物権の比較</h2>
+<table>
+<tr><th>項目</th><th>抵当権</th><th>質権</th><th>留置権</th><th>先取特権</th></tr>
+<tr><td>発生原因</td><td>契約</td><td>契約</td><td>法定</td><td>法定</td></tr>
+<tr><td>占有</td><td>不要</td><td>必要</td><td>必要</td><td>不要</td></tr>
+<tr><td>優先弁済</td><td>○</td><td>○</td><td>✗</td><td>○</td></tr>
+<tr><td>登記</td><td>必要</td><td>不要</td><td>不要</td><td>不要</td></tr>
+</table>
+
+<p style="margin-top:28px;text-align:center;color:#7c6853;font-size:13px">次の魔導書は <b>「債権総論」</b>に挑みます。</p>
+</div>
+</div>
+</body>
+</html>

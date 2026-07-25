@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>時効｜宅建試験ドットコム 解説魔導書</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--font-sans:'Outfit','Noto Sans JP',system-ui,-apple-system,sans-serif}
+body{
+  font-family:var(--font-sans);background:#faf6eb;color:#433422;
+  line-height:1.85;min-height:100vh;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.nav-bar{
+  background:rgba(11,16,28,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(245,158,11,.15);
+  padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:50;margin-bottom:32px;
+}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#f8fafc}
+.nav-logo-icon{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,#6366f1,#818cf8);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;color:#fff;font-weight:900;box-shadow:0 0 12px rgba(99,102,241,.3);
+}
+.nav-logo-text{font-size:15px;font-weight:800;letter-spacing:.3px;color:#f8fafc}
+.nav-logo-text span{color:#6366f1}
+.nav-back{font-size:12px;font-weight:700;color:#94a3b8;padding:6px 14px;border-radius:8px;background:rgba(255,255,255,.04);transition:200ms;text-decoration:none}
+.nav-back:hover{color:#f8fafc}
+.article{padding:24px}
+.article h1{font-size:26px;font-weight:900;color:#2e1d0c;line-height:1.3;margin-bottom:6px;letter-spacing:-.3px}
+.article .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.article .tags span{font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;background:#f3ebd9;color:#7c6853}
+.article .desc{font-size:14px;color:#7c6853;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid #e6dac6;line-height:1.7}
+.article h2{
+  position:relative;padding:4px 0 4px 14px;
+  border-left:5px solid #f59e0b;font-size:22px;font-weight:900;
+  color:#2e1d0c;margin-top:44px;margin-bottom:20px;
+  letter-spacing:.02em;border-bottom:1px solid #e6dac6;padding-bottom:8px;
+}
+.article h3{font-size:18px;font-weight:850;color:#3b2314;border-bottom:2px dashed #dcd0bd;padding-bottom:5px;margin-top:36px;margin-bottom:16px}
+.article p{font-size:15px;margin-bottom:14px;line-height:1.85;color:#433422}
+.article p b,.article strong{font-weight:900;color:#1e0f02;background:linear-gradient(transparent 55%,rgba(245,158,11,.25) 55%);padding:0 2px}
+.article table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;border-radius:10px;overflow:hidden}
+.article th,.article td{border:1px solid #e6dac6;padding:12px 14px;text-align:left}
+.article th{background:#f3ebd9;color:#2e1d0c;font-weight:900;font-size:13px}
+.article td{background:#faf6eb;line-height:1.65;color:#433422}
+.article blockquote{
+  background:#f3ebd9;border-left:4px solid #c9b9a1;
+  border-radius:16px;padding:18px 22px;margin:20px 0;
+  color:#5c4b37;box-shadow:inset 0 1px 3px rgba(0,0,0,.01);font-size:14px;line-height:1.7;
+}
+.article blockquote b{color:#2e1d0c}
+.article hr{margin:28px 0;border:none;border-top:1px solid #e6dac6}
+.article ul{list-style:none;padding-left:4px;margin:16px 0}
+.article ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:15px;line-height:1.7;color:#433422}
+.article ul li::before{content:"✓";position:absolute;left:0;top:0;color:#4f46e5;font-weight:900;font-size:16px}
+.article ol{padding-left:24px;margin:16px 0}
+.article ol li{font-size:15px;line-height:1.7;margin-bottom:10px;color:#433422}
+.article ol li::marker{color:#f59e0b;font-weight:900}
+@media(max-width:768px){
+  .article{padding:16px}
+  .article h1{font-size:20px}
+  .article h2{font-size:18px}
+}
+</style>
+</head>
+<body>
+<div class="nav-bar">
+  <a href="../index.html" class="nav-logo">
+    <div class="nav-logo-icon">宅</div>
+    <div class="nav-logo-text">宅建試験<span>ドットコム</span></div>
+  </a>
+  <a href="../index.html" class="nav-back">← 一覧に戻る</a>
+</div>
+<div class="wrap">
+<div class="article">
+<div class="tags"><span>権利関係</span><span>民法総則</span><span>時効</span></div>
+<h1>時効 ── 取得時効・消滅時効・完成猶予・更新、「年月が権利を変える」仕組みを完全整理</h1>
+<p class="desc">宅建 権利関係の民法総則、代理と並んで出題される「時効」。取得時効と消滅時効の違い、時効の完成猶予と更新、起算点・中断事由を条文ベースで完全整理。</p>
+<hr>
+
+<h2>そもそも「時効」とは何か</h2>
+<p><b>時効</b>とは、<b>一定の期間が経過したことによって、権利の得喪（取得または消滅）が生じる制度</b>。民法は<b>取得時効</b>と<b>消滅時効</b>の2つに分類する。</p>
+<table>
+<tr><th>種類</th><th>内容</th><th>効果</th><th>条文</th></tr>
+<tr><td><b>取得時効</b></td><td>長期間占有した者が所有権を取得</td><td>権利を<b>取得</b></td><td>162条〜163条</td></tr>
+<tr><td><b>消滅時効</b></td><td>長期間行使しなかった権利が消滅</td><td>権利が<b>消滅</b></td><td>166条〜168条</td></tr>
+</table>
+
+<hr>
+
+<h2>取得時効（民法第162条〜第163条）</h2>
+<p>一定期間、他人の物を占有し続けた者が所有権を取得する制度。</p>
+<table>
+<tr><th>要件</th><th>内容</th><th>10年取得時効</th><th>20年取得時効</th></tr>
+<tr><td><b>平穏</b></td><td>暴力を使わず占有</td><td>必要</td><td>必要</td></tr>
+<tr><td><b>公然</b></td><td>隠さず占有</td><td>必要</td><td>必要</td></tr>
+<tr><td><b>善意</b></td><td>自分の物だと信じている</td><td>必要</td><td>不要</td></tr>
+<tr><td><b>無過失</b></td><td>信じることに過失がない</td><td>必要</td><td>不要</td></tr>
+</table>
+<p><b>善意・無過失なら10年、そうでなければ20年占有すれば所有権を取得できる。</b></p>
+
+<hr>
+
+<h2>消滅時効（民法第166条〜第168条）</h2>
+<p>権利を長期間行使しないことによって、その権利が消滅する制度。宅建試験で最も出る。</p>
+<blockquote><b>債権の消滅時効（2020年改正後）：</b>権利を行使できる時から<b>5年</b>。または権利行使可能時から<b>10年</b>（確定的上限）。旧民法の10年から改正されているので試験では要対応。</blockquote>
+
+<h3>消滅時効が適用されない権利</h3>
+<ul>
+<li>所有権（時効によって消滅しない）</li>
+<li>登記請求権（判例）</li>
+</ul>
+
+<h3>不法行為の消滅時効</h3>
+<ul>
+<li>損害及び加害者を知った時から<b>3年</b>（民法第724条）</li>
+<li>または不法行為の時から<b>20年</b>（確定的上限）</li>
+</ul>
+
+<hr>
+
+<h2>時効の完成猶予と更新（超重要）</h2>
+<table>
+<tr><th></th><th>完成猶予</th><th>更新</th></tr>
+<tr><td><b>効果</b></td><td>時効の進行が<b>一時停止</b></td><td>時効が<b>最初からリセット</b></td></tr>
+<tr><td><b>事由例</b></td><td>催告・協議合意</td><td>裁判上の請求・承認・差押え</td></tr>
+<tr><td><b>猶予終了後</b></td><td>残りの期間が再開</td><td>新しい時効期間がスタート</td></tr>
+</table>
+
+<blockquote><b>完成猶予事由：</b>催告（6ヶ月間時効停止）・協議合意・仮差押え<br><b>更新事由：</b>裁判上の請求・差押え・承認（債務者が債務の存在を認める）</blockquote>
+
+<hr>
+
+<h2>時効の援用（民法第145条）</h2>
+<p><b>時効の援用</b>とは「時効が完成した」と主張すること。<b>時効は自動的には適用されない。</b>当事者が「時効です」と言わなければ裁判所は時効を適用できない。</p>
+
+<hr>
+
+<h2>横断比較表</h2>
+<table>
+<tr><th>項目</th><th>取得時効</th><th>消滅時効</th></tr>
+<tr><td><b>効果</b></td><td>権利を取得</td><td>権利が消滅</td></tr>
+<tr><td><b>対象</b></td><td>所有権・財産権</td><td>債権</td></tr>
+<tr><td><b>期間（原則）</b></td><td>20年（善意無過失なら10年）</td><td>5年（＋10年上限）</td></tr>
+<tr><td><b>援用の要否</b></td><td>必要</td><td>必要</td></tr>
+<tr><td><b>頻出度</b></td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
+</table>
+
+<hr>
+
+<h2>宅建試験で出るポイント</h2>
+<ol>
+<li><b>取得時効と消滅時効の区別</b></li>
+<li><b>消滅時効の期間</b>（5年＋10年上限、2020年改正対応）</li>
+<li><b>完成猶予と更新の違い</b>（停止かリセットか）</li>
+<li><b>時効の援用</b>（自動適用されない）</li>
+<li><b>不法行為の消滅時効</b>（3年＋20年）</li>
+</ol>
+
+<p style="margin-top:28px;text-align:center;color:#7c6853;font-size:13px">次の魔導書は <b>「物権変動」</b>──登記・対抗要件・177条・178条に挑みます。</p>
+</div>
+</div>
+</body>
+</html>
