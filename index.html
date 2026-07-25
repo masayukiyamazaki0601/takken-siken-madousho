@@ -5,60 +5,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>宅建魔導書｜権利関係グリモア</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --font-en:'Cinzel','MedievalSharp',serif;
+  --font-en:'Outfit','Inter',system-ui,sans-serif;
   --font-ja:'Noto Sans JP',sans-serif;
-  --parchment:#1a1220;
-  --parchment-dark:#110c18;
-  --gold:#d4a853;
-  --gold-light:#f0d68a;
-  --gold-dim:#8a6e3a;
-  --ink:#e8dcc8;
-  --ink-dim:#988c78;
-  --ink-pale:#5a4e3a;
-  --rune:#7b5ea7;
-  --rune-glow:rgba(123,94,167,.4);
-  --blood:#a83030;
+  --bg-dark:#090d16;
+  --bg-card:#151c2c;
+  --bg-card-hover:#1e293b;
+  --gold:#eab308;
+  --gold-light:#fde68a;
+  --gold-dim:#a16207;
+  --ink:#f8fafc;
+  --ink-dim:#94a3b8;
+  --ink-pale:#64748b;
+  --primary:#4f46e5;
+  --primary-hover:#6366f1;
+  --glass-bg:rgba(11,16,28,0.55);
+  --glass-border:rgba(255,255,255,0.08);
   --radius:12px;
-  --border-rune:1px solid rgba(123,94,167,.25);
+  --radius-xl:24px;
+  --radius-3xl:32px;
+  --color-emerald:#10b981;
+  --color-rose:#f43f5e;
+  --color-amber:#eab308;
+  --color-cyan:#06b6d4;
+  --color-orange:#f97316;
 }
 html{scroll-behavior:smooth}
-
-/* ===== Parchment Background ===== */
 body{
   font-family:var(--font-ja);
-  background:var(--parchment-dark);
+  background:var(--bg-dark);
   color:var(--ink);
   line-height:1.8;
   min-height:100vh;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
+
+/* ===== Magic Animated Background ===== */
 .magic-bg{
   position:fixed;inset:0;z-index:-2;
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(123,94,167,.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 50%, rgba(168,48,48,.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 0%, rgba(212,168,83,.04) 0%, transparent 40%),
-    linear-gradient(180deg, #110c18 0%, #1a1220 40%, #150e1a 100%);
+  background:linear-gradient(-45deg, #090d16, #111827, #1e1b4b, #0f172a);
+  background-size:400% 400%;
+  animation:magic-bg 20s ease infinite;
+}
+@keyframes magic-bg{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 .magic-overlay{
   position:fixed;inset:0;z-index:-1;
   background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,.008) 2px, rgba(255,255,255,.008) 3px),
-    radial-gradient(circle at 30% 40%, rgba(212,168,83,.03) 0%, transparent 30%),
-    radial-gradient(circle at 70% 60%, rgba(123,94,167,.03) 0%, transparent 30%);
+    repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.008) 2px,rgba(255,255,255,.008) 3px),
+    radial-gradient(circle at 30% 40%,rgba(234,179,8,.03) 0%,transparent 30%),
+    radial-gradient(circle at 70% 60%,rgba(79,70,229,.03) 0%,transparent 30%);
   pointer-events:none;
 }
 .wrap{max-width:1200px;margin:0 auto;padding:0 20px 80px;position:relative;z-index:1}
 
-/* ===== Floating Runes (CSS only) ===== */
+/* ===== Floating Runes ===== */
 .rune-decoration{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 .rune-decoration span{
-  position:absolute;font-family:var(--font-en);font-size:14px;color:rgba(123,94,167,.06);
+  position:absolute;font-family:var(--font-en);font-size:14px;color:rgba(79,70,229,.06);
   animation:floatRune 20s infinite linear;
 }
 .rune-decoration span:nth-child(1){top:10%;left:5%;font-size:20px;animation-duration:25s}
@@ -72,36 +83,32 @@ body{
   100%{transform:translateY(0) rotate(360deg);opacity:.06}
 }
 
-/* ===== Header ===== */
+/* ===== Header (Glassmorphism) ===== */
 .header{
   position:sticky;top:12px;z-index:50;
   padding:0 20px;height:64px;
   display:flex;align-items:center;justify-content:space-between;
-  background:rgba(17,12,24,.85);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  border:1px solid rgba(212,168,83,.15);
+  background:rgba(11,16,28,0.55);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.08);
   border-radius:var(--radius);
-  box-shadow:0 0 30px rgba(0,0,0,.4),inset 0 1px 0 rgba(212,168,83,.05);
+  box-shadow:0 10px 40px -10px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,.05);
   margin-bottom:32px;
-}
-.header::after{
-  content:"";position:absolute;bottom:-1px;left:10%;right:10%;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(212,168,83,.2),transparent);
 }
 .header-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .header-logo-icon{
   width:38px;height:38px;border-radius:8px;
-  background:linear-gradient(135deg,#2a1a3a,#3a2a4a);
-  border:1px solid rgba(212,168,83,.3);
+  background:linear-gradient(135deg,#1e293b,#334155);
+  border:1px solid rgba(234,179,8,.3);
   display:flex;align-items:center;justify-content:center;
   font-family:var(--font-en);font-size:18px;color:var(--gold);
-  box-shadow:0 0 12px rgba(212,168,83,.1);
+  box-shadow:0 0 12px rgba(234,179,8,.1);
 }
 .header-logo-text{
   font-family:var(--font-en);font-size:14px;font-weight:700;
   letter-spacing:2px;color:var(--gold-light);
 }
-.header-logo-text span{color:#8a6e3a}
+.header-logo-text span{color:var(--gold-dim)}
 .header-logo-sub{
   font-size:9px;color:var(--ink-pale);letter-spacing:3px;
   font-weight:600;display:block;margin-top:-1px;
@@ -115,32 +122,37 @@ body{
   transition:200ms;letter-spacing:1px;
 }
 .header-nav a:hover,.header-nav a.active{
-  color:var(--gold);border-color:rgba(212,168,83,.2);
-  background:rgba(212,168,83,.06);
+  color:var(--gold);border-color:rgba(234,179,8,.2);
+  background:rgba(234,179,8,.06);
 }
 
-/* ===== Welcome Grimoire ===== */
-.welcome{
-  background:linear-gradient(135deg,rgba(26,18,32,.9),rgba(17,12,24,.9));
-  border:1px solid rgba(212,168,83,.12);
-  border-radius:16px;padding:28px;margin-bottom:44px;
-  position:relative;overflow:hidden;
+/* ===== Glass Panel ===== */
+.glass-panel{
+  background:rgba(11,16,28,0.55);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 10px 40px -10px rgba(0,0,0,0.5);
+  border-radius:var(--radius-3xl);
+  padding:28px;
+  margin-bottom:44px;
 }
-.welcome::before{
-  content:"⚜";position:absolute;top:-10px;right:20px;
-  font-size:60px;color:rgba(212,168,83,.04);font-family:var(--font-en);
+.welcome{
+  composes:glass-panel;
+  position:relative;overflow:hidden;
 }
 .welcome h2{
   font-family:var(--font-en);
-  font-size:18px;font-weight:700;color:var(--gold);
-  margin-bottom:10px;letter-spacing:2px;
+  font-size:18px;font-weight:800;color:var(--gold);
+  margin-bottom:10px;letter-spacing:1px;
 }
 .welcome p{font-size:13px;color:var(--ink-dim);line-height:1.8;margin-bottom:12px}
 .welcome .tip{
   font-size:12px;color:var(--ink-pale);line-height:1.7;
-  border-top:1px solid rgba(212,168,83,.08);padding-top:12px;
+  border-top:1px solid rgba(255,255,255,.06);padding-top:12px;
 }
 .welcome .tip a{color:var(--gold);text-decoration:underline;text-underline-offset:2px}
+.welcome .tip strong{color:var(--gold-light)}
 
 /* ===== Section Title ===== */
 .sec-title{
@@ -151,67 +163,64 @@ body{
   text-transform:uppercase;
 }
 .sec-title::before{content:"◇";font-size:10px;color:var(--gold-dim)}
-.sec-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(212,168,83,.15),transparent)}
+.sec-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(234,179,8,.15),transparent)}
 
-/* ===== Section Color Variants ===== */
+/* Section Color Variants */
 .sec-title.fire{color:#fca5a5}
 .sec-title.fire::before{content:"◇";color:#f87171;font-size:10px}
 .sec-title.gold{color:var(--gold-light)}
 .sec-title.gold::before{content:"◇";color:var(--gold);font-size:10px}
 .sec-title.ice{color:#67e8f9}
 .sec-title.ice::before{content:"◇";color:#67e8f9;font-size:10px}
+.sec-title.emerald{color:#6ee7b7}
+.sec-title.emerald::before{content:"◇";color:#34d399;font-size:10px}
 
-/* ===== Grimoire Grid ===== */
+/* ===== Card Grid ===== */
 .article-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:48px}
 @media(min-width:640px){.article-grid{grid-template-columns:1fr 1fr}}
 @media(min-width:1024px){.article-grid{grid-template-columns:1fr 1fr 1fr}}
 
 .article-card{
   display:flex;align-items:flex-start;gap:14px;padding:18px;
-  background:linear-gradient(135deg,rgba(26,18,32,.7),rgba(17,12,24,.7));
-  border:1px solid rgba(123,94,167,.12);
-  border-radius:14px;text-decoration:none;color:inherit;
+  background:rgba(21,28,44,0.8);
+  border:1px solid rgba(255,255,255,0.04);
+  border-radius:var(--radius-3xl);
+  text-decoration:none;color:inherit;
   transition:300ms cubic-bezier(.4,0,.2,1);
   position:relative;overflow:hidden;
 }
-.article-card::before{
-  content:"";position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(212,168,83,.1),transparent);
-  opacity:0;transition:300ms;
-}
 .article-card:hover{
-  border-color:rgba(212,168,83,.2);
+  border-color:rgba(234,179,8,.15);
   transform:translateY(-2px);
-  box-shadow:0 8px 30px rgba(0,0,0,.3),0 0 20px rgba(123,94,167,.05);
+  box-shadow:0 8px 30px rgba(0,0,0,.3),0 0 20px rgba(79,70,229,.04);
 }
-.article-card:hover::before{opacity:1}
 
-/* Level Badge (Rune-style) */
+/* Level Badge */
 .article-card .badge{
-  width:44px;height:38px;border-radius:8px;
+  width:44px;height:38px;border-radius:12px;
   display:flex;align-items:center;justify-content:center;flex-shrink:0;
   font-family:var(--font-en);font-size:11px;font-weight:700;letter-spacing:1px;
-  background:rgba(123,94,167,.1);border:1px solid rgba(123,94,167,.2);
-  color:var(--rune);transition:300ms;
+  background:rgba(79,70,229,.1);border:1px solid rgba(79,70,229,.2);
+  color:var(--primary);transition:300ms;
 }
 .article-card:hover .badge{
-  background:rgba(212,168,83,.1);border-color:rgba(212,168,83,.25);color:var(--gold);
+  background:rgba(234,179,8,.1);border-color:rgba(234,179,8,.25);color:var(--gold);
 }
 
-/* Completed card style */
-.article-card.completed{border-color:rgba(212,168,83,.2)}
-.article-card.completed .badge{background:rgba(212,168,83,.1);border-color:rgba(212,168,83,.2);color:var(--gold)}
+/* Completed card */
+.article-card.completed{border-color:rgba(234,179,8,.12)}
+.article-card.completed .badge{background:rgba(234,179,8,.1);border-color:rgba(234,179,8,.2);color:var(--gold)}
 .article-card.completed .body h3{color:var(--gold-light)}
 .article-card.completed::after{
-  content:"✦";position:absolute;top:8px;right:12px;
-  font-size:12px;color:rgba(212,168,83,.3);
+  content:"✦";position:absolute;top:10px;right:14px;
+  font-size:12px;color:rgba(234,179,8,.3);
 }
 
 .article-card .body{flex:1;min-width:0}
 .article-card .body h3{
   font-size:14px;font-weight:700;color:var(--ink);
   margin-bottom:5px;transition:300ms;
-  font-family:var(--font-ja);
+  font-family:var(--font-en);
 }
 .article-card:hover .body h3{color:var(--gold-light)}
 .article-card .body p{
@@ -220,9 +229,9 @@ body{
 .article-card .tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:8px}
 .article-card .tags span{
   font-size:10px;font-weight:600;color:var(--ink-pale);
-  background:rgba(123,94,167,.06);
-  border:1px solid rgba(123,94,167,.1);
-  padding:2px 7px;border-radius:3px;
+  background:rgba(15,23,42,.8);
+  border:1px solid rgba(255,255,255,.06);
+  padding:2px 7px;border-radius:4px;
   font-family:var(--font-ja);
 }
 .article-card .arrow{
@@ -236,9 +245,12 @@ body{
 .sidebar{width:300px;flex-shrink:0;display:none}
 @media(min-width:768px){.sidebar{display:block}}
 .side-panel{
-  background:linear-gradient(135deg,rgba(26,18,32,.8),rgba(17,12,24,.8));
-  border:1px solid rgba(123,94,167,.1);
-  border-radius:14px;padding:20px;margin-bottom:18px;
+  background:rgba(11,16,28,0.55);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:var(--radius-3xl);
+  padding:20px;margin-bottom:18px;
 }
 .side-panel h4{
   font-family:var(--font-en);
@@ -246,11 +258,11 @@ body{
   margin-bottom:12px;letter-spacing:2px;
   text-transform:uppercase;
 }
-.profile{display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(123,94,167,.08);padding-bottom:14px;margin-bottom:14px}
+.profile{display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:14px;margin-bottom:14px}
 .profile-avatar{
   width:40px;height:40px;border-radius:50%;
-  background:linear-gradient(135deg,#2a1a3a,#3a2a4a);
-  border:1px solid rgba(212,168,83,.2);
+  background:linear-gradient(135deg,#1e293b,#334155);
+  border:1px solid rgba(234,179,8,.2);
   display:flex;align-items:center;justify-content:center;
   font-size:16px;color:var(--gold);
 }
@@ -258,35 +270,47 @@ body{
 .profile .name{font-size:13px;font-weight:700;color:var(--ink);font-family:var(--font-en);letter-spacing:1px}
 .profile-bio{font-size:11px;color:var(--ink-dim);line-height:1.7}
 
-/* Category Tags (Crystal style) */
+/* Category Tags */
 .category-list{display:flex;flex-direction:column;gap:8px}
 .category-item{
   font-size:12px;font-weight:700;padding:10px 14px;
-  border-radius:8px;display:flex;justify-content:space-between;align-items:center;
-  border:1px solid rgba(123,94,167,.1);
-  background:rgba(123,94,167,.04);
+  border-radius:12px;display:flex;justify-content:space-between;align-items:center;
+  border:1px solid rgba(255,255,255,.06);
+  background:rgba(15,23,42,.5);
   color:var(--ink-dim);
 }
-.category-item:nth-child(1){border-color:rgba(16,185,129,.15);color:#6ee7b7;background:rgba(16,185,129,.04)}
-.category-item:nth-child(2){border-color:rgba(244,63,94,.15);color:#fda4af;background:rgba(244,63,94,.04)}
-.category-item:nth-child(3){border-color:rgba(212,168,83,.15);color:var(--gold-light);background:rgba(212,168,83,.04)}
-.category-item:nth-child(4){border-color:rgba(6,182,212,.15);color:#67e8f9;background:rgba(6,182,212,.04)}
+.category-item:nth-child(1){border-color:rgba(16,185,129,.12);color:#6ee7b7;background:rgba(16,185,129,.04)}
+.category-item:nth-child(2){border-color:rgba(244,63,94,.12);color:#fda4af;background:rgba(244,63,94,.04)}
+.category-item:nth-child(3){border-color:rgba(234,179,8,.12);color:var(--gold-light);background:rgba(234,179,8,.04)}
+.category-item:nth-child(4){border-color:rgba(6,182,212,.12);color:#67e8f9;background:rgba(6,182,212,.04)}
+
+/* Progress Bar */
+.progress-bar{height:6px;background:rgba(15,23,42,.5);border-radius:3px;overflow:hidden}
+.progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:3px;transition:width 0.5s ease}
 
 /* ===== Footer ===== */
-.footer{margin-top:48px;padding:24px 0;text-align:center;font-size:11px;color:var(--ink-pale);border-top:1px solid rgba(123,94,167,.08);letter-spacing:1px}
+.footer{margin-top:48px;padding:24px 0;text-align:center;font-size:11px;color:var(--ink-pale);border-top:1px solid rgba(255,255,255,.06);letter-spacing:1px}
 .footer span{color:var(--gold-dim)}
 
-/* ===== Magic Circle Decoration (bottom) ===== */
+/* ===== Magic Circle ===== */
 .magic-circle{
   position:fixed;bottom:-100px;left:50%;transform:translateX(-50%);
   width:400px;height:400px;z-index:-1;pointer-events:none;
-  background:radial-gradient(circle,rgba(123,94,167,.04) 0%,transparent 70%);
+  background:radial-gradient(circle,rgba(79,70,229,.04) 0%,transparent 70%);
   border-radius:50%;
   animation:pulseGlow 8s ease-in-out infinite;
 }
 @keyframes pulseGlow{
   0%,100%{opacity:.3}
   50%{opacity:.6}
+}
+
+/* Stats Badge inside card */
+.stat-badge{
+  display:inline-flex;align-items:center;gap:3px;
+  font-size:10px;font-weight:800;color:var(--ink-pale);
+  background:rgba(15,23,42,.6);border:1px solid rgba(255,255,255,.05);
+  padding:2px 8px;border-radius:4px;
 }
 </style>
 </head>
@@ -324,7 +348,7 @@ body{
     <div class="main" style="flex:1;min-width:0">
 
       <!-- Welcome -->
-      <div class="welcome">
+      <div class="glass-panel">
         <h2>📖 宅建魔導書ライブラリ</h2>
         <p>宅建試験4分野を<strong style="color:var(--gold-light)">「指が覚えるまで解きまくる → 解説で理解が化ける」</strong>スタイルで<br>
         挫折せずに攻略するための魔導書を<strong style="color:var(--gold-light)">4属性・全33冊</strong>収録。</p>
@@ -332,7 +356,7 @@ body{
       </div>
 
       <!-- Section 1: 権利関係・民法 -->
-      <div class="sec-title">Ⅰ 権利関係【民法】</div>
+      <div class="sec-title emerald">Ⅰ 権利関係【民法】</div>
       <div class="article-grid">
         <a href="content/column-restricted-capacity.html" class="article-card completed">
           <div class="badge">Lv1</div>
@@ -664,7 +688,7 @@ body{
       </div>
       <div class="side-panel">
         <h4>📱 魔導端末アプリ</h4>
-        <div style="background:rgba(123,94,167,.06);border-radius:8px;padding:12px;text-align:center;font-size:11px;font-weight:600;color:var(--ink-pale);border:1px solid rgba(123,94,167,.08)">🚧 召喚準備中</div>
+        <div style="background:rgba(15,23,42,.5);border-radius:12px;padding:12px;text-align:center;font-size:11px;font-weight:600;color:var(--ink-pale);border:1px solid rgba(255,255,255,.06)">🚧 召喚準備中</div>
       </div>
       <div class="side-panel">
         <h4>📂 属性</h4>
@@ -679,8 +703,8 @@ body{
         <h4>📊 進捗</h4>
         <div style="font-size:11px;color:var(--ink-dim);line-height:1.7">
           <div style="display:flex;justify-content:space-between;margin-bottom:6px"><span>全33冊</span><span style="color:var(--gold)">33/33 完了</span></div>
-          <div style="height:6px;background:rgba(123,94,167,.1);border-radius:3px;overflow:hidden">
-            <div style="width:100%;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:3px"></div>
+          <div class="progress-bar">
+            <div class="progress-bar-fill" style="width:100%"></div>
           </div>
         </div>
       </div>
